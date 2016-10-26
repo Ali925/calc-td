@@ -14,19 +14,20 @@
 Route::get('/', function () {
     return view('welcome');
 });
-    
-//Product route
-Route::get('api/product/get/all','ProductController@getAll');
-Route::get('api/product/get/{id}','ProductController@getById');
 
-//Form route
-Route::get('api/form/get/all','FormController@getAll');
-Route::get('api/form/get/{id}','FormController@getById');
+Route::group(['prefix' => 'api'], function (){
 
+    Route::group(['prefix' => 'product'],function (){
+        Route::get('get/all','ProductController@getAll');
+        Route::get('get/{id}','ProductController@getById');
+    });
 
+    Route::group(['prefix' => 'form'],function (){
+        Route::get('get/all','FormController@getAll');
+        Route::get('get/{id}','FormController@getById');
+    });
 
-
-
+});
 
 Auth::routes();
 
