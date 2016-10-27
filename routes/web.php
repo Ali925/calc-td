@@ -27,8 +27,22 @@ Route::group(['prefix' => 'api'], function (){
         Route::get('get/{id}','FormController@getById');
     });
 
+    Route::group(['prefix' => 'decor'],function (){
+        Route::get('get/all','DecorController@getAll');
+        Route::get('get/{id}','DecorController@getById');
+    });
+
+    Route::group(['prefix' => 'category'],function (){
+        Route::get('get/all','DecorCategoryController@getAll');
+        Route::get('get/{id}','DecorCategory@getById');
+    });
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/test', function (){
+    $madel = \App\Decor::where('id',1)->with('decorCategory')->first();
+    return $madel;
+});
