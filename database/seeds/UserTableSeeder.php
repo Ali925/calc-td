@@ -23,6 +23,7 @@ class UserTableSeeder extends Seeder
                 'name' => $user['name'],
                 'email' => $user['email'],
                 'password' => $user['password'],
+                'role' => $user['role'],
             ]);
         }
     }
