@@ -11,4 +11,12 @@ class DecorCategory extends Model
     public function decor(){
         return $this->hasMany('App\Decor');
     }
+
+    public static function getList()
+    {
+        $result = [];
+        $lists = DecorCategory::all();
+        foreach ($lists as $list){ $result[] = $list->name; }
+        return $result;
+    }
 }

@@ -9,7 +9,7 @@ use Illuminate\Http\Response;
 
 class PaymentController extends Controller
 {
-    public function sendPayment(Response $response)
+    public function sendPayment(Request $request)
     {
 
     }

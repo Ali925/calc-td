@@ -8,7 +8,7 @@ use App\Http\Requests;
 
 class OrderController extends Controller
 {
-    public function setOrder()
+    public function setOrder(Request $request)
     {
 
     }
