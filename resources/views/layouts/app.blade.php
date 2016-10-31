@@ -43,9 +43,11 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
+                        @if(Auth::check())
                             @if(Auth::user()->isAdmin())
                                 <li><a href="{{ url('/admin') }}">Панель Администратора</a></li>
                             @endif
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
