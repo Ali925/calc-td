@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(DecorCategoryTableSeeder::class);
+        $this->call(EdgeCategoryTableSeeder::class);
         $this->call(DecorTableSeeder::class);
         $this->call(FormTableSeeder::class);
         $this->call(ProductTableSeeder::class);

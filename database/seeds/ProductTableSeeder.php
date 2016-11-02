@@ -13,6 +13,7 @@ class ProductTableSeeder extends Seeder
     public function run()
     {
         DB::table('products')->truncate();
+        DB::table('form_product')->truncate();
 
         $products = [
             [

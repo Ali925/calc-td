@@ -28,7 +28,7 @@ Route::group(['prefix' => 'api'], function (){
     });
 
     Route::group(['prefix' => 'decor'],function (){
-        Route::get('get/all','DecorController@getAll');
+            Route::get('get/all','DecorController@getAll');
         Route::get('get/{id}','DecorController@getById');
     });
 
