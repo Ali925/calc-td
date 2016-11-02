@@ -27,4 +27,4 @@ AdminSection::registerModel(Form::class, function (ModelConfiguration $model){
 
         return $form;
     });
-})->addMenuPage(Form::class, 3)->setIcon('fa fa-cubes');
+})->addMenuPage(Form::class, 7)->setIcon('fa fa-cubes');

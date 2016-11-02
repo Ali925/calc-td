@@ -28,4 +28,4 @@ AdminSection::registerModel(EdgeDecor::class, function (ModelConfiguration $mode
 
         return $form;
     });
-})->addMenuPage(EdgeDecor::class, 3)->setIcon('fa fa-file-photo-o');
+})->addMenuPage(EdgeDecor::class, 5)->setIcon('fa fa-file-photo-o');

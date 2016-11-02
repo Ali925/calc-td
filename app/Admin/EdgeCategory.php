@@ -23,4 +23,4 @@ AdminSection::registerModel(EdgeCategory::class, function (ModelConfiguration $m
 
         return $form;
     });
-})->addMenuPage(EdgeCategory::class, 2)->setIcon('fa fa-folder-open-o');
+})->addMenuPage(EdgeCategory::class, 4)->setIcon('fa fa-folder-open-o');

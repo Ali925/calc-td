@@ -22,4 +22,4 @@ AdminSection::registerModel(ConfigPayment::class, function (ModelConfiguration $
 
         return $form;
     });
-})->addMenuPage(ConfigPayment::class, 3)->setIcon('fa fa-gear');
+})->addMenuPage(ConfigPayment::class, 8)->setIcon('fa fa-gear');
