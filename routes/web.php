@@ -36,6 +36,14 @@ Route::group(['prefix' => 'api'], function (){
         Route::get('get/all','DecorCategoryController@getAll');
         Route::get('get/{id}','DecorCategory@getById');
     });
+    Route::group(['prefix' => 'edge'], function (){
+        Route::group(['prefix' => 'decor'], function (){
+            Route::get('get/all','EdgeDecorController@getAll');
+        });
+        Route::group(['category'], function (){
+            Route::get('get/all','EdgeCategoryController@getAll');
+        });
+    });
 });
 
 Auth::routes();
