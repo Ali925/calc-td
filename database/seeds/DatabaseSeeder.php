@@ -20,5 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ConfigPaymentTableSeeder::class);
         $this->call(NipsTableSeeder::class);
         $this->call(ThicknessesTableSeeder::class);
+        $this->call(PatternOptionsTableSeeder::class);
+        $this->call(PatternPositionsTableSeeder::class);
     }
 }
