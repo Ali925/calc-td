@@ -14,12 +14,12 @@ class ConfigPaymentTableSeeder extends Seeder
         DB::table('config_payments')->truncate();
 
         $payments = [
-            ['option' => 'merchant', 'value' => '556699'],
-            ['option' => 'currency', 'value' => 'RUB'],
-            ['option' => 'language', 'value' => 'RU'],
-            ['option' => 'comment', 'value' => 'Комментарий к платежу'],
-            ['option' => 'url_return_ok', 'value' => ''],
-            ['option' => 'url_return_no', 'value' => ''],
+            ['option' => 'Merchant_ID', 'value' => '556699'],
+            ['option' => 'OrderCurrency', 'value' => 'RUB'],
+            ['option' => 'Language', 'value' => 'RU'],
+            ['option' => 'OrderComment', 'value' => 'Комментарий к платежу'],
+            ['option' => 'URL_RETURN_OK', 'value' => ''],
+            ['option' => 'URL_RETURN_NO', 'value' => ''],
         ];
 
         foreach ($payments as $payment){
