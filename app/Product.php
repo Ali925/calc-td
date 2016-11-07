@@ -10,4 +10,14 @@ class Product extends Model
     {
         return $this->belongsToMany('App\Form','form_product');
     }
+
+    public function nips()
+    {
+        return $this->belongsToMany('App\Nip');
+    }
+
+    public function thicknesses()
+    {
+        return $this->belongsToMany('App\Thickness');
+    }
 }
