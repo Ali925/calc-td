@@ -12,7 +12,7 @@ class ProductController extends Controller
 
     public function getAll()
     {
-        $response = Product::all();
+        $response = Product::with(['forms'])->with('nips')->with('thicknesses')->get();
         return response()->json($response);
     }
 

@@ -25,4 +25,4 @@ AdminSection::registerModel(PatternPosition::class, function (ModelConfiguration
 
         return $form;
     });
-})->addMenuPage(PatternPosition::class, 8)->setIcon('fa fa-cubes');
+});

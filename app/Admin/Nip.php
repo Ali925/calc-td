@@ -25,4 +25,4 @@ AdminSection::registerModel(Nip::class, function (ModelConfiguration $model){
 
         return $form;
     });
-})->addMenuPage(Nip::class, 8)->setIcon('fa fa-cubes');
+});

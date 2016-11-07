@@ -27,4 +27,4 @@ AdminSection::registerModel(Decor::class, function (ModelConfiguration $model){
 
         return $form;
     });
-})->addMenuPage(Decor::class, 3)->setIcon('fa fa-file-photo-o');
+});

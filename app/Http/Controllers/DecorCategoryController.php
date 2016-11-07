@@ -11,7 +11,7 @@ class DecorCategoryController extends Controller
 {
     public function getAll()
     {
-        $response = DecorCategory::all();
+        $response = DecorCategory::with('decor')->get();
         return response()->json($response);
     }
 

@@ -23,4 +23,4 @@ AdminSection::registerModel(DecorCategory::class, function (ModelConfiguration $
 
         return $form;
     });
-})->addMenuPage(DecorCategory::class, 2)->setIcon('fa fa-folder-open-o');
+});

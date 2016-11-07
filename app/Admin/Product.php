@@ -37,4 +37,4 @@ AdminSection::registerModel(Product::class, function (ModelConfiguration $model)
 
         return $form;
     });
-})->addMenuPage(Product::class, 6)->setIcon('fa fa-cube');
+});

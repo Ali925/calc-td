@@ -23,4 +23,4 @@ AdminSection::registerModel(Thickness::class, function (ModelConfiguration $mode
 
         return $form;
     });
-})->addMenuPage(Thickness::class, 9)->setIcon('fa fa-cubes');
+});

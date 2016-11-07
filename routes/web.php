@@ -44,6 +44,8 @@ Route::group(['prefix' => 'api'], function (){
             Route::get('get/all','EdgeCategoryController@getAll');
         });
     });
+
+    Route::get('pattern', 'PatternController@getAll');
 });
 
 Auth::routes();
