@@ -7,7 +7,10 @@
     </div> <!-- /calc-btn-blc -->
     <div class="calc-title">Выберите конструкцию заготовки</div>
     @foreach($forms as $form)
-        <div class="calc-choice-item" data-id="{{$form->id}}" data-pattern="@if(!empty($form->pattern_image)){{url('/').'/'.$form->pattern_image}}@endif">
+        <div class="calc-choice-item" data-id="{{$form->id}}"
+             data-pattern="@if(!empty($form->pattern_image)){{url('/').'/'.$form->pattern_image}}@endif"
+             data-coast="{{$form->coast}}"
+        >
             <div class="calc-choice-image"><img src="{{url('/').'/'.$form->image}}" alt=""></div>
             <span class="calc-choice-name">{{$form->name}}</span>
         </div>
