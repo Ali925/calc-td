@@ -34,4 +34,18 @@ class PaymentController extends Controller
 
         return view('main',$response);
     }
+
+    public function main2()
+    {
+        $response['blankTypes'] = BlankType::all();
+        $response['forms'] = Form::all();
+        $response['patternPosition'] = PatternPosition::with('options')->get();
+        $response['decors'] = Decor::with('decorCategory')->get();
+        $response['edges'] = EdgeDecor::with('edgeCategory')->get();
+        $response['configPayments'] = ConfigPayment::all();
+        $response['nips'] = Nip::all();
+        $response['thicknesses'] = Thickness::all();
+
+        return view('main2',$response);
+    }
 }
