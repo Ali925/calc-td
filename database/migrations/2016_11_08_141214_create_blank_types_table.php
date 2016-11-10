@@ -17,6 +17,10 @@ class CreateBlankTypesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->text('description');
+            $table->integer('min_width')->nulled();
+            $table->integer('max_width')->nulled();
+            $table->integer('min_length')->nulled();
+            $table->integer('max_length')->nulled();
             $table->timestamps();
         });
     }

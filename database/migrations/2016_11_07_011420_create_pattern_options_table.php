@@ -19,6 +19,7 @@ class CreatePatternOptionsTable extends Migration
             $table->text('image');
             $table->integer('coast');
             $table->text('description');
+            $table->string('kind');
             $table->timestamps();
         });
     }

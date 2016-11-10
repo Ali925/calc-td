@@ -21,6 +21,7 @@ class PatternOptionsTableSeeder extends Seeder
                 'coast' => 1400,
                 'description' => ' -  Соединение двух столешниц/деталей под прямым углом посредством 
                                   металлических стяжек с предварительным «встречным» запилом заготовок',
+                'kind' => 'eurozap',
             ],
             [
                 'name' => 'Еврозапил (низ)',
@@ -28,6 +29,7 @@ class PatternOptionsTableSeeder extends Seeder
                 'coast' => 1400,
                 'description' => ' -  Соединение двух столешниц/деталей под прямым углом посредством 
                                   металлических стяжек с предварительным «встречным» запилом заготовок',
+                'kind' => 'eurozap',
             ],
             [
                 'name' => 'Стандартное соединение (верх)',
@@ -35,6 +37,7 @@ class PatternOptionsTableSeeder extends Seeder
                 'coast' => 300,
                 'description' => ' -  Продольное соединение деталей с помощью металлических
                                   стяжек и плоских шкантов.',
+                'kind' => 'soed',
             ],
             [
                 'name' => 'Стандартное соединение (низ)',
@@ -42,30 +45,35 @@ class PatternOptionsTableSeeder extends Seeder
                 'coast' => 300,
                 'description' => ' -  Продольное соединение деталей с помощью металлических
                                   стяжек и плоских шкантов.',
+                'kind' => 'soed',
             ],
             [
                 'name' => 'Нет',
                 'image' => '',
                 'coast' => 0,
                 'description' => '',
+                'kind' => 'none',
             ],
             [
                 'name' => 'Радиус внешний',
                 'image' => '',
                 'coast' => 500,
                 'description' => ' -  Внешнее/внутреннее закругление угла столешницы/детали.',
+                'kind' => 'radius',
             ],
             [
                 'name' => 'Радиус внутренний',
                 'image' => '',
                 'coast' => 500,
                 'description' => ' -  Внешнее/внутреннее закругление угла столешницы/детали.',
+                'kind' => 'radius',
             ],
             [
                 'name' => 'Скос',
                 'image' => '',
                 'coast' => 300,
                 'description' => ' -  диагональный срез угла столешницы/детали',
+                'kind' => 'skos',
             ],
             [
                 'name' => 'Еврозапил',
@@ -73,6 +81,7 @@ class PatternOptionsTableSeeder extends Seeder
                 'coast' => 1400,
                 'description' => ' -  Соединение двух столешниц/деталей под прямым углом посредством 
                                   металлических стяжек с предварительным «встречным» запилом заготовок',
+                'kind' => 'eurozap',
             ],
             [
                 'name' => 'Стандартное соединение',
@@ -80,6 +89,7 @@ class PatternOptionsTableSeeder extends Seeder
                 'coast' => 300,
                 'description' => ' -  Продольное соединение деталей с помощью металлических
                                   стяжек и плоских шкантов.',
+                'kind' => 'soed',
             ],
         ];
 
@@ -89,6 +99,7 @@ class PatternOptionsTableSeeder extends Seeder
                 'image' => $option['image'],
                 'coast' => $option['coast'],
                 'description' => $option['description'],
+                'kind' => $option['kind'],
             ]);
         }
     }
