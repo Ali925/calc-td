@@ -31,17 +31,4 @@ class HomeController extends Controller
     {
         return view('home');
     }
-
-    public function main()
-    {
-        $response['blankTypes'] = BlankType::all();
-        $response['forms'] = Form::all();
-        $response['patternPosition'] = PatternPosition::with('options')->get();
-        $response['decors'] = Decor::with('decorCategory')->get();
-        $response['edges'] = EdgeDecor::with('edgeCategory')->get();
-
-
-
-        return view('main', $response);
-    }
 }
