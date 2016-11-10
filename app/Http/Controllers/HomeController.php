@@ -2,12 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\BlankType;
-use App\Decor;
-use App\EdgeDecor;
-use App\Form;
-use App\PatternOption;
-use App\PatternPosition;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller

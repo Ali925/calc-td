@@ -6,8 +6,11 @@ use App\ConfigPayment;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use Illuminate\Http\Response;
-use GuzzleHttp\Client;
+use App\BlankType;
+use App\Decor;
+use App\EdgeDecor;
+use App\Form;
+use App\PatternPosition;
 
 class PaymentController extends Controller
 {
