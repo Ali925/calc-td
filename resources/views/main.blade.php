@@ -384,21 +384,6 @@
         <span id="calc-js-message-text"></span>
     </div>  <!-- сообщения -->
 </div>  <!-- /calc-wrapper -->
-
-<script src="{{url('/').'/'}}js/jquery-3.1.0.min.js"></script>
-<script src="{{url('/').'/'}}js/jquery-ui.min.js"></script>
-<script src="{{url('/').'/'}}js/src/config.js"></script>
-<script src="{{url('/').'/'}}js/src/data/data.js"></script>
-<script src="{{url('/').'/'}}js/src/data/image.js"></script>
-<script src="{{url('/').'/'}}js/src/data/storage.js"></script>
-<script src="{{url('/').'/'}}js/src/data/user.js"></script>
-<script src="{{url('/').'/'}}js/src/objects/detail.js"></script>
-<script src="{{url('/').'/'}}js/src/objects/detail_list.js"></script>
-<script src="{{url('/').'/'}}js/src/objects/blank.js"></script>
-<script src="{{url('/').'/'}}js/src/objects/template.js"></script>
-<script src="{{url('/').'/'}}js/src/core.js"></script>
-<script src="{{url('/').'/'}}js/src/start.js"></script>
-
 </body>
 
 </html>
