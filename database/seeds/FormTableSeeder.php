@@ -20,27 +20,31 @@ class FormTableSeeder extends Seeder
                 'name' => 'Прямоугольная и с закруглениями, боковая стойка',
                 'coast' => 200,
                 'image' => 'images/uploads/forms/1.png',
-
+                'pattern_image' => 'images/uploads/back/back1.png',
             ],
             [
                 'name' => 'Столешница с закруглениями в виде полукруга',
                 'coast' => 2000,
                 'image' => 'images/uploads/forms/2.png',
+                'pattern_image' => 'images/uploads/back/back2.png',
             ],
             [
                 'name' => 'Столешница с круглым столом',
                 'coast' => 4000,
                 'image' => 'images/uploads/forms/3.png',
+                'pattern_image' => 'images/uploads/back/back3.png',
             ],
             [
                 'name' => 'Столешница круглая',
                 'coast' => 2000,
                 'image' => 'images/uploads/forms/4.png',
+                'pattern_image' => 'images/uploads/back/back4.png',
             ],
             [
                 'name' => 'Угловой элемент',
                 'coast' => 2000,
                 'image' => 'images/uploads/forms/5.png',
+                'pattern_image' => 'images/uploads/back/back5.png',
             ],
         ];
 
@@ -59,6 +63,7 @@ class FormTableSeeder extends Seeder
                 'name' => $form['name'],
                 'coast' => $form['coast'],
                 'image' => $form['image'],
+                'pattern_image' => $form['pattern_image'],
             ]);
         }
 

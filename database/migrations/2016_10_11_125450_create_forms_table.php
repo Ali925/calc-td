@@ -18,6 +18,7 @@ class CreateFormsTable extends Migration
             $table->string('name')->nulled();
             $table->integer('coast')->nulled();
             $table->string('image')->nulled();
+            $table->string('pattern_image')->nulled();
             $table->timestamps();
         });
 

@@ -7,12 +7,10 @@
     </div> <!-- /calc-btn-blc -->
     <div class="calc-title">Выберите конструкцию заготовки</div>
     @foreach($forms as $form)
-
-        <div class="calc-choice-item" data-id="{{$form->id}}">
+        <div class="calc-choice-item" data-id="{{$form->id}}" data-pattern="{{url('/').'/'.$form->pattern_image}}">
             <div class="calc-choice-image"><img src="{{url('/').'/'.$form->image}}" alt=""></div>
             <span class="calc-choice-name">{{$form->name}}</span>
         </div>
-
     @endforeach
     <div class="calc-btn-blc">
         <button class="calc-nav calc-nav__noactive" id="calc-js-step1_2-next">
