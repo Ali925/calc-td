@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\BlankType;
+use App\EdgeCategory;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -15,5 +16,8 @@ class BlankTypesController extends Controller
         $response['blankTypes'] = BlankType::with('forms')->get();
         $response['product'] = Product::with('blankType')
             ->with('decorCategory')->with('nip')->with('thickness')->get();
+        $response['edgeSeries'] = EdgeCategory::all();
+
+        return response()->json($response);
     }
 }

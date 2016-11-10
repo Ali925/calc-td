@@ -112,10 +112,14 @@
 
                     @foreach($nips as $nip)
                         <div class="calc-radio">
-                            <input name="zaval" type="radio" value="{{$nip->id}}" id="zaval{{$nip->id}}" data-id="{{$nip->id}}">
+                            <input name="zaval" type="radio"
+                                   value="{{$nip->id}}"
+                                   id="zaval{{$nip->id}}"
+                                   data-id="{{$nip->id}}"
+                                   data-name-nip="{{$nip->value}}"
+                            >
                             <label class="calc-radio-label" for="zaval{{$nip->id}}">
                                 {{$nip->name}}
-
                                 @if(!empty($nip->description))
                                     <span class="calc-help-blc">
                                             <i class="fa fa-question-circle" aria-hidden="true"></i>

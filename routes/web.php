@@ -51,6 +51,7 @@ Route::group(['prefix' => 'api'], function (){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/first', 'BlankTypeController@getAll');
 Route::get('/1', 'PaymentController@main');
 Route::get('/2', 'PaymentController@main2');
 Route::get('/test', 'PaymentController@sendPayment');

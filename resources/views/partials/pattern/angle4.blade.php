@@ -6,7 +6,7 @@
         <div class="calc-radio">
             <input name="corner__bl" type="radio" value="{{$option->id}}"
                    data-place="{{$angle->value}}"
-                   data-image="{{url('/').'/'.$option->image}}"
+                   data-image="@if(!empty($option->image)){{url('/').'/'.$option->image}}@endif"
                    id="corner__bl-{{$option->id}}"
             >
             <label class="calc-radio-label" for="corner__bl-{{$option->id}}">
