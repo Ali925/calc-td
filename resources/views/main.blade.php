@@ -7,10 +7,10 @@
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/color.css">
+    <link rel="stylesheet" type="text/css" href="{{url('/').'/'}}css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{url('/').'/'}}css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="{{url('/').'/'}}css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{url('/').'/'}}css/color.css">
 
 </head>
 
