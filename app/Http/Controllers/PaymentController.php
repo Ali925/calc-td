@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\ConfigPayment;
+use App\Nip;
+use App\Thickness;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -27,6 +29,8 @@ class PaymentController extends Controller
         $response['decors'] = Decor::with('decorCategory')->get();
         $response['edges'] = EdgeDecor::with('edgeCategory')->get();
         $response['configPayments'] = ConfigPayment::all();
+        $response['nips'] = Nip::all();
+        $response['thicknesses'] = Thickness::all();
 
         return view('main',$response);
     }

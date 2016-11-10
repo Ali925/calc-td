@@ -108,18 +108,12 @@
                 <div class="calc-col50">
                     <div class="calc-title">Выберите толщину</div>
                     <div class="calc-param-blc">
-                        <div class="calc-radio">
-                            <input name="thick" type="radio" value="1" id="thick1" data-id="1">
-                            <label class="calc-radio-label" for="thick1">1</label>
-                        </div>
-                        <div class="calc-radio">
-                            <input name="thick" type="radio" value="2" id="thick2" data-id="2">
-                            <label class="calc-radio-label" for="thick2">2</label>
-                        </div>
-                        <div class="calc-radio">
-                            <input name="thick" type="radio" value="3" id="thick3" data-id="3">
-                            <label class="calc-radio-label" for="thick3">3</label>
-                        </div>
+                        @foreach($thicknesses as $thickness)
+                            <div class="calc-radio">
+                                <input name="thick" type="radio" value="{{$thickness->value}}" id="thick{{$thickness->id}}" data-id="{{$thickness->id}}">
+                                <label class="calc-radio-label" for="thick{{$thickness->id}}">{{$thickness->name}}</label>
+                            </div>
+                        @endforeach
                     </div> <!-- /calc-param-blc -->
                 </div> <!-- /calc-col50 -->
 
@@ -132,36 +126,23 @@
                </span>
                     </div>
                     <div class="calc-param-blc">
-                        <div class="calc-radio">
-                            <input name="zaval" type="radio" value="1" id="zaval1" data-id="1">
-                            <label class="calc-radio-label" for="zaval1">
-                                без завала
-                                <span class="calc-help-blc">
-                     <i class="fa fa-question-circle" aria-hidden="true"></i>
-                     <span class="calc-help-text"><span class="calc-bold">A (без завала) </span> -  Отсутствие закругления (загиба) пластика на торец столешницы/детали, отделка края осуществляется путем нанесения кромки.</span>
-                   </span>
-                            </label>
-                        </div>
-                        <div class="calc-radio">
-                            <input name="zaval" type="radio" value="2" id="zaval2" data-id="2">
-                            <label class="calc-radio-label" for="zaval2">
-                                однозавальный
-                                <span class="calc-help-blc">
-                     <i class="fa fa-question-circle" aria-hidden="true"></i>
-                     <span class="calc-help-text"><span class="calc-bold">1U</span> -  Завал исполнен только по лицевому торцу столешницы/детали</span>
-                   </span>
-                            </label>
-                        </div>
-                        <div class="calc-radio">
-                            <input name="zaval" type="radio" value="3" id="zaval3" data-id="3">
-                            <label class="calc-radio-label" for="zaval3">
-                                двухзавальный
-                                <span class="calc-help-blc">
-                     <i class="fa fa-question-circle" aria-hidden="true"></i>
-                     <span class="calc-help-text"><span class="calc-bold">2U</span> -  Завал исполнен по обоим (лицевому и тыльному) торцам столешницы/детали</span>
-                   </span>
-                            </label>
-                        </div>
+
+                        @foreach($nips as $nip)
+                            <div class="calc-radio">
+                                <input name="zaval" type="radio" value="{{$nip->id}}" id="zaval{{$nip->id}}" data-id="{{$nip->id}}">
+                                <label class="calc-radio-label" for="zaval{{$nip->id}}">
+                                    {{$nip->name}}
+
+                                    @if(!empty($nip->description))
+                                        <span class="calc-help-blc">
+                                            <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                            <span class="calc-help-text"><span class="calc-bold">{{$nip->value}} ({{$nip->name}})
+                                                </span> {{$nip->description}}</span>
+                                        </span>
+                                    @endif
+                                </label>
+                            </div>
+                        @endforeach
                     </div> <!-- /calc-param-blc -->
                 </div> <!-- /calc-col50 -->
             </div> <!-- /calc-row -->
@@ -403,6 +384,21 @@
         <span id="calc-js-message-text"></span>
     </div>  <!-- сообщения -->
 </div>  <!-- /calc-wrapper -->
+
+<script src="{{url('/').'/'}}js/jquery-3.1.0.min.js"></script>
+<script src="{{url('/').'/'}}js/jquery-ui.min.js"></script>
+<script src="{{url('/').'/'}}js/src/config.js"></script>
+<script src="{{url('/').'/'}}js/src/data/data.js"></script>
+<script src="{{url('/').'/'}}js/src/data/image.js"></script>
+<script src="{{url('/').'/'}}js/src/data/storage.js"></script>
+<script src="{{url('/').'/'}}js/src/data/user.js"></script>
+<script src="{{url('/').'/'}}js/src/objects/detail.js"></script>
+<script src="{{url('/').'/'}}js/src/objects/detail_list.js"></script>
+<script src="{{url('/').'/'}}js/src/objects/blank.js"></script>
+<script src="{{url('/').'/'}}js/src/objects/template.js"></script>
+<script src="{{url('/').'/'}}js/src/core.js"></script>
+<script src="{{url('/').'/'}}js/src/start.js"></script>
+
 </body>
 
 </html>

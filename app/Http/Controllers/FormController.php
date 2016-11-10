@@ -9,7 +9,7 @@ class FormController extends Controller
 {
     public function getAll()
     {
-        $response = Form::all();
+        $response = Form::with('blankTypes')->get();
         return response()->json($response);
     }
 

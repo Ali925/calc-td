@@ -3,7 +3,11 @@
         <div class="calc-title">{{$angle->name}}</div>
         @foreach($angle->options as $option)
             <div class="calc-radio">
-                <input name="side__r-1" type="radio" value="{{$option->id}}" data-place="{{$angle->value}}" id="side__r-1-{{$option->id}}">
+                <input name="side__r-1" type="radio" value="{{$option->id}}"
+                       data-place="{{$angle->value}}"
+                       data-image="{{url('/').'/'.$option->image}}"
+                       id="side__r-1-{{$option->id}}"
+                >
                 <label class="calc-radio-label" for="side__r-1-{{$option->id}}">
                     {{$option->name}}
                     @if(!empty($option->description))

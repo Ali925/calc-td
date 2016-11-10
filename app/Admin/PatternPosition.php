@@ -10,7 +10,7 @@ AdminSection::registerModel(PatternPosition::class, function (ModelConfiguration
     $model->onDisplay(function (){
         $display = AdminDisplay::table()->setColumns([
             AdminColumn::text('name','Наименование'),
-            AdminColumn::lists('pattern_options.name','Опции'),
+            AdminColumn::lists('options.name','Опции'),
         ]);
         $display->paginate(10);
         return $display;
@@ -19,7 +19,7 @@ AdminSection::registerModel(PatternPosition::class, function (ModelConfiguration
     $model->onEdit(function (){
         $form = AdminForm::panel()->addBody([
             AdminFormElement::text('name','Наименование'),
-            AdminFormElement::multiselect('pattern_options', 'Опции')
+            AdminFormElement::multiselect('options', 'Опции')
                 ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
         ]);
 
