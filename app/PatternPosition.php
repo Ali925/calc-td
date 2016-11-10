@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PatternPosition extends Model
 {
-    public function pattern_options()
+    public function options()
     {
         return $this->belongsToMany('App\PatternOption');
     }

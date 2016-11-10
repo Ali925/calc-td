@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Form extends Model
 {
-    public function products()
+    public function blankTypes()
     {
-        return $this->belongsToMany('App\Product','form_product');
+        return $this->belongsToMany('App\BlankType');
     }
 
     public function getUploadSettings()

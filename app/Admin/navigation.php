@@ -58,6 +58,10 @@ return [
         'icon' => 'fa fa-folder-open',
         'pages' => [
             (new Page(\App\Product::class))
+                ->setTitle('Заготовки')
+                ->setIcon('fa fa-cubes')
+                ->setPriority(10),
+            (new Page(\App\BlankType::class))
                 ->setTitle('Тип заготовки')
                 ->setIcon('fa fa-cubes')
                 ->setPriority(10),

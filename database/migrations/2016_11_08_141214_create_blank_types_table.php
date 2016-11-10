@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateThicknessesTable extends Migration
+class CreateBlankTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateThicknessesTable extends Migration
      */
     public function up()
     {
-        Schema::create('thicknesses', function (Blueprint $table) {
+        Schema::create('blank_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('value');
+            $table->text('description');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateThicknessesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('thicknesses');
+        Schema::dropIfExists('blank_types');
     }
 }

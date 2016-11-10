@@ -20,11 +20,6 @@ class CreateNipsTable extends Migration
             $table->text('description');
             $table->timestamps();
         });
-
-        Schema::create('nip_product', function (Blueprint $table){
-            $table->unsignedInteger('nip_id');
-            $table->unsignedInteger('product_id');
-        });
     }
 
     /**
@@ -35,6 +30,5 @@ class CreateNipsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('nips');
-        Schema::dropIfExists('nip_product');
     }
 }

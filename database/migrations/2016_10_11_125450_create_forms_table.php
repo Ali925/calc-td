@@ -21,9 +21,9 @@ class CreateFormsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('form_product', function (Blueprint $table){
+        Schema::create('blank_type_form', function (Blueprint $table){
             $table->unsignedInteger('form_id');
-            $table->unsignedInteger('product_id');
+            $table->unsignedInteger('blank_type_id');
         });
     }
 
@@ -35,6 +35,6 @@ class CreateFormsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('forms');
-        Schema::dropIfExists('form_product');
+        Schema::dropIfExists('blank_type_form');
     }
 }

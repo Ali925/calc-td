@@ -6,18 +6,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    public function forms()
+    public function blankType()
     {
-        return $this->belongsToMany('App\Form','form_product');
+        return $this->belongsTo('App\BlankType');
     }
 
-    public function nips()
+    public function decorCategory()
     {
-        return $this->belongsToMany('App\Nip');
+        return $this->belongsTo('App\DecorCategory');
     }
 
-    public function thicknesses()
+    public function nip()
     {
-        return $this->belongsToMany('App\Thickness');
+        return $this->belongsTo('App\Nip');
+    }
+
+    public function thickness()
+    {
+        return $this->belongsTo('App\Thickness');
     }
 }

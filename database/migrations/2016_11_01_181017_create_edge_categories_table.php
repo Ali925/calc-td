@@ -19,11 +19,6 @@ class CreateEdgeCategoriesTable extends Migration
             $table->integer('coast');
             $table->timestamps();
         });
-
-        Schema::create('edge_category_decor', function (Blueprint $table){
-            $table->unsignedInteger('decor_id');
-            $table->unsignedInteger('edge_category_id');
-        });
     }
 
     /**
@@ -34,6 +29,5 @@ class CreateEdgeCategoriesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('edge_categories');
-        Schema::dropIfExists('edge_category_decor');
     }
 }

@@ -52,7 +52,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/test', function (){
-    $madel = \App\Decor::where('id',1)->with('decorCategory')->first();
-    return $madel;
-});
+Route::get('/test', 'PaymentController@sendPayment');
+Route::get('/1', 'HomeController@main');

@@ -19,4 +19,9 @@ class DecorCategory extends Model
         foreach ($lists as $list){ $result[] = $list->name; }
         return $result;
     }
+
+    public function product()
+    {
+        return $this->hasMany('App\Product');
+    }
 }

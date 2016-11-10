@@ -13,7 +13,6 @@ class NipsTableSeeder extends Seeder
     public function run()
     {
         DB::table('nips')->truncate();
-        DB::table('nip_product')->truncate();
 
         $datas = [
             [
@@ -34,41 +33,11 @@ class NipsTableSeeder extends Seeder
             ],
         ];
 
-        $pivots = [
-            [
-                'nip_id' => 1,
-                'product_id' => 1,
-            ],
-            [
-                'nip_id' => 1,
-                'product_id' => 2,
-            ],
-            [
-                'nip_id' => 2,
-                'product_id' => 2,
-            ],
-            [
-                'nip_id' => 3,
-                'product_id' => 2,
-            ],
-            [
-                'nip_id' => 1,
-                'product_id' => 3,
-            ],
-        ];
-
         foreach ($datas as $data){
             \App\Nip::create([
                 'name' => $data['name'],
                 'value' => $data['value'],
                 'description' => $data['description'],
-            ]);
-        }
-
-        foreach ($pivots as $pivot){
-            DB::table('nip_product')->insert([
-                'nip_id' => $pivot['nip_id'],
-                'product_id' => $pivot['product_id'],
             ]);
         }
     }

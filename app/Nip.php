@@ -8,6 +8,6 @@ class Nip extends Model
 {
     public function product()
     {
-        return $this->belongsToMany('App\Product');
+        return $this->hasMany('App\Product');
     }
 }

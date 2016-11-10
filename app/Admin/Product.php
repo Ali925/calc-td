@@ -7,32 +7,33 @@ AdminSection::registerModel(Product::class, function (ModelConfiguration $model)
 
     $model->onDisplay(function (){
         $display = AdminDisplay::table()->setColumns([
-            AdminColumn::text('name','Наименование'),
-            AdminColumn::text('max_length', 'Макс. длин.'),
-            AdminColumn::text('min_length', 'Мин. длин.'),
-            AdminColumn::text('max_width', 'Макс. шир.'),
-            AdminColumn::text('min_width', 'Мин. шир.'),
-            AdminColumn::lists('forms.name','Типы констр-ии'),
-            AdminColumn::lists('thicknesses.name','Толщина'),
-            AdminColumn::lists('nips.name','Завал'),
+            AdminColumn::relatedLink('blankType.name','Тип заготовки'),
+            AdminColumn::relatedLink('decorCategory.name','Серия декора'),
+            AdminColumn::relatedLink('thickness.name','Толщина'),
+            AdminColumn::relatedLink('nip.value','Завал'),
+            AdminColumn::text('length','Долинна'),
+            AdminColumn::text('width','Ширина'),
+            AdminColumn::text('coast','Цена'),
         ]);
         $display->paginate(10);
         return $display;
     });
 
     $model->onCreateAndEdit(function (){
+
         $form = AdminForm::panel()->addBody([
-            AdminFormElement::text('name','Наименование'),
-            AdminFormElement::text('max_length', 'Максимальная длинна'),
-            AdminFormElement::text('min_length', 'Минимальная длинна'),
-            AdminFormElement::text('max_width', 'Максимальная ширина'),
-            AdminFormElement::text('min_width', 'Минимальная ширина'),
-            AdminFormElement::multiselect('forms', 'Тип конструкции')
-                ->setModelForOptions(new \App\Form())->setDisplay('name'),
-            AdminFormElement::multiselect('thicknesses', 'Толщина')
-                ->setModelForOptions(new \App\Thickness())->setDisplay('name'),
-            AdminFormElement::multiselect('nips', 'Завал')
-                ->setModelForOptions(new \App\Nip())->setDisplay('name'),
+            AdminFormElement::select('blank_type_id','Тип заготовки')
+                ->setModelForOptions(\App\BlankType::class)->setDisplay('name'),
+            AdminFormElement::select('decor_category_id','Серия декора')
+                ->setModelForOptions(\App\DecorCategory::class)->setDisplay('name'),
+            AdminFormElement::select('thickness_id','Толщина')
+                ->setModelForOptions(\App\Thickness::class)->setDisplay('name'),
+            AdminFormElement::select('nip_id','Завал')
+                ->setModelForOptions(\App\Nip::class)->setDisplay('name'),
+            AdminFormElement::text('length','Долинна'),
+            AdminFormElement::text('width','Ширина'),
+            AdminFormElement::text('coast','Цена'),
+
         ]);
 
         return $form;

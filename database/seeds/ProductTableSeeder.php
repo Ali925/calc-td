@@ -13,79 +13,56 @@ class ProductTableSeeder extends Seeder
     public function run()
     {
         DB::table('products')->truncate();
-        DB::table('form_product')->truncate();
 
         $products = [
             [
-                'name' => 'Боковая стойка',
-                'min_length' => 570,
-                'max_length' => 3030,
-                'max_width' => 1200,
-                'min_width' => 600,
+                'blank_type_id' => 1,
+                'decor_category_id' => 1,
+                'nip_id' => 1,
+                'thickness_id' => 1,
+                'length' => 3050,
+                'width' => 600,
+                'coast' => 2240,
             ],
             [
-                'name' => 'Столешница повышенной влагостойкости',
-                'min_length' => 570,
-                'max_length' => 3030,
-                'max_width' => 1200,
-                'min_width' => 600,
+                'blank_type_id' => 1,
+                'decor_category_id' => 1,
+                'nip_id' => 1,
+                'thickness_id' => 1,
+                'length' => 3050,
+                'width' => 1200,
+                'coast' => 4750,
             ],
             [
-                'name' => 'Мебельный щит',
-                'min_length' => 200,
-                'max_length' => 3030,
-                'max_width' => 1200,
-                'min_width' => 200,
-            ],
-        ];
-
-        $pivots = [
-            [
-                'form_id' => 1,
-                'product_id' => 1,
+                'blank_type_id' => 1,
+                'decor_category_id' => 1,
+                'nip_id' => 1,
+                'thickness_id' => 2,
+                'length' => 3050,
+                'width' => 600,
+                'coast' => 2500,
             ],
             [
-                'form_id' => 1,
-                'product_id' => 2,
-            ],
-            [
-                'form_id' => 2,
-                'product_id' => 2,
-            ],
-            [
-                'form_id' => 3,
-                'product_id' => 2,
-            ],
-            [
-                'form_id' => 4,
-                'product_id' => 2,
-            ],
-            [
-                'form_id' => 5,
-                'product_id' => 2,
-            ],
-            [
-                'form_id' => 1,
-                'product_id' => 3,
+                'blank_type_id' => 1,
+                'decor_category_id' => 1,
+                'nip_id' => 1,
+                'thickness_id' => 2,
+                'length' => 3050,
+                'width' => 1200,
+                'coast' => 5290,
             ],
         ];
 
         foreach ($products as $product){
             \App\Product::create([
-                'name' => $product['name'],
-                'min_length' => $product['min_length'],
-                'max_length' => $product['max_length'],
-                'max_width' => $product['max_width'],
-                'min_width' => $product['min_width'],
+                'blank_type_id' => $product['blank_type_id'],
+                'decor_category_id' => $product['decor_category_id'],
+                'nip_id' => $product['nip_id'],
+                'thickness_id' => $product['thickness_id'],
+                'length' => $product['length'],
+                'width' => $product['width'],
+                'coast' => $product['coast'],
             ]);
-        }
-
-        foreach ($pivots as $pivot){
-            DB::table('form_product')->insert([
-                'form_id' => $pivot['form_id'],
-                'product_id' => $pivot['product_id'],
-            ]);
-
         }
     }
 }

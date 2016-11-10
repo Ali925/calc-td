@@ -13,6 +13,7 @@ class FormTableSeeder extends Seeder
     public function run()
     {
         DB::table('forms')->truncate();
+        DB::table('blank_type_form')->truncate();
 
         $forms = [
             [
@@ -43,11 +44,28 @@ class FormTableSeeder extends Seeder
             ],
         ];
 
+        $pivots = [
+            [ 'form_id' => 1, 'blank_type_id' => 1 ],
+            [ 'form_id' => 1, 'blank_type_id' => 3 ],
+            [ 'form_id' => 1, 'blank_type_id' => 2 ],
+            [ 'form_id' => 2, 'blank_type_id' => 2 ],
+            [ 'form_id' => 3, 'blank_type_id' => 2 ],
+            [ 'form_id' => 4, 'blank_type_id' => 2 ],
+            [ 'form_id' => 5, 'blank_type_id' => 2 ],
+        ];
+
         foreach ($forms as $form){
             \App\Form::create([
                 'name' => $form['name'],
                 'coast' => $form['coast'],
                 'image' => $form['image'],
+            ]);
+        }
+
+        foreach ($pivots as $pivot){
+            DB::table('blank_type_form')->insert([
+                'form_id' => $pivot['form_id'],
+                'blank_type_id' => $pivot['blank_type_id']
             ]);
         }
     }

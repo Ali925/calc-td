@@ -10,7 +10,7 @@ AdminSection::registerModel(Form::class, function (ModelConfiguration $model){
             AdminColumn::text('name','Наименование'),
             AdminColumn::text('coast','Цена'),
             AdminColumn::image('image','Изображение'),
-            AdminColumn::lists('products.name','Типы заготовок'),
+            AdminColumn::lists('blankTypes.name','Типы заготовок'),
         ]);
         $display->paginate(10);
         return $display;
@@ -21,8 +21,8 @@ AdminSection::registerModel(Form::class, function (ModelConfiguration $model){
             AdminFormElement::text('name','Наименование'),
             AdminFormElement::text('coast','Цена'),
             AdminFormElement::image('image','Изображение'),
-            AdminFormElement::multiselect('products', 'Продукт')
-                ->setModelForOptions(new \App\Product())->setDisplay('name'),
+            AdminFormElement::multiselect('blankTypes', 'Продукт')
+                ->setModelForOptions(new \App\BlankType())->setDisplay('name'),
         ]);
 
         return $form;

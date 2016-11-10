@@ -15,11 +15,13 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->nulled();
-            $table->integer('min_length')->nulled();
-            $table->integer('max_length')->nulled();
-            $table->integer('max_width')->nulled();
-            $table->integer('min_width')->nulled();
+            $table->unsignedInteger('blank_type_id');
+            $table->unsignedInteger('decor_category_id');
+            $table->unsignedInteger('nip_id');
+            $table->unsignedInteger('thickness_id');
+            $table->integer('length');
+            $table->integer('width');
+            $table->integer('coast');
             $table->timestamps();
         });
     }
