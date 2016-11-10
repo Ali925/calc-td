@@ -33,11 +33,41 @@ class NipsTableSeeder extends Seeder
             ],
         ];
 
+        $pivots = [
+            [
+                'nip_id' => 1,
+                'thickness_id' => 1,
+            ],
+            [
+                'nip_id' => 1,
+                'thickness_id' => 2,
+            ],
+            [
+                'nip_id' => 1,
+                'thickness_id' => 3,
+            ],
+            [
+                'nip_id' => 2,
+                'thickness_id' => 3,
+            ],
+            [
+                'nip_id' => 3,
+                'thickness_id' => 3,
+            ],
+        ];
+
         foreach ($datas as $data){
             \App\Nip::create([
                 'name' => $data['name'],
                 'value' => $data['value'],
                 'description' => $data['description'],
+            ]);
+        }
+
+        foreach ($pivots as $pivot){
+            DB::table('nip_thickness')->insert([
+                'nip_id' => $pivot['nip_id'],
+                'thickness_id' => $pivot['thickness_id'],
             ]);
         }
     }

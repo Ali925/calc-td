@@ -10,4 +10,9 @@ class Nip extends Model
     {
         return $this->hasMany('App\Product');
     }
+
+    public function thicknesses()
+    {
+        return $this->belongsToMany('App\Thickness');
+    }
 }

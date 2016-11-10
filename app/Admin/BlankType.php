@@ -9,6 +9,11 @@ AdminSection::registerModel(BlankType::class, function (ModelConfiguration $mode
     $model->onDisplay(function (){
         $display = AdminDisplay::table()->setColumns([
             AdminColumn::text('name','Наименование'),
+            AdminColumn::text('min_width','Мин. ширина'),
+            AdminColumn::text('max_width','Макс. ширина'),
+            AdminColumn::text('min_length','Мин. длинна'),
+            AdminColumn::text('max_length','Макс. длинна'),
+            AdminColumn::lists('thicknesses.name','Толщинны'),
             AdminColumn::text('description','Описание'),
 
         ]);
@@ -19,6 +24,12 @@ AdminSection::registerModel(BlankType::class, function (ModelConfiguration $mode
     $model->onCreateAndEdit(function (){
         $form = AdminForm::panel()->addBody([
             AdminFormElement::text('name','Наименование'),
+            AdminFormElement::text('min_width','Мин. ширина'),
+            AdminFormElement::text('max_width','Макс. ширина'),
+            AdminFormElement::text('min_length','Мин. длинна'),
+            AdminFormElement::text('max_length','Макс. длинна'),
+            AdminFormElement::multiselect('thicknesses','Толщины')
+                ->setModelForOptions(new \App\Thickness())->setDisplay('name'),
             AdminFormElement::wysiwyg('description','Описание'),
         ]);
 

@@ -19,6 +19,11 @@ class CreateThicknessesTable extends Migration
             $table->integer('value');
             $table->timestamps();
         });
+
+        Schema::create('nip_thickness', function (Blueprint $table){
+            $table->unsignedInteger('nip_id');
+            $table->unsignedInteger('thickness_id');
+        });
     }
 
     /**
@@ -29,5 +34,6 @@ class CreateThicknessesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('thicknesses');
+        Schema::dropIfExists('nip_thickness');
     }
 }

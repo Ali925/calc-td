@@ -15,4 +15,9 @@ class BlankType extends Model
     {
         return $this->belongsToMany('App\Form');
     }
+
+    public function thicknesses()
+    {
+        return $this->belongsToMany('App\Thickness');
+    }
 }

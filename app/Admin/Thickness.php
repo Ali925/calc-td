@@ -10,6 +10,7 @@ AdminSection::registerModel(Thickness::class, function (ModelConfiguration $mode
         $display = AdminDisplay::table()->setColumns([
             AdminColumn::text('name','Наименование'),
             AdminColumn::text('value','Значение'),
+            AdminColumn::lists('nips.name','Значение'),
         ]);
         $display->paginate(10);
         return $display;
@@ -19,6 +20,8 @@ AdminSection::registerModel(Thickness::class, function (ModelConfiguration $mode
         $form = AdminForm::panel()->addBody([
             AdminFormElement::text('name','Наименование'),
             AdminFormElement::text('value','Значение'),
+            AdminFormElement::multiselect('nips','Завалы')
+                ->setModelForOptions(new \App\Nip())->setDisplay('name'),
         ]);
 
         return $form;

@@ -10,4 +10,14 @@ class Thickness extends Model
     {
         return $this->hasMany('App\Product');
     }
+
+    public function blankTypes()
+    {
+        return $this->belongsToMany('App\BlankType');
+    }
+
+    public function nips()
+    {
+        return $this->belongsToMany('App\Nip');
+    }
 }

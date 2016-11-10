@@ -23,6 +23,11 @@ class CreateBlankTypesTable extends Migration
             $table->integer('max_length')->nulled();
             $table->timestamps();
         });
+
+        Schema::create('blank_type_thickness', function (Blueprint $table){
+            $table->unsignedInteger('blank_type_id');
+            $table->unsignedInteger('thickness_id');
+        });
     }
 
     /**
@@ -33,5 +38,6 @@ class CreateBlankTypesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('blank_types');
+        Schema::dropIfExists('blank_type_thickness');
     }
 }
