@@ -1,5 +1,5 @@
 <div class="calc-draft-item calc-draft-side calc-draft-side__l">
-    <?php $angle = $patternPosition->where('value','=','side-4')->first() ?>
+    <?php $angle = $patternPosition->where('value','=','side4')->first() ?>
     <div class="calc-title">{{$angle->name}}</div>
         <div class="calc-vert-blc">
             @foreach($angle->options as $option)

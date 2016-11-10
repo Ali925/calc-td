@@ -26,6 +26,7 @@ class PaymentController extends Controller
         $response['patternPosition'] = PatternPosition::with('options')->get();
         $response['decors'] = Decor::with('decorCategory')->get();
         $response['edges'] = EdgeDecor::with('edgeCategory')->get();
+        $response['configPayments'] = ConfigPayment::all();
 
         return view('main',$response);
     }

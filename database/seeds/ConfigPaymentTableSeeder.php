@@ -18,8 +18,6 @@ class ConfigPaymentTableSeeder extends Seeder
             ['option' => 'OrderCurrency', 'value' => 'RUB'],
             ['option' => 'Language', 'value' => 'RU'],
             ['option' => 'OrderComment', 'value' => 'Комментарий к платежу'],
-            ['option' => 'URL_RETURN_OK', 'value' => ''],
-            ['option' => 'URL_RETURN_NO', 'value' => ''],
         ];
 
         foreach ($payments as $payment){

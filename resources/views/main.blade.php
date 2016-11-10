@@ -331,10 +331,12 @@
         <div class="calc-title">Введите данные</div>
         <div class="calc-form-blc">
             <form method="post" action="https://test.paysecure.ru/pay/order.cfm">
-                <INPUT TYPE="HIDDEN" NAME="Merchant_ID" VALUE="">
+                @foreach($configPayments as $payment)
+                    <INPUT TYPE="HIDDEN" NAME="{{$payment->option}}" VALUE="{{$payment->value}}">
+                @endforeach
+
                 <INPUT TYPE="HIDDEN" NAME="OrderNumber" VALUE="">
                 <INPUT TYPE="HIDDEN" NAME="OrderAmount" VALUE="">
-                <INPUT TYPE="HIDDEN" NAME="OrderComment" VALUE="">
                 <div class="calc-form-item">
                     <input name="FirstName" class="calc-field" placeholder="Введите Имя">
                 </div> <!-- /calc-form-item -->
@@ -401,20 +403,6 @@
         <span id="calc-js-message-text"></span>
     </div>  <!-- сообщения -->
 </div>  <!-- /calc-wrapper -->
-<!-- js -->
-<script src="js/jquery-3.1.0.min.js"></script>
-<script src="js/jquery-ui.min.js"></script>
-<script src="js/src/config.js"></script>
-<script src="js/src/data/data.js"></script>
-<script src="js/src/data/image.js"></script>
-<script src="js/src/data/storage.js"></script>
-<script src="js/src/data/user.js"></script>
-<script src="js/src/objects/detail.js"></script>
-<script src="js/src/objects/detail_list.js"></script>
-<script src="js/src/objects/blank.js"></script>
-<script src="js/src/objects/template.js"></script>
-<script src="js/src/core.js"></script>
-<script src="js/src/start.js"></script>
 </body>
 
 </html>

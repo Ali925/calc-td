@@ -16,14 +16,14 @@ class PatternPositionsTableSeeder extends Seeder
         DB::table('pattern_option_pattern_position')->truncate();
 
         $positions = [
-            [ 'name' => 'Сторона 1', 'value' => 'side-1', ],
-            [ 'name' => 'Угол 1', 'value' => 'angle-1', ],
-            [ 'name' => 'Сторона 2', 'value' => 'side-2', ],
-            [ 'name' => 'Угол 2', 'value' => 'angle-2', ],
-            [ 'name' => 'Сторона 3', 'value' => 'side-3', ],
-            [ 'name' => 'Угол 3', 'value' => 'angle-3', ],
-            [ 'name' => 'Сторона 4', 'value' => 'side-4', ],
-            [ 'name' => 'Угол 4', 'value' => 'angle-4', ],
+            [ 'name' => 'Сторона 1', 'value' => 'side1', ],
+            [ 'name' => 'Угол 1', 'value' => 'angle1', ],
+            [ 'name' => 'Сторона 2', 'value' => 'side2', ],
+            [ 'name' => 'Угол 2', 'value' => 'angle2', ],
+            [ 'name' => 'Сторона 3', 'value' => 'side3', ],
+            [ 'name' => 'Угол 3', 'value' => 'angle3', ],
+            [ 'name' => 'Сторона 4', 'value' => 'side4', ],
+            [ 'name' => 'Угол 4', 'value' => 'angle4', ],
         ];
 
         $pivots = [
