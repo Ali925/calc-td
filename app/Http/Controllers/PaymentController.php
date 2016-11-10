@@ -15,4 +15,9 @@ class PaymentController extends Controller
     {
 
     }
+
+    public function main()
+    {
+        return view('main');
+    }
 }

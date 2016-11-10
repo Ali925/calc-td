@@ -51,6 +51,5 @@ Route::group(['prefix' => 'api'], function (){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-
+Route::get('/1', 'PaymentController@main');
 Route::get('/test', 'PaymentController@sendPayment');
-Route::get('/1', 'HomeController@main');
