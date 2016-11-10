@@ -52,4 +52,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/1', 'PaymentController@main');
+Route::get('/2', 'PaymentController@main2');
 Route::get('/test', 'PaymentController@sendPayment');
