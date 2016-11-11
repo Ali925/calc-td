@@ -97,7 +97,11 @@ return [
                         ->setIcon('fa fa-cubes')
                         ->setPriority(40),
                 ],
-            ]
+            ],
+            (new Page(\App\PatternAccordance::class))
+                ->setTitle('Соответствие чертежей')
+                ->setIcon('fa fa-cubes')
+                ->setPriority(40),
         ],
     ],
 ];
