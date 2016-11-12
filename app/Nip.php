@@ -15,4 +15,17 @@ class Nip extends Model
     {
         return $this->belongsToMany('App\Thickness');
     }
+
+    public function patternAccordance()
+    {
+        return $this->hasMany(PatternAccordance::class);
+    }
+
+    public static function getList()
+    {
+        $result = [];
+        $lists = Nip::all();
+        foreach ($lists as $list){ $result[$list->id] = $list->name; }
+        return $result;
+    }
 }

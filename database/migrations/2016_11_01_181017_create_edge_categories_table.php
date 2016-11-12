@@ -17,6 +17,7 @@ class CreateEdgeCategoriesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('coast');
+            $table->boolean('egoist');
             $table->timestamps();
         });
     }

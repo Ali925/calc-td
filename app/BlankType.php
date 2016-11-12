@@ -20,4 +20,17 @@ class BlankType extends Model
     {
         return $this->belongsToMany('App\Thickness');
     }
+
+    public function patternAccordance()
+    {
+        return $this->hasMany(PatternAccordance::class);
+    }
+
+    public static function getList()
+    {
+        $result = [];
+        $lists = BlankType::all();
+        foreach ($lists as $list){ $result[$list->id] = $list->name; }
+        return $result;
+    }
 }

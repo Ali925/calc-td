@@ -19,22 +19,35 @@ class EdgeCategoryTableSeeder extends Seeder
             [
                 'name' => 'Кромка техническая',
                 'coast' => 100,
+                'egoist' => 0
             ],
             [
                 'name' => 'Кромка в цвет',
                 'coast' => 300,
+                'egoist' => 1
             ],
             [
                 'name' => 'Кромка АБС',
                 'coast' => 400,
+                'egoist' => 1
             ],
             [
                 'name' => 'Кромка 3D',
                 'coast' => 400,
+                'egoist' => 1
+            ],
+            [
+                'name' => 'Без кромки',
+                'coast' => 0,
+                'egoist' => 0
             ],
         ];
 
         $decors = [
+            [
+                'name' => 'Нет', 'code' => 'Нет', 'image' => 'images/uploads/none.png',
+                'edge_category_id' => 5
+            ],
             [ 'name' => '3D', 'code' => '3D', 'image' => 'images/uploads/3d.jpg',
                 'edge_category_id' => 4
             ],
@@ -167,6 +180,7 @@ class EdgeCategoryTableSeeder extends Seeder
             \App\EdgeCategory::create([
                 'name' => $category['name'],
                 'coast' => $category['coast'],
+                'egoist' => $category['egoist'],
             ]);
         }
 

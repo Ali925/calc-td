@@ -16,7 +16,7 @@ class DecorCategory extends Model
     {
         $result = [];
         $lists = DecorCategory::all();
-        foreach ($lists as $list){ $result[] = $list->name; }
+        foreach ($lists as $list){ $result[$list->id] = $list->name; }
         return $result;
     }
 

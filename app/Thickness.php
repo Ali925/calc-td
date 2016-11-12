@@ -20,4 +20,12 @@ class Thickness extends Model
     {
         return $this->belongsToMany('App\Nip');
     }
+
+    public static function getList()
+    {
+        $result = [];
+        $lists = Thickness::all();
+        foreach ($lists as $list){ $result[$list->id] = $list->name; }
+        return $result;
+    }
 }

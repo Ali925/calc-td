@@ -16,18 +16,22 @@ class CreatePatternAccordancesTable extends Migration
         Schema::create('pattern_accordances', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->text('image');
-            $table->integer('thickness');
-            $table->text('edge_one')->nulled();
-            $table->text('edge_two')->nulled();
-            $table->text('edge_three')->nulled();
-            $table->text('edge_four')->nulled();
-            $table->integer('blank_type');
-            $table->integer('nip');
-            $table->text('euro')->nulled();
-            $table->text('radius')->nulled();
-            $table->text('bevel')->nulled();
-            $table->text('standard')->nulled();
+            $table->string('image');
+            $table->unsignedInteger('thickness_id');
+            $table->json('edge_one');
+            $table->json('edge_two');
+            $table->json('edge_three');
+            $table->json('edge_four');
+            $table->unsignedInteger('blank_type_id');
+            $table->unsignedInteger('nip_id');
+            $table->json('part_side_one');
+            $table->json('part_side_two');
+            $table->json('part_side_three');
+            $table->json('part_side_four');
+            $table->json('part_edge_one');
+            $table->json('part_edge_two');
+            $table->json('part_edge_three');
+            $table->json('part_edge_four');
             $table->timestamps();
         });
     }
