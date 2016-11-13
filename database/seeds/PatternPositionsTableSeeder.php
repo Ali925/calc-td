@@ -27,38 +27,65 @@ class PatternPositionsTableSeeder extends Seeder
         ];
 
         $pivots = [
+            //side - 1
+            ['pattern_option_id' => 7, 'pattern_position_id' => 1, ],
             ['pattern_option_id' => 1, 'pattern_position_id' => 1, ],
             ['pattern_option_id' => 2, 'pattern_position_id' => 1, ],
             ['pattern_option_id' => 3, 'pattern_position_id' => 1, ],
             ['pattern_option_id' => 4, 'pattern_position_id' => 1, ],
             ['pattern_option_id' => 5, 'pattern_position_id' => 1, ],
+            ['pattern_option_id' => 6, 'pattern_position_id' => 1, ],
+
+            //angle - 1
+            ['pattern_option_id' => 7, 'pattern_position_id' => 2, ],
+            ['pattern_option_id' => 8, 'pattern_position_id' => 2, ],
+            ['pattern_option_id' => 9, 'pattern_position_id' => 2, ],
+            ['pattern_option_id' => 10, 'pattern_position_id' => 2, ],
+
+            //side - 2
+            ['pattern_option_id' => 7, 'pattern_position_id' => 3, ],
+            ['pattern_option_id' => 1, 'pattern_position_id' => 3, ],
+            ['pattern_option_id' => 2, 'pattern_position_id' => 3, ],
+            ['pattern_option_id' => 3, 'pattern_position_id' => 3, ],
+            ['pattern_option_id' => 4, 'pattern_position_id' => 3, ],
             ['pattern_option_id' => 5, 'pattern_position_id' => 3, ],
-            ['pattern_option_id' => 9, 'pattern_position_id' => 3, ],
-            ['pattern_option_id' => 10, 'pattern_position_id' => 3, ],
+            ['pattern_option_id' => 6, 'pattern_position_id' => 3, ],
+
+            //angle - 2
+            ['pattern_option_id' => 7, 'pattern_position_id' => 4, ],
+            ['pattern_option_id' => 8, 'pattern_position_id' => 4, ],
+            ['pattern_option_id' => 9, 'pattern_position_id' => 4, ],
+            ['pattern_option_id' => 10, 'pattern_position_id' => 4, ],
+
+            //side - 3
+            ['pattern_option_id' => 7, 'pattern_position_id' => 5, ],
             ['pattern_option_id' => 1, 'pattern_position_id' => 5, ],
             ['pattern_option_id' => 2, 'pattern_position_id' => 5, ],
             ['pattern_option_id' => 3, 'pattern_position_id' => 5, ],
             ['pattern_option_id' => 4, 'pattern_position_id' => 5, ],
             ['pattern_option_id' => 5, 'pattern_position_id' => 5, ],
-            ['pattern_option_id' => 5, 'pattern_position_id' => 7, ],
-            ['pattern_option_id' => 9, 'pattern_position_id' => 7, ],
-            ['pattern_option_id' => 10, 'pattern_position_id' => 7, ],
-            ['pattern_option_id' => 5, 'pattern_position_id' => 2, ],
-            ['pattern_option_id' => 6, 'pattern_position_id' => 2, ],
-            ['pattern_option_id' => 7, 'pattern_position_id' => 2, ],
-            ['pattern_option_id' => 8, 'pattern_position_id' => 2, ],
-            ['pattern_option_id' => 5, 'pattern_position_id' => 4, ],
-            ['pattern_option_id' => 6, 'pattern_position_id' => 4, ],
-            ['pattern_option_id' => 7, 'pattern_position_id' => 4, ],
-            ['pattern_option_id' => 8, 'pattern_position_id' => 4, ],
-            ['pattern_option_id' => 5, 'pattern_position_id' => 6, ],
-            ['pattern_option_id' => 6, 'pattern_position_id' => 6, ],
+            ['pattern_option_id' => 6, 'pattern_position_id' => 5, ],
+
+            //angle - 3
             ['pattern_option_id' => 7, 'pattern_position_id' => 6, ],
             ['pattern_option_id' => 8, 'pattern_position_id' => 6, ],
-            ['pattern_option_id' => 5, 'pattern_position_id' => 8, ],
-            ['pattern_option_id' => 6, 'pattern_position_id' => 8, ],
+            ['pattern_option_id' => 9, 'pattern_position_id' => 6, ],
+            ['pattern_option_id' => 10, 'pattern_position_id' => 6, ],
+
+            //side - 4
+            ['pattern_option_id' => 7, 'pattern_position_id' => 7, ],
+            ['pattern_option_id' => 1, 'pattern_position_id' => 7, ],
+            ['pattern_option_id' => 2, 'pattern_position_id' => 7, ],
+            ['pattern_option_id' => 3, 'pattern_position_id' => 7, ],
+            ['pattern_option_id' => 4, 'pattern_position_id' => 7, ],
+            ['pattern_option_id' => 5, 'pattern_position_id' => 7, ],
+            ['pattern_option_id' => 6, 'pattern_position_id' => 7, ],
+
+            //angle - 4
             ['pattern_option_id' => 7, 'pattern_position_id' => 8, ],
             ['pattern_option_id' => 8, 'pattern_position_id' => 8, ],
+            ['pattern_option_id' => 9, 'pattern_position_id' => 8, ],
+            ['pattern_option_id' => 10, 'pattern_position_id' => 8, ],
         ];
 
         foreach ($positions as $position){

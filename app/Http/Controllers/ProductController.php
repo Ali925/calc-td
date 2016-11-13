@@ -31,9 +31,9 @@ class ProductController extends Controller
             ->where('nip_id', $request->nip)
             ->where('thickness_id', $request->thickness)
             ->where('width', $width)
-            ->get();
+            ->first();
 
-        return $query;
+        return response()->json($query);
     }
 
 

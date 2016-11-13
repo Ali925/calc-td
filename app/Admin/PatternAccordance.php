@@ -5,7 +5,6 @@ use App\PatternAccordance;
 
 AdminSection::registerModel(PatternAccordance::class, function (ModelConfiguration $model){
     $model->setTitle('Опции чертежа');
-    $model->disableEditing();
 
     Assets::addCss('admin-table',asset('css/adminTables.css'));
 
@@ -30,29 +29,30 @@ AdminSection::registerModel(PatternAccordance::class, function (ModelConfigurati
             AdminColumn::lists('part_edge_four','У-4')->setWidth('100px'),
         ]);
         $display->paginate(10);
-        $display->setHtmlAttribute('class', 'text-center');
+        $display->setHtmlAttribute('class', 'table2');
         return $display;
     });
 
-    $model->onCreate(function (){
+    $model->onCreateAndEdit(function (){
         $form = AdminForm::panel()->addBody([
             AdminFormElement::text('name','Наименование'),
             AdminFormElement::image('image','Изображение'),
-            AdminFormElement::select('thickness_id','Толщ.', \App\Thickness::getList()),
-            AdminFormElement::multiselect('edge_one','Кромка 1', \App\EdgeCategory::getList()),
-            AdminFormElement::multiselect('edge_two','Кромка 2', \App\EdgeCategory::getList()),
-            AdminFormElement::multiselect('edge_three','Кромка 3', \App\EdgeCategory::getList()),
-            AdminFormElement::multiselect('edge_four','Кромка 4',\App\EdgeCategory::getList()),
-            AdminFormElement::select('blank_type_id','Тип заг.', \App\BlankType::getList()),
-            AdminFormElement::select('nip_id','Завал', \App\Nip::getList()),
-            AdminFormElement::multiselect('part_side_one','Сторона 1', \App\PatternOption::getList()),
-            AdminFormElement::multiselect('part_side_two','Сторона 2',\App\PatternOption::getList()),
-            AdminFormElement::multiselect('part_side_three','Сторона 3',\App\PatternOption::getList()),
-            AdminFormElement::multiselect('part_side_four','Сторона 4',\App\PatternOption::getList()),
-            AdminFormElement::multiselect('part_edge_one','Угол 1',\App\PatternOption::getList()),
-            AdminFormElement::multiselect('part_edge_two','Угол 2',\App\PatternOption::getList()),
-            AdminFormElement::multiselect('part_edge_three','Угол 3',\App\PatternOption::getList()),
-            AdminFormElement::multiselect('part_edge_four','Угол 4',\App\PatternOption::getList()),
+            AdminFormElement::select('thickness_id','Толщ.')
+                ->setOptions(\App\Thickness::getList()),
+            AdminFormElement::multiselect('edge_one','Кромка 1')->setOptions(\App\EdgeCategory::getList()),
+            AdminFormElement::multiselect('edge_two','Кромка 2')->setOptions(\App\EdgeCategory::getList()),
+            AdminFormElement::multiselect('edge_three','Кромка 3')->setOptions(\App\EdgeCategory::getList()),
+            AdminFormElement::multiselect('edge_four','Кромка 4')->setOptions(\App\EdgeCategory::getList()),
+            AdminFormElement::select('blank_type_id','Тип заг.')->setOptions(\App\BlankType::getList()),
+            AdminFormElement::select('nip_id','Завал')->setOptions(\App\Nip::getList()),
+            AdminFormElement::multiselect('part_side_one','Сторона 1')->setOptions(\App\PatternOption::getList()),
+            AdminFormElement::multiselect('part_side_two','Сторона 2')->setOptions(\App\PatternOption::getList()),
+            AdminFormElement::multiselect('part_side_three','Сторона 3')->setOptions(\App\PatternOption::getList()),
+            AdminFormElement::multiselect('part_side_four','Сторона 4')->setOptions(\App\PatternOption::getList()),
+            AdminFormElement::multiselect('part_edge_one','Угол 1')->setOptions(\App\PatternOption::getList()),
+            AdminFormElement::multiselect('part_edge_two','Угол 2')->setOptions(\App\PatternOption::getList()),
+            AdminFormElement::multiselect('part_edge_three','Угол 3')->setOptions(\App\PatternOption::getList()),
+            AdminFormElement::multiselect('part_edge_four','Угол 4')->setOptions(\App\PatternOption::getList()),
         ]);
 
         return $form;

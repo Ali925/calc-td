@@ -12,7 +12,7 @@ class PatternAccordance extends Model
         $result = [];
         foreach ($arrays as $array){
             $model = EdgeCategory::find($array);
-            $result[] = $model->name;
+            $result[$model->id] = $model->name;
         }
         return $result;
     }
@@ -22,7 +22,7 @@ class PatternAccordance extends Model
         $result = [];
         foreach ($arrays as $array){
             $model = EdgeCategory::find($array);
-            $result[] = $model->name;
+            $result[$model->id] = $model->name;
         }
         return $result;
     }
@@ -32,7 +32,7 @@ class PatternAccordance extends Model
         $result = [];
         foreach ($arrays as $array){
             $model = EdgeCategory::find($array);
-            $result[] = $model->name;
+            $result[$model->id] = $model->name;
         }
         return $result;
     }
@@ -42,7 +42,7 @@ class PatternAccordance extends Model
         $result = [];
         foreach ($arrays as $array){
             $model = EdgeCategory::find($array);
-            $result[] = $model->name;
+            $result[$model->id] = $model->name;
         }
         return $result;
     }
@@ -52,7 +52,7 @@ class PatternAccordance extends Model
         $result = [];
         foreach ($arrays as $array){
             $model = PatternOption::find($array);
-            $result[] = $model->name;
+            $result[$model->id] = $model->name;
         }
         return $result;
     }
@@ -61,7 +61,7 @@ class PatternAccordance extends Model
         $result = [];
         foreach ($arrays as $array){
             $model = PatternOption::find($array);
-            $result[] = $model->name;
+            $result[$model->id] = $model->name;
         }
         return $result;
     }
@@ -70,7 +70,7 @@ class PatternAccordance extends Model
         $result = [];
         foreach ($arrays as $array){
             $model = PatternOption::find($array);
-            $result[] = $model->name;
+            $result[$model->id] = $model->name;
         }
         return $result;
     }
@@ -79,7 +79,7 @@ class PatternAccordance extends Model
         $result = [];
         foreach ($arrays as $array){
             $model = PatternOption::find($array);
-            $result[] = $model->name;
+            $result[$model->id] = $model->name;
         }
         return $result;
     }
@@ -89,7 +89,7 @@ class PatternAccordance extends Model
         $result = [];
         foreach ($arrays as $array){
             $model = PatternOption::find($array);
-            $result[] = $model->name;
+            $result[$model->id] = $model->name;
         }
         return $result;
     }
@@ -98,7 +98,7 @@ class PatternAccordance extends Model
         $result = [];
         foreach ($arrays as $array){
             $model = PatternOption::find($array);
-            $result[] = $model->name;
+            $result[$model->id] = $model->name;
         }
         return $result;
     }
@@ -107,7 +107,7 @@ class PatternAccordance extends Model
         $result = [];
         foreach ($arrays as $array){
             $model = PatternOption::find($array);
-            $result[] = $model->name;
+            $result[$model->id] = $model->name;
         }
         return $result;
     }
@@ -116,7 +116,7 @@ class PatternAccordance extends Model
         $result = [];
         foreach ($arrays as $array){
             $model = PatternOption::find($array);
-            $result[] = $model->name;
+            $result[$model->id] = $model->name;
         }
         return $result;
     }

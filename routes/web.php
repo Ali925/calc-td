@@ -58,3 +58,4 @@ Route::group(['prefix' => 'api'], function (){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/1', 'PatternController@getPatternByParameter');
