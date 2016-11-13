@@ -17,9 +17,16 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'api'], function (){
 
+    Route::group(['prefix' => 'data'], function (){
+        Route::get('first', 'MainController@getFirstData');
+        Route::get('main','MainController@allPage');
+        Route::get('body','MainController@getBodyPage');
+    });
+
     Route::group(['prefix' => 'product'],function (){
         Route::get('get/all','ProductController@getAll');
         Route::get('get/{id}','ProductController@getById');
+        Route::post('post/blank','ProductController@getByParameter');
     });
 
     Route::group(['prefix' => 'form'],function (){
@@ -51,7 +58,3 @@ Route::group(['prefix' => 'api'], function (){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/first', 'BlankTypesController@getAll');
-Route::get('/1', 'PaymentController@main');
-Route::get('/2', 'PaymentController@main2');
-Route::get('/test', 'PaymentController@sendPayment');

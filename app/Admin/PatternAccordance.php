@@ -5,6 +5,7 @@ use App\PatternAccordance;
 
 AdminSection::registerModel(PatternAccordance::class, function (ModelConfiguration $model){
     $model->setTitle('Опции чертежа');
+    $model->disableEditing();
 
     $model->onDisplay(function (){
         $display = AdminDisplay::table()->setColumns([
@@ -27,6 +28,7 @@ AdminSection::registerModel(PatternAccordance::class, function (ModelConfigurati
             AdminColumn::lists('part_edge_four','У-4'),
         ]);
         $display->paginate(10);
+        $display->setHtmlAttribute('class', 'text-center');
         return $display;
     });
 
