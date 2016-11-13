@@ -14,6 +14,8 @@ use App\EdgeDecor;
 use App\ConfigPayment;
 use App\Nip;
 use App\Thickness;
+use App\EdgeCategory;
+use App\PatternOption;
 
 
 class MainController extends Controller
