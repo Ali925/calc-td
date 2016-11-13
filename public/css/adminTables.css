@@ -1,0 +1,7 @@
+.content-wrapper{
+    overflow: auto !important;
+}
+
+.content{
+    min-width: 2100px !important;
+}

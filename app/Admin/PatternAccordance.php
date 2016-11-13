@@ -7,25 +7,27 @@ AdminSection::registerModel(PatternAccordance::class, function (ModelConfigurati
     $model->setTitle('Опции чертежа');
     $model->disableEditing();
 
+    Assets::addCss('admin-table',asset('css/adminTables.css'));
+
     $model->onDisplay(function (){
         $display = AdminDisplay::table()->setColumns([
-            AdminColumn::text('name','Наим.'),
-            AdminColumn::image('image','Изобр.'),
-            AdminColumn::relatedLink('thickness.value','Толщ.'),
-            AdminColumn::lists('edge_one','К-1'),
-            AdminColumn::lists('edge_two','К-2'),
-            AdminColumn::lists('edge_three','К-3'),
-            AdminColumn::lists('edge_four','К-4'),
-            AdminColumn::relatedLink('blankType.name','Тип заг.'),
-            AdminColumn::relatedLink('nip.name','Завал'),
-            AdminColumn::lists('part_side_one','C-1'),
-            AdminColumn::lists('part_side_two','C-2'),
-            AdminColumn::lists('part_side_three','C-3'),
-            AdminColumn::lists('part_side_four','C-4'),
-            AdminColumn::lists('part_edge_one','У-1'),
-            AdminColumn::lists('part_edge_two','У-2'),
-            AdminColumn::lists('part_edge_three','У-3'),
-            AdminColumn::lists('part_edge_four','У-4'),
+            AdminColumn::text('name','Наим.')->setWidth('100px'),
+            AdminColumn::image('image','Изобр.')->setWidth('300px'),
+            AdminColumn::relatedLink('thickness.value','Толщ.')->setWidth('100px'),
+            AdminColumn::lists('edge_one','К-1')->setWidth('100px'),
+            AdminColumn::lists('edge_two','К-2')->setWidth('100px'),
+            AdminColumn::lists('edge_three','К-3')->setWidth('100px'),
+            AdminColumn::lists('edge_four','К-4')->setWidth('100px'),
+            AdminColumn::relatedLink('blankType.name','Тип заг.')->setWidth('200px'),
+            AdminColumn::relatedLink('nip.name','Завал')->setWidth('200px'),
+            AdminColumn::lists('part_side_one','C-1')->setWidth('100px'),
+            AdminColumn::lists('part_side_two','C-2')->setWidth('100px'),
+            AdminColumn::lists('part_side_three','C-3')->setWidth('100px'),
+            AdminColumn::lists('part_side_four','C-4')->setWidth('100px'),
+            AdminColumn::lists('part_edge_one','У-1')->setWidth('100px'),
+            AdminColumn::lists('part_edge_two','У-2')->setWidth('100px'),
+            AdminColumn::lists('part_edge_three','У-3')->setWidth('100px'),
+            AdminColumn::lists('part_edge_four','У-4')->setWidth('100px'),
         ]);
         $display->paginate(10);
         $display->setHtmlAttribute('class', 'text-center');
