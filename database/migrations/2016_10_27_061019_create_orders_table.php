@@ -21,9 +21,7 @@ class CreateOrdersTable extends Migration
             $table->boolean('card_payment');
             $table->boolean('ya_payment');
             $table->boolean('wm_payment');
-            $table->unsignedInteger('product_id');
-            $table->unsignedInteger('form_id');
-            $table->unsignedInteger('decor_id');
+            $table->unsignedInteger('pattern_accordance_id');
             $table->timestamps();
         });
     }
