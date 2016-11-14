@@ -21,6 +21,11 @@ class Nip extends Model
         return $this->hasMany(PatternAccordance::class);
     }
 
+    public function patternPositions()
+    {
+        return $this->belongsToMany('App\PatternPosition');
+    }
+
     public static function getList()
     {
         $result = [];

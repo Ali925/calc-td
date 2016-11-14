@@ -24,6 +24,7 @@ class MainController extends Controller
         $response['edgeSeries'] = EdgeCategory::all();
         $response['patternOptions'] = PatternOption::all();
         $response['thickness'] = Thickness::with('nips')->get();
+        $response['nip'] = Nip::with('patternPositions')->get();
 
         return response()->json($response);
     }

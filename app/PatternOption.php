@@ -11,6 +11,16 @@ class PatternOption extends Model
         return $this->belongsToMany('App\PatternPosition');
     }
 
+    public function patternAccordance()
+    {
+        return $this->hasMany('App\PatternAccordance');
+    }
+
+    public function nips()
+    {
+        return $this->belongsToMany('App\Nip');
+    }
+
     public static function getList()
     {
         $result = [];

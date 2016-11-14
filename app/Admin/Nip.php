@@ -11,6 +11,8 @@ AdminSection::registerModel(Nip::class, function (ModelConfiguration $model){
             AdminColumn::text('name','Наименование'),
             AdminColumn::text('value','Значение'),
             AdminColumn::text('description','Описание'),
+            AdminColumn::lists('patternPositions.name','Описание'),
+
         ]);
         $display->paginate(10);
         return $display;
@@ -20,6 +22,8 @@ AdminSection::registerModel(Nip::class, function (ModelConfiguration $model){
         $form = AdminForm::panel()->addBody([
             AdminFormElement::text('name','Наименование'),
             AdminFormElement::text('value','Значение'),
+            AdminFormElement::multiselect('patternPosition','Стороны')
+                ->setModelForOptions(\App\PatternPosition::class)->setDisplay('name'),
             AdminFormElement::wysiwyg('description','Описание'),
         ]);
 

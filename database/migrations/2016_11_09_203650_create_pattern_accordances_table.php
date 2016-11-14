@@ -24,14 +24,14 @@ class CreatePatternAccordancesTable extends Migration
             $table->text('edge_four');
             $table->unsignedInteger('blank_type_id');
             $table->unsignedInteger('nip_id');
-            $table->text('part_side_one');
-            $table->text('part_side_two');
-            $table->text('part_side_three');
-            $table->text('part_side_four');
-            $table->text('part_edge_one');
-            $table->text('part_edge_two');
-            $table->text('part_edge_three');
-            $table->text('part_edge_four');
+            $table->unsignedInteger('part_side_one');
+            $table->unsignedInteger('part_side_two');
+            $table->unsignedInteger('part_side_three');
+            $table->unsignedInteger('part_side_four');
+            $table->unsignedInteger('part_edge_one');
+            $table->unsignedInteger('part_edge_two');
+            $table->unsignedInteger('part_edge_three');
+            $table->unsignedInteger('part_edge_four');
             $table->timestamps();
         });
     }

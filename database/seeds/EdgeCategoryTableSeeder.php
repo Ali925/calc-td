@@ -41,11 +41,20 @@ class EdgeCategoryTableSeeder extends Seeder
                 'coast' => 0,
                 'egoist' => 0
             ],
+            [
+                'name' => 'Завал',
+                'coast' => 0,
+                'egoist' => 0
+            ],
         ];
 
         $decors = [
             [
-                'name' => 'Нет', 'code' => 'Нет', 'image' => 'images/uploads/none.png',
+                'name' => 'У вас выбран завал', 'code' => 'zaval', 'image' => 'images/uploads/none.png',
+                'edge_category_id' => 5
+            ],
+            [
+                'name' => 'Нет', 'code' => 'none', 'image' => 'images/uploads/none.png',
                 'edge_category_id' => 5
             ],
             [ 'name' => '3D', 'code' => '3D', 'image' => 'images/uploads/3d.jpg',
