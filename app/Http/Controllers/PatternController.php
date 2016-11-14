@@ -48,6 +48,7 @@ class PatternController extends Controller
     public function notEmptyPattern(Request $request)
     {
         $query = PatternAccordance::where('thickness_id',$request->thickness_id)
+            ->where('form_id',$request->form_id)
             ->where('blank_type_id',$request->blank_type_id)
             ->where('nip_id',$request->nip_id)
             ->where('part_side_one',$request->part_side_one)

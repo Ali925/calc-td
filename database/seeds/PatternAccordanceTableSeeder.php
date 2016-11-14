@@ -15,22 +15,22 @@ class PatternAccordanceTableSeeder extends Seeder
 
         $patterns = [
             [
-                'name' => 'П01', 'image' => '', 'thickness_id' => 3,
-                'blank_type_id' => 2,  'nip_id' => 1,
+                'name' => 'П01', 'image' => '', 'thickness_id' => 3, 'blank_type_id' => 2, 'nip_id' => 1,
                 'part_side_one' => 7, 'part_side_two' => 7,'part_side_three' => 7, 'part_side_four' => 7,
                 'part_edge_one' => 7, 'part_edge_two' => 7,'part_edge_three' => 7, 'part_edge_four' => 7,
+                'form_id' => 1
             ],
             [
-                'name' => 'П01', 'image' => '', 'thickness_id' => 3,
-                'blank_type_id' => 2, 'nip_id' => 2,
+                'name' => 'П01', 'image' => '', 'thickness_id' => 3, 'blank_type_id' => 2, 'nip_id' => 2,
                 'part_side_one' => 7, 'part_side_two' => 7,'part_side_three' => 7, 'part_side_four' => 7,
                 'part_edge_one' => 7, 'part_edge_two' => 7,'part_edge_three' => 7, 'part_edge_four' => 7,
+                'form_id' => 1
             ],
             [
-                'name' => 'П01', 'image' => '', 'thickness_id' => 3,
-                'blank_type_id' => 2, 'nip_id' => 3,
+                'name' => 'П01', 'image' => '', 'thickness_id' => 3, 'blank_type_id' => 2, 'nip_id' => 3,
                 'part_side_one' => 7, 'part_side_two' => 7,'part_side_three' => 7, 'part_side_four' => 7,
                 'part_edge_one' => 7, 'part_edge_two' => 7,'part_edge_three' => 7, 'part_edge_four' => 7,
+                'form_id' => 1
             ],
         ];
 
@@ -42,6 +42,7 @@ class PatternAccordanceTableSeeder extends Seeder
                 'part_side_three' => $pattern['part_side_three'], 'part_side_four' => $pattern['part_side_four'],
                 'part_edge_one' => $pattern['part_edge_one'], 'part_edge_two' => $pattern['part_edge_two'],
                 'part_edge_three' => $pattern['part_edge_three'], 'part_edge_four' => $pattern['part_edge_four'],
+                'form_id' => $pattern['form_id']
             ]);
 
         }

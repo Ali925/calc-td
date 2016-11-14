@@ -28,4 +28,9 @@ class Form extends Model
     {
         return md5($this->id).'.'.$file->getClientOriginalExtension();
     }
+
+    public function patternAccordance()
+    {
+        return $this->hasMany('App\PattenAccordance');
+    }
 }

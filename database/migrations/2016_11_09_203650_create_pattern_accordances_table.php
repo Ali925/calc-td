@@ -18,6 +18,7 @@ class CreatePatternAccordancesTable extends Migration
             $table->string('name');
             $table->string('image');
             $table->unsignedInteger('thickness_id');
+            $table->unsignedInteger('form_id');
             $table->unsignedInteger('blank_type_id');
             $table->unsignedInteger('nip_id');
             $table->unsignedInteger('part_side_one');

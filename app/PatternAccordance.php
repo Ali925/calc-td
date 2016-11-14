@@ -80,6 +80,11 @@ class PatternAccordance extends Model
         return $this->belongsToMany('App\EdgeCategory','edge_four_pivot');
     }
 
+    public function form()
+    {
+        return $this->belongsTo('App\Form');
+    }
+
 
 
 }

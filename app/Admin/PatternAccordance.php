@@ -11,8 +11,9 @@ AdminSection::registerModel(PatternAccordance::class, function (ModelConfigurati
     $model->onDisplay(function (){
         $display = AdminDisplay::table()->setColumns([
             AdminColumn::text('name','Наим.')->setWidth('100px'),
-            AdminColumn::image('image','Изобр.')->setWidth('300px'),
+            AdminColumn::image('image','Изобр.')->setWidth('200px'),
             AdminColumn::relatedLink('thickness.value','Толщ.')->setWidth('100px'),
+            AdminColumn::relatedLink('form.name','Констр.')->setWidth('100px'),
             AdminColumn::lists('patternEdgeDecorsOne.name','К-1')->setWidth('100px'),
             AdminColumn::lists('patternEdgeDecorsTwo.name','К-2')->setWidth('100px'),
             AdminColumn::lists('patternEdgeDecorsThree.name','К-3')->setWidth('100px'),
@@ -39,6 +40,8 @@ AdminSection::registerModel(PatternAccordance::class, function (ModelConfigurati
             AdminFormElement::image('image','Изображение')->required(),
             AdminFormElement::select('thickness_id','Толщ.')->required()
                 ->setModelForOptions(new \App\Thickness())->setDisplay('name'),
+            AdminFormElement::select('form_id','Тип конструкции')->required()
+                ->setModelForOptions(new \App\Form())->setDisplay('name'),
             AdminFormElement::multiselect('patternEdgeDecorsOne','Кромка 1')->required()
                 ->setModelForOptions(new \App\EdgeCategory())->setDisplay('name'),
             AdminFormElement::multiselect('patternEdgeDecorsTwo','Кромка 2')->required()
