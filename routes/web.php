@@ -52,10 +52,16 @@ Route::group(['prefix' => 'api'], function (){
         });
     });
 
-    Route::get('pattern', 'PatternController@getAll');
+    Route::group(['prefix' => 'pattern'],function (){
+        Route::get('get/all', 'PatternController@getAll');
+        Route::post('post/check', 'PatternController@notEmptyPattern');
+        Route::post('post/result', 'PatternController@getPatternByParameter');
+
+    });
+
+
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/1', 'PatternController@getPatternByParameter');

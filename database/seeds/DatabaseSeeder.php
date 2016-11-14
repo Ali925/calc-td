@@ -24,5 +24,9 @@ class DatabaseSeeder extends Seeder
         $this->call(PatternOptionsTableSeeder::class);
         $this->call(PatternPositionsTableSeeder::class);
         $this->call(PatternAccordanceTableSeeder::class);
+        $this->call(EdgeOnePivotTableSeeder::class);
+        $this->call(EdgeTwoPivotTableSeeder::class);
+        $this->call(EdgeThreePivotTableSeeder::class);
+        $this->call(EdgeFourPivotTableSeeder::class);
     }
 }

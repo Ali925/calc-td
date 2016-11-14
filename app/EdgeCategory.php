@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class EdgeCategory extends Model
 {
     public function edgeDecor(){
-        return $this->belongsToMany('App\EdgeDecor');
+        return $this->hasMany('App\EdgeDecor');
     }
 
     public static function getList()
@@ -21,5 +21,25 @@ class EdgeCategory extends Model
     public function patternAccordance()
     {
         return $this->hasMany(PatternAccordance::class);
+    }
+
+    public function patternAccordanceEdgeOne()
+    {
+        return $this->belongsToMany('App\PatternAccordance','edge_one_pivot');
+    }
+
+    public function patternAccordanceEdgeTwo()
+    {
+        return $this->belongsToMany('App\PatternAccordance','edge_two_pivot');
+    }
+
+    public function patternAccordanceEdgeThree()
+    {
+        return $this->belongsToMany('App\PatternAccordance','edge_three_pivot');
+    }
+
+    public function patternAccordanceEdgeFour()
+    {
+        return $this->belongsToMany('App\PatternAccordance','edge_four_pivot');
     }
 }

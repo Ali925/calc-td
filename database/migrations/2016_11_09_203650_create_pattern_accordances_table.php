@@ -18,10 +18,6 @@ class CreatePatternAccordancesTable extends Migration
             $table->string('name');
             $table->string('image');
             $table->unsignedInteger('thickness_id');
-            $table->text('edge_one');
-            $table->text('edge_two');
-            $table->text('edge_three');
-            $table->text('edge_four');
             $table->unsignedInteger('blank_type_id');
             $table->unsignedInteger('nip_id');
             $table->unsignedInteger('part_side_one');
@@ -34,6 +30,23 @@ class CreatePatternAccordancesTable extends Migration
             $table->unsignedInteger('part_edge_four');
             $table->timestamps();
         });
+
+        Schema::create('edge_one_pivot',function (Blueprint $table){
+            $table->unsignedInteger('pattern_accordance_id');
+            $table->unsignedInteger('edge_category_id');
+        });
+        Schema::create('edge_two_pivot',function (Blueprint $table){
+            $table->unsignedInteger('pattern_accordance_id');
+            $table->unsignedInteger('edge_category_id');
+        });
+        Schema::create('edge_three_pivot',function (Blueprint $table){
+            $table->unsignedInteger('pattern_accordance_id');
+            $table->unsignedInteger('edge_category_id');
+        });
+        Schema::create('edge_four_pivot',function (Blueprint $table){
+            $table->unsignedInteger('pattern_accordance_id');
+            $table->unsignedInteger('edge_category_id');
+        });
     }
 
     /**
@@ -44,5 +57,9 @@ class CreatePatternAccordancesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('pattern_accordances');
+        Schema::dropIfExists('edge_one_pivot');
+        Schema::dropIfExists('edge_two_pivot');
+        Schema::dropIfExists('edge_three_pivot');
+        Schema::dropIfExists('edge_four_pivot');
     }
 }
