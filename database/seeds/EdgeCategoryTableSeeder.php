@@ -51,7 +51,7 @@ class EdgeCategoryTableSeeder extends Seeder
         $decors = [
             [
                 'name' => 'У вас выбран завал', 'code' => 'zaval', 'image' => 'images/uploads/none.png',
-                'edge_category_id' => 5
+                'edge_category_id' => 6
             ],
             [
                 'name' => 'Нет', 'code' => 'none', 'image' => 'images/uploads/none.png',
