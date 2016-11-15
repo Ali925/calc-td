@@ -18,7 +18,7 @@ AdminSection::registerModel(Order::class, function (ModelConfiguration $model){
         return $display;
     });
 
-    $model->onCreateAndEdit(function ($id = null){
+    $model->onEdit(function ($id = null){
         $display = AdminDisplay::tabbed();
         $display->setTabs(function () use ($id){
             $tabs =[];

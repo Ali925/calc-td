@@ -20,6 +20,7 @@ class PatternController extends Controller
     {
         $query = PatternAccordance::where('thickness_id',$request->thickness_id)
             ->where('form_id',$request->form_id)
+            ->where('thickness_id', $request->thickness_id)
             ->where('blank_type_id',$request->blank_type_id)
             ->where('nip_id',$request->nip_id)
             ->where('part_side_one',$request->part_side_one)
@@ -52,6 +53,7 @@ class PatternController extends Controller
             ->where('form_id',$request->form_id)
             ->where('blank_type_id',$request->blank_type_id)
             ->where('nip_id',$request->nip_id)
+            ->where('thickness_id', $request->thickness_id)
             ->where('part_side_one',$request->part_side_one)
             ->where('part_side_two',$request->part_side_two)
             ->where('part_side_three',$request->part_side_three)
