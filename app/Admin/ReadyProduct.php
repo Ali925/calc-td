@@ -29,6 +29,7 @@ AdminSection::registerModel(ReadyProduct::class, function (ModelConfiguration $m
 
         ]);
         $display->paginate(10);
+        $display->setHtmlAttribute('class', 'table2');
         return $display;
     });
 })->addMenuPage(ReadyProduct::class, 0)

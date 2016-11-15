@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    $('.table2').css({'overflow': 'scroll', 'width': '100%', 'display': 'inline-block'});
+    $('.table2').wrap('<div class="table-wrapper" style="overflow:auto"></div>')
 });
 
 
