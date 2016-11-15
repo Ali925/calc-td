@@ -85,6 +85,11 @@ class PatternAccordance extends Model
         return $this->belongsTo('App\Form');
     }
 
+    public function readyProduct()
+    {
+        return $this->hasMany('App\ReadyProduct');
+    }
+
 
 
 }

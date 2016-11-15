@@ -16,6 +16,11 @@ class Decor extends Model
         return $this->belongsTo('App\DecorCategory');
     }
 
+    public function readyProduct()
+    {
+        return $this->hasMany('App\ReadyProduct');
+    }
+
     public function getUploadSettings()
     {
         return [

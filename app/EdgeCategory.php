@@ -42,4 +42,9 @@ class EdgeCategory extends Model
     {
         return $this->belongsToMany('App\PatternAccordance','edge_four_pivot');
     }
+
+    public function readyProduct()
+    {
+        return $this->hasMany('App\ReadyProduct');
+    }
 }

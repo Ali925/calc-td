@@ -26,6 +26,11 @@ class BlankType extends Model
         return $this->hasMany(PatternAccordance::class);
     }
 
+    public function readyProduct()
+    {
+        return $this->hasMany('App\ReadyProduct');
+    }
+
     public static function getList()
     {
         $result = [];

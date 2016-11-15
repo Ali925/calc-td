@@ -4,10 +4,10 @@ use SleepingOwl\Admin\Navigation\Page;
 
 return [
     [
-        'title' => 'Dashboard',
-        'icon'  => 'fa fa-dashboard',
-        'url'   => route('admin.dashboard'),
-        'priority' => 0
+        (new Page(\App\Order::class))
+            ->setTitle('Заказы')
+            ->setIcon('fa fa-file-photo-o')
+            ->setPriority(0),
     ],
 
     [

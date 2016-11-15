@@ -21,6 +21,11 @@ class Thickness extends Model
         return $this->belongsToMany('App\Nip');
     }
 
+    public function readyProduct()
+    {
+        return $this->hasMany('App\ReadyProduct');
+    }
+
     public static function getList()
     {
         $result = [];

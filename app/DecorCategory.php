@@ -12,6 +12,11 @@ class DecorCategory extends Model
         return $this->hasMany('App\Decor');
     }
 
+    public function readyProduct()
+    {
+        return $this->hasMany('App\ReadyProduct');
+    }
+
     public static function getList()
     {
         $result = [];

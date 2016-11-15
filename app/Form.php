@@ -33,4 +33,9 @@ class Form extends Model
     {
         return $this->hasMany('App\PattenAccordance');
     }
+
+    public function readyProduct()
+    {
+        return $this->hasMany('App\ReadyProduct');
+    }
 }

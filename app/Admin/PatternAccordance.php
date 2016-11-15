@@ -6,7 +6,7 @@ use App\PatternAccordance;
 AdminSection::registerModel(PatternAccordance::class, function (ModelConfiguration $model){
     $model->setTitle('Соответствие чертежей');
     if (url()->current() == url('admin/pattern_accordances'))
-        Assets::addCss('admin-table',asset('css/adminTables.css'));
+        Assets::addJs('admin-table',asset('js/admin-table.js'));
 
     $model->onDisplay(function (){
         $display = AdminDisplay::table()->setColumns([

@@ -33,4 +33,9 @@ class Nip extends Model
         foreach ($lists as $list){ $result[$list->id] = $list->name; }
         return $result;
     }
+
+    public function readyProduct()
+    {
+        return $this->hasMany('App\ReadyProduct');
+    }
 }

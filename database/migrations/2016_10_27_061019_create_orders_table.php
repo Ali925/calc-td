@@ -18,11 +18,12 @@ class CreateOrdersTable extends Migration
             $table->string('order_num');
             $table->string('order_amount');
             $table->unsignedInteger('customer_id');
-            $table->boolean('card_payment');
-            $table->boolean('ya_payment');
-            $table->boolean('wm_payment');
-            $table->unsignedInteger('pattern_accordance_id');
             $table->timestamps();
+        });
+
+        Schema::create('order_ready_product',function (Blueprint $table){
+            $table->unsignedInteger('order_id');
+            $table->unsignedInteger('ready_product_id');
         });
     }
 
@@ -34,5 +35,6 @@ class CreateOrdersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('orders');
+        Schema::dropIfExists('order_ready_product');
     }
 }
