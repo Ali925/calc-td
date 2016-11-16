@@ -41,7 +41,7 @@ class PatternController extends Controller
             })
             ->whereHas('patternEdgeDecorsFour', function ($query) use($request){
                 $query->where('id',$request->k4_id);
-            })->get();
+            })->first();
 
             return response()->json($query);
     }
