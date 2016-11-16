@@ -56,7 +56,12 @@ Route::group(['prefix' => 'api'], function (){
         Route::get('get/all', 'PatternController@getAll');
         Route::post('post/check', 'PatternController@notEmptyPattern');
         Route::post('post/result', 'PatternController@getPatternByParameter');
+    });
 
+    Route::group(['prefix' => 'order'], function (){
+        Route::post('post/order','OrderController@setOrder');
+        Route::post('post/customer','OrderController@setCustomer');
+        Route::post('post/ready','OrderController@setReadyProduct');
     });
 
 
