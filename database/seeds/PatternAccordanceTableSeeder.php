@@ -15,19 +15,19 @@ class PatternAccordanceTableSeeder extends Seeder
 
         $patterns = [
             [
-                'name' => 'П01', 'image' => '', 'thickness_id' => 3, 'blank_type_id' => 2, 'nip_id' => 1,
+                'name' => 'П01', 'image' => 'images/uploads/pattern/p01.png', 'thickness_id' => 3, 'blank_type_id' => 2, 'nip_id' => 1,
                 'part_side_one' => 7, 'part_side_two' => 7,'part_side_three' => 7, 'part_side_four' => 7,
                 'part_edge_one' => 7, 'part_edge_two' => 7,'part_edge_three' => 7, 'part_edge_four' => 7,
                 'form_id' => 1
             ],
             [
-                'name' => 'П01', 'image' => '', 'thickness_id' => 3, 'blank_type_id' => 2, 'nip_id' => 2,
+                'name' => 'П01', 'image' => 'images/uploads/pattern/p01.png', 'thickness_id' => 3, 'blank_type_id' => 2, 'nip_id' => 2,
                 'part_side_one' => 7, 'part_side_two' => 7,'part_side_three' => 7, 'part_side_four' => 7,
                 'part_edge_one' => 7, 'part_edge_two' => 7,'part_edge_three' => 7, 'part_edge_four' => 7,
                 'form_id' => 1
             ],
             [
-                'name' => 'П01', 'image' => '', 'thickness_id' => 3, 'blank_type_id' => 2, 'nip_id' => 3,
+                'name' => 'П01', 'image' => 'images/uploads/pattern/p01.png', 'thickness_id' => 3, 'blank_type_id' => 2, 'nip_id' => 3,
                 'part_side_one' => 7, 'part_side_two' => 7,'part_side_three' => 7, 'part_side_four' => 7,
                 'part_edge_one' => 7, 'part_edge_two' => 7,'part_edge_three' => 7, 'part_edge_four' => 7,
                 'form_id' => 1

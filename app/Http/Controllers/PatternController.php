@@ -65,9 +65,9 @@ class PatternController extends Controller
             ->get();
 
         if (sizeof($query) > 0){
-            return response()->json(['message' => true]);
+            return response()->json(['status' => true]);
         }else{
-            return response()->json(['message' => 'Такую деталь невозможно создать']);
+            return response()->json(['status' => false]);
         }
     }
 }

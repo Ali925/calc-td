@@ -25,11 +25,18 @@ AdminSection::registerModel(Order::class, function (ModelConfiguration $model){
             $form = AdminForm::panel();
 
             $form->addBody([
-                AdminFormElement::text('order_num','№ заказа'),
-                AdminFormElement::text('order_amount','Стоимость'),
-                AdminFormElement::select('customer_id','Заказчик')
+                AdminFormElement::text('order_num','№ заказа')->setReadonly(true),
+                AdminFormElement::text('order_amount','Стоимость')->setReadonly(true),
+                AdminFormElement::select('customer_id','Заказчик')->setReadonly(true)
                     ->setModelForOptions(\App\Customer::class)->setDisplay('first_name'),
             ]);
+            $form
+                ->getButtons()
+                ->setCancelButtonText('Close')
+                ->hideDeleteButton()
+                ->hideSaveAndCloseButton()
+                ->hideSaveAndCreateButton();
+
 
             $tabs[] = AdminDisplay::tab($form)->setLabel('Main Form')->setActive(true);
 
@@ -41,12 +48,6 @@ AdminSection::registerModel(Order::class, function (ModelConfiguration $model){
 
             return $tabs;
         });
-        /*$form = AdminForm::panel()->addBody([
-            AdminFormElement::text('order_num','№ заказа'),
-            AdminFormElement::select('customer_id','Заказчик')
-                ->setModelForOptions(\App\Customer::class)->setDisplay('name'),,
-            AdminFormElement::text('order_amount','Стоимость'),
-        ]);*/
 
         return $display;
     });

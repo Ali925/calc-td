@@ -10,15 +10,15 @@ AdminSection::registerModel(PatternAccordance::class, function (ModelConfigurati
     $model->onDisplay(function (){
         $display = AdminDisplay::table()->setColumns([
             AdminColumn::text('name','Наим.')->setWidth('100px'),
-            AdminColumn::image('image','Изобр.')->setWidth('200px'),
-            AdminColumn::relatedLink('thickness.value','Толщ.')->setWidth('100px'),
-            AdminColumn::relatedLink('form.name','Констр.')->setWidth('100px'),
+            AdminColumn::image('image','Изобр.')->setWidth('100px'),
+            AdminColumn::relatedLink('thickness.value','Толщ.'),
+            AdminColumn::relatedLink('form.name','Констр.'),
 //            AdminColumn::lists('patternEdgeDecorsOne.name','К-1')->setWidth('100px'),
 //            AdminColumn::lists('patternEdgeDecorsTwo.name','К-2')->setWidth('100px'),
 //            AdminColumn::lists('patternEdgeDecorsThree.name','К-3')->setWidth('100px'),
 //            AdminColumn::lists('patternEdgeDecorsFour.name','К-4')->setWidth('100px'),
-//            AdminColumn::relatedLink('blankType.name','Тип заг.')->setWidth('200px'),
-            AdminColumn::relatedLink('nip.name','Завал')->setWidth('200px'),
+            AdminColumn::relatedLink('blankType.name','Тип заг.'),
+            AdminColumn::relatedLink('nip.name','Завал'),
 //            AdminColumn::relatedLink('patternOptionSideOne.name','C-1')->setWidth('100px'),
 //            AdminColumn::relatedLink('patternOptionSideTwo.name','C-2')->setWidth('100px'),
 //            AdminColumn::relatedLink('patternOptionSideThree.name','C-3')->setWidth('100px'),
@@ -30,6 +30,7 @@ AdminSection::registerModel(PatternAccordance::class, function (ModelConfigurati
         ]);
         $display->paginate(10);
         $display->setHtmlAttribute('class', 'table2');
+        $display->setHtmlAttribute('class', 'text-center');
         return $display;
     });
 

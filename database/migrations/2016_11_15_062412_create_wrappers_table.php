@@ -15,6 +15,7 @@ class CreateWrappersTable extends Migration
     {
         Schema::create('wrappers', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
             $table->integer('width');
             $table->integer('length');
             $table->integer('coast');
