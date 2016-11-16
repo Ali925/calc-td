@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Wrapper;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\BlankType;
@@ -25,6 +26,7 @@ class MainController extends Controller
         $response['patternOptions'] = PatternOption::all();
         $response['thickness'] = Thickness::with('nips')->get();
         $response['nip'] = Nip::with('patternPositions')->get();
+        $response['wrapper'] = Wrapper::all();
 
         return response()->json($response);
     }
