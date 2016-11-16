@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
         $this->call(EdgeOnePivotTableSeeder::class);
         $this->call(EdgeTwoPivotTableSeeder::class);
         $this->call(EdgeThreePivotTableSeeder::class);
+        $this->call(EdgeFourPivotTableSeeder::class);
         $this->call(WrapperTableSeeder::class);
     }
 }

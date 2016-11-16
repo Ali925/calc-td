@@ -14,4 +14,12 @@ use App\Http\Requests;
 class BlankTypesController extends Controller
 {
 
+    public function getBlankType(Request $request)
+    {
+        $query = Product::where('blank_type_id', $request->blank_type_id)
+            ->where('blank_type_id', $request->blank_type_id)
+
+            ->where('blank_type_id', $request->blank_type_id);
+    }
+
 }
