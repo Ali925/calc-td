@@ -215,7 +215,7 @@
                 </div>
             </div>
             <div class="calc-btn-blc">
-                <button class="calc-info-btn calc-info-btn__active">
+                <button class="calc-info-btn calc-info-btn__active" id="btn-edges_reset">
                     <i class="fa fa-refresh" aria-hidden="true"></i>
                     <span class="calc-nav-text">Сбросить кромки</span>
                 </button>

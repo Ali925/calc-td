@@ -22,7 +22,7 @@ class OrderController extends Controller
         $query->order_num = '000-'.$query->id;
         $query->save();
 
-        return $query->id;
+        return response()->json(['id' => $query->id,'order_num' => $query->order_num]);
     }
 
     public function setCustomer(Request $request)

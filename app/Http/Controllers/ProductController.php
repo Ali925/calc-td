@@ -24,14 +24,12 @@ class ProductController extends Controller
 
     public function getByParameter(Request $request)
     {
-        $width = ($request->width <= 600) ? 600 : 1200;
-
-        $query = Product::where('blank_type_id', $request->blankType)
-            ->where('decor_category_id', $request->decorCategory)
-            ->where('nip_id', $request->nip)
-            ->where('thickness_id', $request->thickness)
-            ->where('width', $width)
-            ->first();
+        $query = Product::where('blank_type_id', $request->blank_type_id)
+            ->where('decor_category_id', $request->decor_category_id)
+            ->where('nip_id', $request->nip_id)
+            ->where('thickness_id', $request->thickness_id)
+            ->where('width', '<=' ,$request->width)
+            ->get();
 
         return response()->json($query);
     }
