@@ -3,7 +3,7 @@ use App\Product;
 use SleepingOwl\Admin\Model\ModelConfiguration;
 
 AdminSection::registerModel(Product::class, function (ModelConfiguration $model){
-    $model->setTitle('Тип заготовки');
+    $model->setTitle('Заготовки');
 
     $model->onDisplay(function (){
         $display = AdminDisplay::table()->setColumns([
