@@ -9,7 +9,7 @@
                  data-series-id="{{$decor->decorCategory->id}}"
                  data-series-name="{{$decor->decorCategory->name}}"
             >
-                <img src="{{url('/').'/css/img/galochka.png'}}" alt="" class="calc-modal-check">
+                <img src="{{url('/').'/css/img/galochka1.png'}}" alt="" class="calc-modal-check">
                 <img src="@if(!empty($decor->image)){{url('/').'/'.$decor->image}}@endif" alt="">
                 <span class="calc-modal-name">{{$decor->name}} {{$decor->code}} ({{$decor->decorCategory->name}})</span>
             </div>
