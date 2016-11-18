@@ -18,6 +18,7 @@ class CreateOrdersTable extends Migration
             $table->string('order_num');
             $table->string('order_amount')->nullable();
             $table->unsignedInteger('customer_id')->nullable();
+            $table->enum('status',['Оплачено','Не оплачено'])->default('Не оплачено');
             $table->timestamps();
         });
 

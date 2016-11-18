@@ -6,6 +6,31 @@ use Illuminate\Database\Eloquent\Model;
 
 class ReadyProduct extends Model
 {
+    protected $fillable = [
+        'blank_type_id',
+        'thickness_id',
+        'form_id',
+        'decor_category_id',
+        'decor_id',
+        'wrapper_id',
+        'pattern_accordance_id',
+        'part_side_one',
+        'part_side_two',
+        'part_side_three',
+        'part_side_four',
+        'part_edge_one',
+        'part_edge_two',
+        'part_edge_three',
+        'part_edge_four',
+        'edge_one',
+        'edge_two',
+        'edge_three',
+        'edge_four',
+        'nip_id',
+        'width',
+        'length',
+        'coast',
+    ];
     public function blankType(){ return $this->belongsTo('App\BlankType'); }
     public function thickness(){ return $this->belongsTo('App\Thickness'); }
     public function form(){ return $this->belongsTo('App\Form'); }

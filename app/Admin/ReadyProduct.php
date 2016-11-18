@@ -54,6 +54,8 @@ AdminSection::registerModel(ReadyProduct::class, function (ModelConfiguration $m
                 ->setModelForOptions(new \App\Decor())->setDisplay('name'),
             AdminFormElement::select('wrapper_id','Упаковка')->setReadonly(true)
                 ->setModelForOptions(new \App\Wrapper())->setDisplay('name'),
+            AdminFormElement::select('nip_id','Завал')->setReadonly(true)
+                ->setModelForOptions(new \App\Nip())->setDisplay('name'),
             AdminFormElement::select('part_side_one','С-1')->setReadonly(true)
                 ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
             AdminFormElement::select('part_side_two','С-2')->setReadonly(true)

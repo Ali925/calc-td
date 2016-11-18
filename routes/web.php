@@ -70,3 +70,10 @@ Route::group(['prefix' => 'api'], function (){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/1', function (){
+    $u = \App\Order::all()->first();
+    $r = $u->readyProducts->first()->blankType->name;
+
+    dd($r);
+
+});

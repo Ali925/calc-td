@@ -15,7 +15,6 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         'App\Events\OrderCreate' => [
             'App\Listeners\TechEmailSend',
-            'App\Listeners\ManagerEmailSend',
         ],
     ];
 

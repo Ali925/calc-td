@@ -34,6 +34,7 @@ class CreateReadyProductsTable extends Migration
             $table->unsignedInteger('edge_two');
             $table->unsignedInteger('edge_three');
             $table->unsignedInteger('edge_four');
+            $table->unsignedInteger('nip_id');
             $table->integer('width');
             $table->integer('length');
             $table->integer('coast');

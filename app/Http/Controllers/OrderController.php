@@ -43,7 +43,7 @@ class OrderController extends Controller
 
         $detail = $order->readyProducts;
 
-        event($order, $detail ,$query);
+       event($order, $detail ,$query);
     }
 
     public function setReadyProduct(Request $request)
@@ -74,6 +74,7 @@ class OrderController extends Controller
                 $readyProduct->edge_two = $product->edge_two;
                 $readyProduct->edge_three = $product->edge_three;
                 $readyProduct->edge_four = $product->edge_four;
+                $readyProduct->nip_id = $product->nip_id;
                 $readyProduct->width = $product->width;
                 $readyProduct->length = $product->length;
                 $readyProduct->coast = $product->coast;

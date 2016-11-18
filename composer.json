@@ -9,7 +9,8 @@
         "laravel/framework": "5.3.*",
         "laravelrus/sleepingowl": "4.*@dev",
         "barryvdh/laravel-cors": "^0.8.2",
-        "guzzlehttp/guzzle": "^6.2"
+        "guzzlehttp/guzzle": "^6.2",
+        "barryvdh/laravel-dompdf": "^0.7.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

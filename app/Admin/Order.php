@@ -13,6 +13,7 @@ AdminSection::registerModel(Order::class, function (ModelConfiguration $model){
             AdminColumn::text('order_num','№ заказа'),
             AdminColumn::relatedLink('customer.first_name','Заказчик'),
             AdminColumn::text('order_amount','Стоимость'),
+            AdminColumn::text('status','Статус'),
         ]);
         $display->paginate(10);
         return $display;
