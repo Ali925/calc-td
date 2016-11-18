@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\TechStack;
 use App\Wrapper;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -41,6 +42,7 @@ class MainController extends Controller
         $response['configPayments'] = ConfigPayment::all();
         $response['nips'] = Nip::all();
         $response['thicknesses'] = Thickness::all();
+        $response['tech_stack'] = TechStack::all();
 
         return view('main',$response);
     }
@@ -55,7 +57,8 @@ class MainController extends Controller
         $response['configPayments'] = ConfigPayment::all();
         $response['nips'] = Nip::all();
         $response['thicknesses'] = Thickness::all();
+        $response['tech_stack'] = TechStack::all();
 
-        return view('main',$response);
+        return view('main2',$response);
     }
 }

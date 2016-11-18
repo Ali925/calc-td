@@ -19,15 +19,7 @@
     <div class="calc-top calc-clearfix">
         <h1>Калькулятор</h1>
         <div class="calc-name" id="calc-js-current">Деталь № <span class="calc-special" id="calc-js-current-number">222</span></div>
-        <div class="calc-top-links">
-            <div class="calc-nav">Техническая документация</div>
-            <div class="calc-top-links-blc">
-                <div class="calc-top-links-inside">
-                    <p><a href="#"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Инструкция по чтению чертежей.pdf</a></p>
-                    <p><a href="#"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Инструкция по монтажу и эксплуатации столешниц.pdf</a></p>
-                </div>
-            </div>
-        </div>
+        @include('partials.toplinks')
 
     </div>  <!-- /calc-top -->
 

@@ -7,7 +7,7 @@
         @foreach($edges as $edge)
             <div class="calc-modal-item" data-id="{{$edge->id}}" data-code="{{$edge->code}}"
                  data-series-id="{{$edge->edgeCategory->id}}">  <!-- выбранный элемент -->
-                <img src="{{url('/').'/css/img/galochka1.png'}}" alt="" class="calc-modal-check">
+                <img src="{{url('/').'/css/img/galochka.png'}}" alt="" class="calc-modal-check">
                 <img src="{{url('/').'/'.$edge->image}}" alt="">
                 <span class="calc-modal-name">{{$edge->name}} {{$edge->code}} ({{$edge->edgeCategory->name}})</span>
             </div>

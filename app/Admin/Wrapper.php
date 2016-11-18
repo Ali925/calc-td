@@ -21,7 +21,7 @@ AdminSection::registerModel(Wrapper::class, function (ModelConfiguration $model)
         $form = AdminForm::panel()->addBody([
             AdminFormElement::text('width','Ширина'),
             AdminFormElement::text('length','Длинна'),
-            AdminFormElement::wysiwyg('coast','Цена'),
+            AdminFormElement::text('coast','Цена'),
         ]);
 
         return $form;

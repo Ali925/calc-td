@@ -77,6 +77,10 @@ return [
                 ->setTitle('Толщины')
                 ->setIcon('fa fa-cubes')
                 ->setPriority(40),
+            (new Page(\App\Wrapper::class))
+                ->setTitle('Упаковка')
+                ->setIcon('fa fa-cubes')
+                ->setPriority(50),
         ]
 
     ],
