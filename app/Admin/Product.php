@@ -11,7 +11,7 @@ AdminSection::registerModel(Product::class, function (ModelConfiguration $model)
             AdminColumn::relatedLink('decorCategory.name','Серия декора'),
             AdminColumn::relatedLink('thickness.name','Толщина'),
             AdminColumn::relatedLink('nip.value','Завал'),
-            AdminColumn::text('length','Долинна'),
+            AdminColumn::text('length','Длина'),
             AdminColumn::text('width','Ширина'),
             AdminColumn::text('coast','Цена'),
         ]);
@@ -30,7 +30,7 @@ AdminSection::registerModel(Product::class, function (ModelConfiguration $model)
                 ->setModelForOptions(\App\Thickness::class)->setDisplay('name'),
             AdminFormElement::select('nip_id','Завал')
                 ->setModelForOptions(\App\Nip::class)->setDisplay('name'),
-            AdminFormElement::text('length','Долинна'),
+            AdminFormElement::text('length','Длина'),
             AdminFormElement::text('width','Ширина'),
             AdminFormElement::text('coast','Цена'),
 

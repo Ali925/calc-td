@@ -3,7 +3,7 @@ use App\ConfigPayment;
 use SleepingOwl\Admin\Model\ModelConfiguration;
 
 AdminSection::registerModel(ConfigPayment::class, function (ModelConfiguration $model){
-    $model->setTitle('Конфигурация плтежей');
+    $model->setTitle('Конфигурация платежей');
 
     $model->onDisplay(function (){
         $display = AdminDisplay::table()->setColumns([
