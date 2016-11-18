@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Form extends Model
 {
+
+    protected $casts = [
+        'image' => 'image',
+        'pattern_image' => 'image',
+    ];
+
     public function blankTypes()
     {
         return $this->belongsToMany('App\BlankType');
@@ -15,6 +21,14 @@ class Form extends Model
     {
         return [
             'image' => [
+                'orientate' => [],
+                'resize' => [600, null, function ($constraint) {
+                    $constraint->upsize();
+                    $constraint->aspectRatio();
+                }]
+            ],
+
+            'pattern_image' => [
                 'orientate' => [],
                 'resize' => [600, null, function ($constraint) {
                     $constraint->upsize();

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Customer;
 use App\Order;
 use App\ReadyProduct;
+use Illuminate\Console\Scheduling\Event;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -28,17 +29,21 @@ class OrderController extends Controller
     public function setCustomer(Request $request)
     {
         $query = new Customer();
-        $query->first_name = $request->first_name;
-        $query->middle_name = $request->middle_name;
-        $query->last_name = $request->last_name;
-        $query->email = $request->email;
-        $query->address = $request->address;
-        $query->phone = $request->phone;
+        $query->first_name = $request->FirstName;
+        $query->last_name = $request->LastName;
+        $query->email = $request->Email;
+        $query->address = 'Empty';
+        $query->city = 'Empty';
+        $query->phone = $request->MobilePhone;
         $query->save();
 
         $order = Order::find($request->order_id);
         $order->customer_id = $query->id;
         $order->save();
+
+        $detail = $order->readyProducts;
+
+        event($order, $detail ,$query);
     }
 
     public function setReadyProduct(Request $request)
