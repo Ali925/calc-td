@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\BlankType;
 use App\PatternAccordance;
 use App\PatternPosition;
+use App\Product;
+use App\Wrapper;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -44,10 +46,43 @@ class PatternController extends Controller
                 $query->where('id',$request->k4_id);
             })->first();
 
-        $blank = BlankType::where('blank_type_id',$request->blank_type_id)->get();
+        $width = ($request->width <= 600)? 600 : 1200;
+        $blank = Product::where('blank_type_id', $request->blank_type_id)
+            ->where('decor_category_id', $request->decor_category_id)
+            ->where('nip_id', $request->nip_id)
+            ->where('thickness_id', $request->thickness_id)
+            ->where('width', '=' ,$width)
+            ->first();
+
+        $width_proxy = ($width == 600)? 1200 : 600;
+        $blank_proxy = Product::where('blank_type_id', $request->blank_type_id)
+            ->where('decor_category_id', $request->decor_category_id)
+            ->where('nip_id', $request->nip_id)
+            ->where('thickness_id', $request->thickness_id)
+            ->where('width', '=' ,$width_proxy)
+            ->first();
+
+        $wrapper = Wrapper::all()->toArray();
 
 
-            return response()->json($query);
+
+        return response()->json([
+            'pattern' => [
+                'id' => $query->id,
+                'image' => $query->image,
+            ],
+
+            'blank' => [
+                'id' => $blank->id,
+                'width' => $blank->width,
+                'len' => $blank->lenght,
+                'coast' => $blank->coast,
+            ],
+            'proxy_blank' => [
+                'id' => $blank_proxy->id,
+            ],
+            'wrapper' => $wrapper,
+        ]);
     }
 
     public function notEmptyPattern(Request $request)
