@@ -3,7 +3,6 @@
 <body>
 
 @foreach($details as $detail)
-
     Деталь № {{$detail->id}}
     <table>
         <tr>
@@ -22,9 +21,9 @@
             <td>{{$detail->blankType->name}}</td>
             <td>{{$detail->thickness->name}}</td>
             <td>{{$detail->form->name}} / {{$detail->form->coast}}</td>
-            <td>{{$detail->decorCotegory->name}} / {{$detail->decorCotegory->coast}}</td>
+            <td>{{$detail->decorCategory->name}} / {{$detail->decorCategory->coast}}</td>
             <td>{{$detail->decor->name}}</td>
-            <td>{{$detail->nip->name}} / {{$detail->nip->coast}}</td>
+            <td>{{$detail->nip->name}}</td>
             <td>{{$detail->patternOptionSideOne->name}} / {{$detail->patternOptionSideOne->coast}}</td>
             <td>{{$detail->patternOptionSideTwo->name}} / {{$detail->patternOptionSideTwo->coast}}</td>
             <td>{{$detail->patternOptionSideThree->name}} / {{$detail->patternOptionSideThree->coast}}</td>

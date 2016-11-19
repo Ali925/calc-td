@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\BlankType;
 use App\PatternAccordance;
 use App\PatternPosition;
 use Illuminate\Http\Request;
@@ -42,6 +43,9 @@ class PatternController extends Controller
             ->whereHas('patternEdgeDecorsFour', function ($query) use($request){
                 $query->where('id',$request->k4_id);
             })->first();
+
+        $blank = BlankType::where('blank_type_id',$request->blank_type_id)->get();
+
 
             return response()->json($query);
     }

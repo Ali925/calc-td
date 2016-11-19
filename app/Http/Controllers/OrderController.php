@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Customer;
 use App\Order;
 use App\ReadyProduct;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Console\Scheduling\Event;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
 
@@ -43,7 +43,7 @@ class OrderController extends Controller
 
         $detail = $order->readyProducts;
 
-       event($order, $detail ,$query);
+        event($order, $detail ,$query);
     }
 
     public function setReadyProduct(Request $request)

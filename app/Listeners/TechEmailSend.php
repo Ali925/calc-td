@@ -3,9 +3,9 @@
 namespace App\Listeners;
 
 use App\Events\OrderCreate;
-use App\Mail\OrderTechSender;
 use App\TechEmail;
 use App\User;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Mail;
@@ -32,10 +32,8 @@ class TechEmailSend
     {
         $users[] = TechEmail::all(['email'])->toArray();
         $users[] = User::where('role', 2)->get('email')->toArray();
-        $pdf_coast = PDF::loadView('emails.tech', $event->details);;
-        $pdf_empty = PDF::loadView('emails.empty', $event->details);;
-        $pattern   = [];
-
+        $pdf_coast = PDF::loadView('emails.tech', $event->details);
+        $pdf_empty = PDF::loadView('emails.empty', $event->details);
 
         Mail::send('emails.manager',
             [
@@ -51,8 +49,6 @@ class TechEmailSend
 
                 $m->attachData($pdf_coast, 'With Prise');
                 $m->attachData($pdf_empty, 'WithOut Prise');
-
-
         });
     }
 }

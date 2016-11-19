@@ -22,7 +22,7 @@
             <td>{{$detail->blankType->name}}</td>
             <td>{{$detail->thickness->name}}</td>
             <td>{{$detail->form->name}}</td>
-            <td>{{$detail->decorCotegory->name}}</td>
+            <td>{{$detail->decorCategory->name}}</td>
             <td>{{$detail->decor->name}}</td>
             <td>{{$detail->nip->name}}</td>
             <td>{{$detail->patternOptionSideOne->name}}</td>
