@@ -3,11 +3,10 @@
 namespace App\Listeners;
 
 use App\Events\OrderCreate;
+use App\Mail\ManagerMailSend;
 use App\TechEmail;
 use App\User;
 use Barryvdh\DomPDF\Facade as PDF;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Mail;
 
 class TechEmailSend
@@ -30,25 +29,19 @@ class TechEmailSend
      */
     public function handle(OrderCreate $event)
     {
-        $users[] = TechEmail::all(['email'])->toArray();
-        $users[] = User::where('role', 2)->get('email')->toArray();
-        $pdf_coast = PDF::loadView('emails.tech', $event->details);
-        $pdf_empty = PDF::loadView('emails.empty', $event->details);
+        $user = TechEmail::all(['email'])->toArray();
+        $users = User::where('role', 2)->get(['email'])->toArray();
+        $pdf_coast = PDF::loadView('emails.tech', ['details' => $event->details])
+            ->setPaper('a4', 'landscape')
+            ->setWarnings(false)
+            ->download('invoice.pdf');
+        $pdf_empty = PDF::loadView('emails.empty', ['details' => $event->details])
+            ->setPaper('a4', 'landscape')
+            ->setWarnings(false)
+            ->download('invoice.pdf');
 
-        Mail::send('emails.manager',
-            [
-                'order' => $event->order,
-                'customer' => $event->customer,
-            ], function ($m) use ($users, $event, $pdf_coast, $pdf_empty) {
-                $m->from('tdsouz@tds-sofi.spb.ru', 'Калькулятор');
-                $m->to('melentev.av@gmail.com')->subject('Новый заказ');
+        Mail::to('melentev.av@gmail.com')->send(new ManagerMailSend($event->order, $event->customer, $pdf_coast, $pdf_empty));
+        //Mail::to($user)->send(new ManagerMailSend($event->order, $event->customer, $pdf_coast, $pdf_empty));
 
-                foreach ($event->details as $detail){
-                    $m->attachData($detail->image, $detail->name);
-                }
-
-                $m->attachData($pdf_coast, 'With Prise');
-                $m->attachData($pdf_empty, 'WithOut Prise');
-        });
     }
 }

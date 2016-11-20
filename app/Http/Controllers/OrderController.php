@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
+use App\Events\OrderCreate;
+use App\Mail\ManagerMailSend;
 use App\Order;
 use App\ReadyProduct;
-use Barryvdh\DomPDF\Facade as PDF;
-use Illuminate\Console\Scheduling\Event;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Event as Event;
 
 class OrderController extends Controller
 {
@@ -43,7 +45,7 @@ class OrderController extends Controller
 
         $detail = $order->readyProducts;
 
-        event($order, $detail ,$query);
+        Event::fire(new OrderCreate($order,$query,$detail));
     }
 
     public function setReadyProduct(Request $request)

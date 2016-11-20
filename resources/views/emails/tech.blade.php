@@ -1,10 +1,27 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
-<html>
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .page-break {
+            page-break-after: always;
+        }
+        body{
+            margin: 0 auto;
+        }
+    </style>
+</head>
 <body>
-
 @foreach($details as $detail)
-    Деталь № {{$detail->id}}
-    <table>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Чертеж № {{$detail->id}}, соответствует чертежу: {{$detail->patternAccordance->name}}</h2><br>
+    <table border="2" rules="all" cellpadding="3">
         <tr>
             <td>Tип заготовки</td>
             <td>Толщина</td>
@@ -20,15 +37,18 @@
         <tr>
             <td>{{$detail->blankType->name}}</td>
             <td>{{$detail->thickness->name}}</td>
-            <td>{{$detail->form->name}} / {{$detail->form->coast}}</td>
-            <td>{{$detail->decorCategory->name}} / {{$detail->decorCategory->coast}}</td>
+            <td>{{$detail->form->name}} / {{$detail->form->coast}} .руб</td>
+            <td>{{$detail->decorCategory->name}} / {{$detail->decorCategory->coast}} .руб</td>
             <td>{{$detail->decor->name}}</td>
             <td>{{$detail->nip->name}}</td>
-            <td>{{$detail->patternOptionSideOne->name}} / {{$detail->patternOptionSideOne->coast}}</td>
-            <td>{{$detail->patternOptionSideTwo->name}} / {{$detail->patternOptionSideTwo->coast}}</td>
-            <td>{{$detail->patternOptionSideThree->name}} / {{$detail->patternOptionSideThree->coast}}</td>
-            <td>{{$detail->patternOptionSideFour->name}} / {{$detail->patternOptionSideFour->coast}}</td>
+            <td>{{$detail->patternOptionSideOne->name}} / {{$detail->patternOptionSideOne->coast}} .руб</td>
+            <td>{{$detail->patternOptionSideTwo->name}} / {{$detail->patternOptionSideTwo->coast}} .руб</td>
+            <td>{{$detail->patternOptionSideThree->name}} / {{$detail->patternOptionSideThree->coast}} .руб</td>
+            <td>{{$detail->patternOptionSideFour->name}} / {{$detail->patternOptionSideFour->coast}} .руб</td>
         </tr>
+                </table>
+                <br>
+                <table border="2" rules="all" cellpadding="3">
         <tr>
             <td>Угол - 1</td>
             <td>Угол - 2</td>
@@ -42,21 +62,26 @@
             <td>Длинна</td>
         </tr>
         <tr>
-            <td>{{$detail->patternOptionEdgeOne->name}} / {{$detail->patternOptionEdgeOne->coast}}</td>
-            <td>{{$detail->patternOptionEdgeTwo->name}} / {{$detail->patternOptionEdgeTwo->coast}}</td>
-            <td>{{$detail->patternOptionEdgeThree->name}} / {{$detail->patternOptionEdgeThree->coast}}</td>
-            <td>{{$detail->patternOptionEdgeFour->name}} / {{$detail->patternOptionEdgeFour->coast}}</td>
-            <td>{{$detail->edgeOne->name}} / {{$detail->edgeOne->coast}}</td>
-            <td>{{$detail->edgeTwo->name}} / {{$detail->edgeTwo->coast}}</td>
-            <td>{{$detail->edgeThree->name}} / {{$detail->edgeThree->coast}}</td>
-            <td>{{$detail->edgeFour->name}} / {{$detail->edgeFour->coast}}</td>
+            <td>{{$detail->patternOptionEdgeOne->name}} / {{$detail->patternOptionEdgeOne->coast}} .руб</td>
+            <td>{{$detail->patternOptionEdgeTwo->name}} / {{$detail->patternOptionEdgeTwo->coast}} .руб</td>
+            <td>{{$detail->patternOptionEdgeThree->name}} / {{$detail->patternOptionEdgeThree->coast}} .руб</td>
+            <td>{{$detail->patternOptionEdgeFour->name}} / {{$detail->patternOptionEdgeFour->coast}} .руб</td>
+            <td>{{$detail->edgeOne->name}} / {{$detail->edgeOne->coast}} .руб</td>
+            <td>{{$detail->edgeTwo->name}} / {{$detail->edgeTwo->coast}} .руб</td>
+            <td>{{$detail->edgeThree->name}} / {{$detail->edgeThree->coast}} .руб</td>
+            <td>{{$detail->edgeFour->name}} / {{$detail->edgeFour->coast}} .руб</td>
             <td>{{$detail->width}}</td>
             <td>{{$detail->length}}</td>
         </tr>
     </table>
 
-@endforeach
+            </div>
+        </div>
+    </div>
 
+    <div class="page-break"></div>
+
+@endforeach
 </body>
 </html>
 
