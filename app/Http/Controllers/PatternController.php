@@ -65,7 +65,12 @@ class PatternController extends Controller
             ->where('width', '=' ,$width_proxy)
             ->first();
 
-        $wrapper = Wrapper::all()->toArray();
+        $length = '';
+        if ($request->length <= 1000) $length = 1000;
+        if (1500 <= $request->length and $request->length > 1000) $length = 1500;
+        if ($request->length > 1500 and $request->length <= 3050) $length = 3050;
+
+        $wrapper = Wrapper::where('length', $length)->first();
 
 
 
@@ -84,7 +89,7 @@ class PatternController extends Controller
                 'proxy_blank' => [
                     'id' => $blank_proxy->id,
                 ],
-                'wrapper' => $wrapper,
+                'wrapper' => $wrapper->coast,
             ]);
         }else{
             if ($query == null) return response()->json(['status' => false, 'message' => 'Нет  чертежей']);
