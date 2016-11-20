@@ -47,14 +47,17 @@ class PatternController extends Controller
             })->first();
 
         $width = ($request->width <= 600)? 600 : 1200;
+
         $blank = Product::where('blank_type_id', $request->blank_type_id)
             ->where('decor_category_id', $request->decor_category_id)
             ->where('nip_id', $request->nip_id)
             ->where('thickness_id', $request->thickness_id)
             ->where('width', '=' ,$width)
+            ->get()
             ->first();
 
         $width_proxy = ($width == 600)? 1200 : 600;
+
         $blank_proxy = Product::where('blank_type_id', $request->blank_type_id)
             ->where('decor_category_id', $request->decor_category_id)
             ->where('nip_id', $request->nip_id)
@@ -66,28 +69,35 @@ class PatternController extends Controller
 
 
 
-        return response()->json([
-            'pattern' => [
-                'id' => $query->id,
-                'image' => $query->image,
-            ],
+        if ($query != null & $blank != null & $wrapper!=null){
+            return response()->json([
+                'pattern' => [
+                    'id' => $query->id,
+                    'image' => $query->image,
+                ],
+                'blank' => [
+                    'id' => $blank->id,
+                    'width' => $blank->width,
+                    'len' => $blank->lenght,
+                    'coast' => $blank->coast,
+                ],
+                'proxy_blank' => [
+                    'id' => $blank_proxy->id,
+                ],
+                'wrapper' => $wrapper,
+            ]);
+        }else{
+            if ($query == null) return response()->json(['status' => false, 'message' => 'Нет  чертежей']);
+            if ($blank == null) return response()->json(['status' => false, 'message' => 'Нет загтовки']);
+            if ($wrapper == null) return response()->json(['status' => false, 'message' => 'Нет обертки']);
+        }
 
-            'blank' => [
-                'id' => $blank->id,
-                'width' => $blank->width,
-                'len' => $blank->lenght,
-                'coast' => $blank->coast,
-            ],
-            'proxy_blank' => [
-                'id' => $blank_proxy->id,
-            ],
-            'wrapper' => $wrapper,
-        ]);
     }
 
     public function notEmptyPattern(Request $request)
     {
-        $query = PatternAccordance::where('thickness_id',$request->thickness_id)
+        $query =
+            PatternAccordance::where('thickness_id',$request->thickness_id)
             ->where('form_id',$request->form_id)
             ->where('blank_type_id',$request->blank_type_id)
             ->where('nip_id',$request->nip_id)
@@ -105,7 +115,7 @@ class PatternController extends Controller
         if (sizeof($query) > 0){
             return response()->json(['status' => true]);
         }else{
-            return response()->json(['status' => false]);
+            return response()->json(['status' => false, 'message' => 'Такую деталь создать нельзя']);
         }
     }
 }
