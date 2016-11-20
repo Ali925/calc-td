@@ -76,6 +76,7 @@ class PatternController extends Controller
 
         if ($query != null & $blank != null & $wrapper!=null){
             return response()->json([
+                'status' => true,
                 'pattern' => [
                     'id' => $query->id,
                     'image' => $query->image,
@@ -89,7 +90,7 @@ class PatternController extends Controller
                 'proxy_blank' => [
                     'id' => $blank_proxy->id,
                 ],
-                'wrapper' => $wrapper->coast,
+                'wrapper' => ['coast' => $wrapper->coast ],
             ]);
         }else{
             if ($query == null) return response()->json(['status' => false, 'message' => 'Нет  чертежей']);
