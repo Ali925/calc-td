@@ -84,7 +84,7 @@ class PatternController extends Controller
                 'blank' => [
                     'id' => $blank->id,
                     'width' => $blank->width,
-                    'len' => $blank->lenght,
+                    'len' => $blank->length,
                     'coast' => $blank->coast,
                 ],
                 'proxy_blank' => [
