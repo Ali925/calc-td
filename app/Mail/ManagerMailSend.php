@@ -36,6 +36,7 @@ class ManagerMailSend extends Mailable
     public function build()
     {
         return $this->view('emails.manager')
+            ->subject('оформлен новый заказ на мебельные детали №'.$this->order->order_num)
             ->attachData($this->pdf_tech,'С ценой '.$this->order->order_num.'.pdf')
             ->attachData($this->pdf_empty, 'Без цены'.$this->order->order_num.'.pdf')
             ->with([

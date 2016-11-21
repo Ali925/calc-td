@@ -2,15 +2,16 @@
 <html>
 <body>
 
-Добрый день!
+Добрый день! <br>
 {{$order->created_at}} – оформлен новый заказ на мебельные детали № {{$order->order_num}} через модуль калькулятора.
+<br>
 
-Данные клиента:
-ФИО: {{$customer->first_name}} {{$customer->last_name}}
-Телефон: {{$customer->phone}}
-Эл. почта: {{$customer->email}}
-Сумма заказа: {{$order->order_amount}}
-Статус заказа: {{$order->status}}
+Данные клиента: <br>
+ФИО: {{$customer->first_name}} {{$customer->last_name}} <br>
+Телефон: {{$customer->phone}} <br>
+Эл. почта: {{$customer->email}} <br>
+Сумма заказа: {{$order->order_amount}} <br>
+Статус заказа: {{$order->status}} <br>
 
 
 </body>

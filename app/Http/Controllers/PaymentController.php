@@ -16,18 +16,5 @@ use App\PatternPosition;
 
 class PaymentController extends Controller
 {
-    public function sendPayment()
-    {
 
-    }
-
-    public function setOrder()
-    {
-
-    }
-
-    public function setCustomer()
-    {
-
-    }
 }
