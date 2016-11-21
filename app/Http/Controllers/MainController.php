@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
 use App\TechStack;
 use App\Wrapper;
 use Illuminate\Http\Request;
@@ -60,5 +61,13 @@ class MainController extends Controller
         $response['tech_stack'] = TechStack::all();
 
         return view('main',$response);
+    }
+
+    public function getPrint(Request $request)
+    {
+        $order = Order::find($request->order_id);
+        $details = $order->readyProducts;
+
+        return view('print',['details' => $details]);
     }
 }

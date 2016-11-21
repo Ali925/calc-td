@@ -10,13 +10,14 @@
         .calc-print {
             width: 100%;
             max-width: 800px;
-            margin-left: 1%;
-            margin-top: 1%;
-            color: #000000;
+            font-family: "PT Sans",sans-serif;
+            color: #666666;
         }
         .calc-info-item {
             border-bottom: 2px solid #666666;
             padding-bottom: 20px;
+            font-family: "PT Sans",sans-serif;
+            color: #666666;
         }
         .calc-clearfix::after {
             clear: both;
@@ -37,11 +38,12 @@
             color: #cd353d;
         }
         .calc-info-draft {
+            margin: 20px auto 0;
             max-width: 700px;
         }
         .calc-info-draft img {
             height: auto;
-            max-width: 20%;
+            max-width: 100%;
             vertical-align: middle;
         }
         .calc-info-table {
@@ -57,8 +59,9 @@
             vertical-align: middle;
         }
         .calc-info-table .calc-info-header td {
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 700;
+            color: #000000;
         }
         .page-break {
             page-break-after: always;
