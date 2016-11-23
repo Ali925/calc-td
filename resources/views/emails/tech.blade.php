@@ -58,9 +58,6 @@
             font-weight: 700;
             color: #000000;
         }
-        .page-break {
-            page-break-after: always;
-        }
     </style>
 </head>
 
@@ -206,7 +203,6 @@
 
         </div>
     </div>
-    <div class="page-break"></div>
 @endforeach
 </body>
 
