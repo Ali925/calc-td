@@ -10,14 +10,9 @@
         .calc-print {
             width: 100%;
             max-width: 800px;
-            font-family: "PT Sans",sans-serif;
             color: #666666;
-        }
-        .calc-info-item {
-            border-bottom: 2px solid #666666;
-            padding-bottom: 20px;
-            font-family: "PT Sans",sans-serif;
-            color: #666666;
+            margin-top: 1%;
+            margin-left: 1%;
         }
         .calc-clearfix::after {
             clear: both;
@@ -41,7 +36,7 @@
             margin: 20px auto 0;
             max-width: 700px;
         }
-        .calc-info-draft img {
+        .calc-info-top img {
             height: auto;
             max-width: 100%;
             vertical-align: middle;
@@ -182,16 +177,16 @@
                             <div class="calc-info-text">{{$radius}}</div>
                         </td>
                         <td>
-                            <div class="calc-info-text">{{$detail->edgeOne->name}}</div>
+                            <div class="calc-info-text">{{$detail->edgeOne->name}} ({{$detail->edgeOne->edgeCategory->name}})</div>
                         </td>
                         <td>
-                            <div class="calc-info-text">{{$detail->edgeTwo->name}}</div>
+                            <div class="calc-info-text">{{$detail->edgeTwo->name}} ({{$detail->edgeTwo->edgeCategory->name}})</div>
                         </td>
                         <td>
-                            <div class="calc-info-text">{{$detail->edgeThree->name}}</div>
+                            <div class="calc-info-text">{{$detail->edgeThree->name}} ({{$detail->edgeThree->edgeCategory->name}})</div>
                         </td>
                         <td>
-                            <div class="calc-info-text">{{$detail->edgeFour->name}}</div>
+                            <div class="calc-info-text">{{$detail->edgeFour->name}} ({{$detail->edgeFour->edgeCategory->name}})</div>
                         </td>
                     </tr>
                 </table>

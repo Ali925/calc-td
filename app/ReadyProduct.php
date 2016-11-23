@@ -47,10 +47,10 @@ class ReadyProduct extends Model
     public function patternOptionEdgeThree(){ return $this->belongsTo('App\PatternOption', 'part_edge_three', 'id'); }
     public function patternOptionEdgeFour(){ return $this->belongsTo('App\PatternOption', 'part_edge_four', 'id'); }
 
-    public function edgeOne(){ return $this->belongsTo('App\EdgeCategory','edge_one', 'id'); }
-    public function edgeTwo(){ return $this->belongsTo('App\EdgeCategory','edge_two', 'id'); }
-    public function edgeThree(){ return $this->belongsTo('App\EdgeCategory','edge_three', 'id'); }
-    public function edgeFour(){ return $this->belongsTo('App\EdgeCategory','edge_four', 'id'); }
+    public function edgeOne(){ return $this->belongsTo('App\EdgeDecor','edge_one', 'id'); }
+    public function edgeTwo(){ return $this->belongsTo('App\EdgeDecor','edge_two', 'id'); }
+    public function edgeThree(){ return $this->belongsTo('App\EdgeDecor','edge_three', 'id'); }
+    public function edgeFour(){ return $this->belongsTo('App\EdgeDecor','edge_four', 'id'); }
 
     public function patternAccordance(){ return $this->belongsTo('App\PatternAccordance'); }
     public function wrapper(){ return $this->belongsTo('App\Wrapper'); }

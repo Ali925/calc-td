@@ -10,14 +10,9 @@
         .calc-print {
             width: 100%;
             max-width: 800px;
-            font-family: "PT Sans",sans-serif;
             color: #666666;
-        }
-        .calc-info-item {
-            border-bottom: 2px solid #666666;
-            padding-bottom: 20px;
-            font-family: "PT Sans",sans-serif;
-            color: #666666;
+            margin-top: 1%;
+            margin-left: 1%;
         }
         .calc-clearfix::after {
             clear: both;
@@ -41,7 +36,7 @@
             margin: 20px auto 0;
             max-width: 700px;
         }
-        .calc-info-draft img {
+        .calc-info-top img {
             height: auto;
             max-width: 100%;
             vertical-align: middle;
@@ -163,10 +158,10 @@
                         <td>Скос<br>Kол-во <span class="calc-info-price">/ Стоимость, руб</span></td>
                         <td>Стандартное соединение<br>Kол-во <span class="calc-info-price">/ Стоимость, руб</span></td>
                         <td>Радиус<br>Kол-во / Стоимость, руб</td>
-                        <td>Кромка по длине детали оборотная сторона 1<br>Вид <span class="calc-info-price">/ Стоимость, руб</span></td>
-                        <td>Кромка по ширине детали  правая сторона 2<br>Вид <span class="calc-info-price">/ Стоимость, руб</span></td>
-                        <td>Кромка по длине детали лицевая сторона 3<br>Вид <span class="calc-info-price">/ Стоимость, руб</span></td>
-                        <td>Кромка по ширине детали  левая сторона 4<br>Вид <span class="calc-info-price">/ Стоимость, руб</span></td>
+                        <td>Кромка сторона 1<br>Вид <span class="calc-info-price">/ Стоимость, руб</span></td>
+                        <td>Кромка сторона 2<br>Вид <span class="calc-info-price">/ Стоимость, руб</span></td>
+                        <td>Кромка сторона 3<br>Вид <span class="calc-info-price">/ Стоимость, руб</span></td>
+                        <td>Кромка сторона 4<br>Вид <span class="calc-info-price">/ Стоимость, руб</span></td>
                     </tr>
                     <tr>
                         <td>
@@ -190,20 +185,20 @@
                             </div>
                         </td>
                         <td>
-                            <div class="calc-info-text">{{$detail->edgeOne->name}}</div>
-                            <span class="calc-info-price"> / {{$detail->edgeOne->coast}} руб</span>
+                            <div class="calc-info-text">{{$detail->edgeOne->name}} ({{$detail->edgeOne->edgeCategory->name}})</div>
+                            <span class="calc-info-price"> / {{$detail->edgeOne->edgeCategory->coast}} руб</span>
                         </td>
                         <td>
-                            <div class="calc-info-text">{{$detail->edgeTwo->name}}</div>
-                            <span class="calc-info-price">/ {{$detail->edgeTwo->coast}} руб</span>
+                            <div class="calc-info-text">{{$detail->edgeTwo->name}} ({{$detail->edgeTwo->edgeCategory->name}})</div>
+                            <span class="calc-info-price">/ {{$detail->edgeTwo->edgeCategory->coast}} руб</span>
                         </td>
                         <td>
-                            <div class="calc-info-text">{{$detail->edgeThree->name}}</div>
-                            <span class="calc-info-price">/ {{$detail->edgeThree->coast}} руб</span>
+                            <div class="calc-info-text">{{$detail->edgeThree->name}} ({{$detail->edgeThree->edgeCategory->name}})</div>
+                            <span class="calc-info-price">/ {{$detail->edgeThree->edgeCategory->coast}} руб</span>
                         </td>
                         <td>
-                            <div class="calc-info-text">{{$detail->edgeFour->name}}</div>
-                            <span class="calc-info-price">/ {{$detail->edgeFour->coast}} руб</span>
+                            <div class="calc-info-text">{{$detail->edgeFour->name}} ({{$detail->edgeFour->edgeCategory->name}})</div>
+                            <span class="calc-info-price">/ {{$detail->edgeFour->edgeCategory->coast}} руб</span>
                         </td>
                     </tr>
                 </table>

@@ -42,8 +42,8 @@ class TechEmailSend
             ->download('invoice.pdf');
 
 
-        Mail::to($users)->send(new ManagerMailSend($event->order, $event->customer, $pdf_coast, $pdf_empty));
-        Mail::to($user)->send(new ManagerMailSend($event->order, $event->customer, $pdf_coast, $pdf_empty));
+        Mail::to('melentev.av@gmail.com')->send(new ManagerMailSend($event->order, $event->customer, $pdf_coast, $pdf_empty));
+        Mail::to('melentev.av@gmail.com')->send(new ManagerMailSend($event->order, $event->customer, $pdf_coast, $pdf_empty));
         Mail::to($event->customer->email)->send(new CustomerMailler($event->order,$event->customer,$pdf_coast));
 
     }

@@ -10,6 +10,10 @@ class EdgeDecor extends Model
         return $this->belongsTo('App\EdgeCategory');
     }
 
+    public function readyProduct(){
+        return $this->belongsTo('App\ReadyProduct');
+    }
+
     protected $casts = ['image' => 'image'];
 
     public function getUploadSettings()
