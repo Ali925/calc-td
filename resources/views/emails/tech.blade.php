@@ -36,7 +36,7 @@
             margin: 20px auto 0;
             max-width: 700px;
         }
-        .calc-info-top img {
+        .calc-info-draft img {
             height: auto;
             max-width: 100%;
             vertical-align: middle;
@@ -158,10 +158,10 @@
                         <td>Скос<br>Kол-во <span class="calc-info-price">/ Стоимость, руб</span></td>
                         <td>Стандартное соединение<br>Kол-во <span class="calc-info-price">/ Стоимость, руб</span></td>
                         <td>Радиус<br>Kол-во / Стоимость, руб</td>
-                        <td>Кромка сторона 1<br>Вид <span class="calc-info-price">/ Стоимость, руб</span></td>
-                        <td>Кромка сторона 2<br>Вид <span class="calc-info-price">/ Стоимость, руб</span></td>
-                        <td>Кромка сторона 3<br>Вид <span class="calc-info-price">/ Стоимость, руб</span></td>
-                        <td>Кромка сторона 4<br>Вид <span class="calc-info-price">/ Стоимость, руб</span></td>
+                        <td>Кромка сторона 1 оборотная<br>Вид <span class="calc-info-price">/ Цена, руб</span></td>
+                        <td>Кромка сторона 2 правая<br>Вид <span class="calc-info-price">/ Цена, руб</span></td>
+                        <td>Кромка сторона 3 лицевая<br>Вид <span class="calc-info-price">/ Цена, руб</span></td>
+                        <td>Кромка сторона 4 левая<br>Вид <span class="calc-info-price">/ Цена, руб</span></td>
                     </tr>
                     <tr>
                         <td>

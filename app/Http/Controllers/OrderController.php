@@ -32,10 +32,10 @@ class OrderController extends Controller
     {
         $query = new Customer();
         $query->first_name = $request->FirstName;
+        $query->middle_name = $request->MiddleName;
         $query->last_name = $request->LastName;
         $query->email = $request->Email;
-        $query->address = 'Empty';
-        $query->city = 'Empty';
+        $query->address = (!empty($request->address))?$request->address:'empty';
         $query->phone = $request->MobilePhone;
         $query->save();
 
@@ -46,6 +46,8 @@ class OrderController extends Controller
         $detail = $order->readyProducts;
 
         Event::fire(new OrderCreate($order,$query,$detail));
+
+        return response()->json(['status' => true]);
     }
 
     public function setReadyProduct(Request $request)

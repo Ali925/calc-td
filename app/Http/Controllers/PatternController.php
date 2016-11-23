@@ -90,7 +90,10 @@ class PatternController extends Controller
                 'proxy_blank' => [
                     'id' => $blank_proxy->id,
                 ],
-                'wrapper' => ['coast' => $wrapper->coast ],
+                'wrapper' => [
+                    'id' => $wrapper->id,
+                    'coast' => $wrapper->coast
+                ],
             ]);
         }else{
             if ($query == null) return response()->json(['status' => false, 'message' => 'Нет  чертежей']);
