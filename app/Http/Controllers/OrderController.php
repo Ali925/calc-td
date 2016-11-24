@@ -60,13 +60,14 @@ class OrderController extends Controller
             foreach ($request->ready_product as $product){
 
                 $readyProduct = new ReadyProduct();
-                $readyProduct->blank_type_id = $product->blank_type_id;
+                $readyProduct->blank_type_id = $product['blank_type_id'];
                 $readyProduct->thickness_id = $product->thickness_id;
                 $readyProduct->form_id = $product->form_id;
                 $readyProduct->decor_category_id = $product->decor_category_id;
                 $readyProduct->decor_id = $product->decor_id;
                 $readyProduct->wrapper_id = $product->wrapper_id;
                 $readyProduct->pattern_accordance_id = $product->pattern_accordance_id;
+
                 $readyProduct->part_side_one = $product->part_side_one;
                 $readyProduct->part_side_two = $product->part_side_two;
                 $readyProduct->part_side_three = $product->part_side_three;
@@ -75,10 +76,12 @@ class OrderController extends Controller
                 $readyProduct->part_edge_two = $product->part_edge_two;
                 $readyProduct->part_edge_three = $product->part_edge_three;
                 $readyProduct->part_edge_four = $product->part_edge_four;
+
                 $readyProduct->edge_one = $product->edge_one;
                 $readyProduct->edge_two = $product->edge_two;
                 $readyProduct->edge_three = $product->edge_three;
                 $readyProduct->edge_four = $product->edge_four;
+
                 $readyProduct->nip_id = $product->nip_id;
                 $readyProduct->width = $product->width;
                 $readyProduct->length = $product->length;
