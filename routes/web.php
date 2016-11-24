@@ -64,7 +64,7 @@ Route::group(['prefix' => 'api'], function (){
         Route::post('post/ready','OrderController@setReadyProduct');
     });
 
-    Route::post('get/print', 'MainController@getPrint');
+    Route::post('post/print', 'MainController@getPrint');
 
 
 });
