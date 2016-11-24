@@ -36,6 +36,7 @@ class OrderController extends Controller
         $query->last_name = $request->LastName;
         $query->email = $request->Email;
         $query->address = (!empty($request->address))?$request->address:'empty';
+        $query->city = 'empty';
         $query->phone = $request->MobilePhone;
         $query->save();
 
