@@ -8,7 +8,7 @@ AdminSection::registerModel(ReadyProduct::class, function (ModelConfiguration $m
 
     $model->onDisplay(function (){
         $display = AdminDisplay::table()->setColumns([
-            AdminColumn::relatedLink('patternAccordance.image','Чертеж'),
+            AdminColumn::image('patternAccordance.image','Чертеж'),
             AdminColumn::relatedLink('form.name','Тип конструкции'),
             AdminColumn::text('width','Ширина'),
             AdminColumn::text('length','Длинна'),
