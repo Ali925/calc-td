@@ -101,8 +101,7 @@ class OrderController extends Controller
 
             return response()->json(['status' => true,'order' => [
                 'order_number'=>$order->order_num,
-                'order_amount' => $order->order_amount
-            ]
+                'order_amount' => $order->order_amount]
             ]);
         }
 

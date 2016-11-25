@@ -190,8 +190,9 @@
             </div>
 
         </div>
-</div>
+
 @endforeach
+</div>
 </body>
 
 </html>
