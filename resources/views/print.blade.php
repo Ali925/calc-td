@@ -4,65 +4,6 @@
 <head>
     <meta charset="utf-8" >
     <title>Калькулятор</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        .calc-print {
-            width: 100%;
-            max-width: 800px;
-            font-family: sans-serif;
-            color: #000000;
-        }
-        .calc-info-item {
-            border-bottom: 2px solid #666666;
-            padding-bottom: 20px;
-        }
-        .calc-clearfix::after {
-            clear: both;
-            content: "";
-            display: table;
-        }
-        .calc-info-top {
-            padding: 20px 0;
-            position: relative;
-        }
-        .calc-name {
-            font-size: 18px;
-            font-weight: 700;
-            text-transform: uppercase;
-            text-align: center;
-        }
-        .calc-special {
-            color: #cd353d;
-        }
-        .calc-info-draft {
-            margin: 20px auto 0;
-            max-width: 700px;
-        }
-        .calc-info-draft img {
-            height: auto;
-            max-width: 100%;
-            vertical-align: middle;
-        }
-        .calc-info-table {
-            border-collapse: collapse;
-            border-spacing: 0;
-            width: 100%;
-        }
-        .calc-info-table td {
-            border: 1px solid #666666;
-            font-size: 13px;
-            padding: 10px 2px;
-            text-align: center;
-            vertical-align: middle;
-        }
-        .calc-info-table .calc-info-header td {
-            font-size: 10px;
-            font-weight: 700;
-        }
-    </style>
 </head>
 <body>
 <div class="calc-print">
