@@ -48,7 +48,9 @@ class OrderController extends Controller
 
         Event::fire(new OrderCreate($order,$query,$detail));
 
-        return response()->json(['status' => true]);
+        return response()->json(['status' => true, 'order' => [
+            'order_number'=>$order->order_num,
+            'order_amount' => $order->order_amount]]);
     }
 
     public function setReadyProduct(Request $request)
@@ -99,10 +101,7 @@ class OrderController extends Controller
             $order->order_amount = array_sum($coast);
             $order->save();
 
-            return response()->json(['status' => true,'order' => [
-                'order_number'=>$order->order_num,
-                'order_amount' => $order->order_amount]
-            ]);
+            return response()->json(['status' => true]);
         }
 
         return response()->json(['status' => false]);
