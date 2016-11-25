@@ -285,6 +285,9 @@
                 <div class="calc-form-item">
                     <input name="MobilePhone" class="calc-field" placeholder="Введите телефон">
                 </div> <!-- /calc-form-item -->
+                    <div class="calc-form-item">
+                        <input name="address" class="calc-field" placeholder="Введите адрес">
+                    </div> <!-- /calc-form-item -->
             </form>
         </div> <!-- /calc-form-blc -->
         <div class="calc-btn-blc">

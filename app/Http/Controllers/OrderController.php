@@ -36,7 +36,7 @@ class OrderController extends Controller
         $query->last_name = $request->LastName;
         $query->email = $request->Email;
         $query->address = (!empty($request->address))?$request->address:'empty';
-        $query->city = 'empty';
+        $query->city = (!empty($request->city))?$request->city:'empty';
         $query->phone = $request->MobilePhone;
         $query->save();
 
@@ -99,7 +99,11 @@ class OrderController extends Controller
             $order->order_amount = array_sum($coast);
             $order->save();
 
-            return response()->json(['status' => true]);
+            return response()->json(['status' => true,'order' => [
+                'order_number'=>$order->order_num,
+                'order_amount' => $order->order_amount
+            ]
+            ]);
         }
 
         return response()->json(['status' => false]);
