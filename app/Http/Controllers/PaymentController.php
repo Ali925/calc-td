@@ -19,7 +19,8 @@ class PaymentController extends Controller
 {
     public function setOk(Request $request)
     {
-        dd($request);
+        $data = $request->all();
+        dd($data);
 
         $order = Order::where('order_num')->first();
         $order->bill = $request->billnumber;
