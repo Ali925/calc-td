@@ -219,7 +219,7 @@
     </div>  <!-- /calc-stage2 -->   <!-- конец второго экрана -->
 
     <div class="calc-stage" id="calc-stage3"> <!-- третий экран -->
-        <div class="calc-title">Заказ № <span class="calc-special">1</span></div>
+        <div class="calc-title">Заказ № <span class="calc-special" id="calc-js-order-number">0</span></div>
 
         <div class="calc-info-blc">  <!-- блок результатов  -->
 
@@ -236,26 +236,30 @@
 
         <div class="calc-result-blc">
             <div class="calc-result-item calc-clearfix">
-                <div class="calc-col50">Итого стоимость обработки</div>
-                <div class="calc-col50 calc-result-number" id="calc-js-result-elem_price">33333 руб.</div>
+                <div class="calc-col50">Стоимость обработки</div>
+                <div class="calc-col50 calc-result-number" id="calc-js-result-elem_price"></div>
             </div> <!-- /calc-result-item -->
             <div class="calc-result-item calc-clearfix">
-                <div class="calc-col50">Итого стоимость детали</div>
-                <div class="calc-col50 calc-result-number" id="calc-js-result-raw_price">33333 руб.</div>
+                <div class="calc-col50">Стоимость детали</div>
+                <div class="calc-col50 calc-result-number" id="calc-js-result-raw_price"></div>
             </div> <!-- /calc-result-item -->
             <div class="calc-result-item calc-clearfix">
-                <div class="calc-col50">Итого стоимость упаковки</div>
-                <div class="calc-col50 calc-result-number" id="calc-js-result-pack_price">33333 руб.</div>
+                <div class="calc-col50">Стоимость упаковки</div>
+                <div class="calc-col50 calc-result-number" id="calc-js-result-pack_price"></div>
             </div> <!-- /calc-result-item -->
             <div class="calc-result-item calc-clearfix calc-special">
                 <div class="calc-col50">Итого стоимость заказа</div>
-                <div class="calc-col50 calc-result-number" id="calc-js-result-full_price">33333 руб.</div>
+                <div class="calc-col50 calc-result-number" id="calc-js-result-full_price"></div>
             </div> <!-- /calc-result-item -->
         </div> <!-- /calc-result-blc -->
 
         <div class="calc-btn-blc">
-            <input name="" type="button" value="Подтвердить" class="calc-btn calc-btn__active">
-            <input name="" type="button" value="Распечатать" class="calc-btn calc-btn__noactive">
+            <input name="" type="button" value="Подтвердить" class="calc-btn calc-btn__active" id="calc-js-fix-btn">
+            <input name="" type="button" value="Распечатать" class="calc-btn calc-btn__noactive" id="calc-js-print-btn">
+            <div class="calc-load calc-hidden" id="calc-js-st3-loader">
+                <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                <span class="calc-load_text">Пожалуйста, подождите</span>
+            </div>
         </div> <!-- /calc-btn-blc -->
 
         <div class="calc-btn-blc">
@@ -266,35 +270,52 @@
     <div class="calc-stage" id="calc-stage4">    <!-- четвертый экран -->
         <div class="calc-title">Введите данные</div>
         <div class="calc-form-blc">
-            <form method="post" action="https://test.paysecure.ru/pay/order.cfm">
+            <div class="calc-stage" id="calc-stage4">    <!-- четвертый экран -->
+                <div class="calc-title">Введите данные</div>
+                <form method="post" action="https://test.paysecure.ru/pay/order.cfm"  id="calc-js-payment-form">
+                    <div class="calc-form-blc">
                 @foreach($configPayments as $payment)
                     <INPUT TYPE="HIDDEN" NAME="{{$payment->option}}" VALUE="{{$payment->value}}">
                 @endforeach
 
                 <INPUT TYPE="HIDDEN" NAME="OrderNumber" VALUE="">
                 <INPUT TYPE="HIDDEN" NAME="OrderAmount" VALUE="">
-                <div class="calc-form-item">
-                    <input name="FirstName" class="calc-field" placeholder="Введите Имя">
-                </div> <!-- /calc-form-item -->
-                <div class="calc-form-item">
-                    <input name="LastName" class="calc-field" placeholder="Введите фамилию">
-                </div> <!-- /calc-form-item -->
-                <div class="calc-form-item">
-                    <input name="Email" class="calc-field" placeholder="Введите email">
-                </div>
-                <div class="calc-form-item">
-                    <input name="MobilePhone" class="calc-field" placeholder="Введите телефон">
-                </div> <!-- /calc-form-item -->
-                    <div class="calc-form-item">
-                        <input name="address" class="calc-field" placeholder="Введите адрес">
+                    <div class="calc-form-item calc-form-item__required">
+                        <input name="FirstName" class="calc-field calc-js-user_field" placeholder="Имя">
+                        <div class="calc-error-message calc-hidden">Пожалуйста, введите имя</div>
                     </div> <!-- /calc-form-item -->
-            </form>
-        </div> <!-- /calc-form-blc -->
-        <div class="calc-btn-blc">
-            <input name="" type="button" value="Назад" class="calc-btn calc-btn__active" id="calc-js-step4-prev">
-            <input name="" type="button" value="Завершить" class="calc-btn calc-btn__noactive">
-        </div> <!-- /calc-btn-blc -->
-    </div>  <!-- /calc-stage4 -->  <!-- конец четвертого экрана -->
+                    <div class="calc-form-item calc-form-item__required">
+                        <input name="SecondName" class="calc-field calc-js-user_field" placeholder="Отчество">
+                        <div class="calc-error-message calc-hidden">Пожалуйста, введите отчество</div>
+                    </div> <!-- /calc-form-item -->
+                    <div class="calc-form-item calc-form-item__required">
+                        <input name="LastName" class="calc-field calc-js-user_field" placeholder="Фамилия">
+                        <div class="calc-error-message calc-hidden">Пожалуйста, введите фамилию</div>
+                    </div> <!-- /calc-form-item -->
+                    <div class="calc-form-item calc-form-item__required">
+                        <input name="Email" class="calc-field calc-js-user_field" placeholder="E-mail">
+                        <div class="calc-error-message calc-hidden">Пожалуйста, введите корректный e-mail</div>
+                    </div>
+                    <div class="calc-form-item calc-form-item__required">
+                        <input name="MobilePhone" class="calc-field calc-js-user_field" placeholder="+7(___)_______">
+                        <div class="calc-error-message calc-hidden">Пожалуйста, введите корректный телефон</div>
+                    </div> <!-- /calc-form-item -->
+                    <div class="calc-form-item">
+                        <input name="address" class="calc-field calc-js-user_field" placeholder="Адрес (заполняется в случае доставки)">
+                    </div>
+
+                    </div> <!-- /calc-form-blc -->
+                    <div class="calc-btn-blc">
+                        <button type="button" class="calc-btn calc-btn__active" id="calc-js-step4-prev">Назад</button>
+                        <button type="button" class="calc-btn calc-btn__noactive" id="calc-js-payment-check">Завершить</button>
+                        <input name="submit" type="submit" value="Оплатить" class="calc-btn calc-btn__noactive" id="calc-js-payment-submit">
+                        <div class="calc-load calc-hidden" id="calc-js-st4-loader">
+                            <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                            <span class="calc-load_text">Пожалуйста, подождите</span>
+                        </div>
+                    </div> <!-- /calc-btn-blc -->
+                </form>
+            </div>  <!-- /calc-stage4 -->  <!-- конец четвертого экрана -->
 
     <!-- модальные окно -->
     <div class="calc-modal-bg"></div>  <!-- блок для затемнения, общий для модальных окон -->
@@ -314,6 +335,15 @@
         </div>
         <span id="calc-js-message-text"></span>
     </div>  <!-- сообщения -->
+
+
+    <!-- удаление детали -->
+    <!-- new addition -->
+    <div id="calc-js-confirm-delete" class="calc-hidden">
+        <div>Вы уверены, что хотите удалить деталь №<span id="calc-js-confirm_number"></span></div>
+    </div>  <!-- сообщения -->
+    <!-- end of new addition -->
+
 </div>  <!-- /calc-wrapper -->
 </body>
 
