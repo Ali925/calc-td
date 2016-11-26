@@ -68,6 +68,7 @@ Route::group(['prefix' => 'api'], function (){
 
 
 });
+    Route::get('/ok', 'PaymentController@setOk');
 
 Auth::routes();
 
