@@ -276,7 +276,7 @@
                     <INPUT TYPE="HIDDEN" NAME="{{$payment->option}}" VALUE="{{$payment->value}}">
                 @endforeach
                     <INPUT TYPE="HIDDEN" NAME="URL_RETURN_OK" VALUE="{{url('/ok')}}">
-                    <INPUT TYPE="HIDDEN" NAME="URL_RETURN_OK" VALUE="{{url('/no')}}">
+                    <INPUT TYPE="HIDDEN" NAME="URL_RETURN_NO" VALUE="{{url('/no')}}">
 
                 <INPUT TYPE="HIDDEN" NAME="OrderNumber" VALUE="">
                 <INPUT TYPE="HIDDEN" NAME="OrderAmount" VALUE="">
