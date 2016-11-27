@@ -24,10 +24,10 @@ class PaymentController extends Controller
         $users = User::where('role', 2)->get(['email'])->toArray();
         $email = [];
         foreach ($users as $user){
-            $email = $user['email'];
+            $email[] = $user['email'];
         }
         dd($email);
-        Mail::send($user)->send(new StatusMailler($order));
+        Mail::send($email)->send(new StatusMailler($order));
 
         return 'Спасибо за ваше внимание внимание к нашей продукции!';
     }
