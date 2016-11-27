@@ -22,7 +22,7 @@ class PaymentController extends Controller
         $order->save();
 
         $user = User::where('role', 2)->get(['email'])->toArray();
-        Mail::send($user)->send(new StatusMailler($order));
+        Mail::send($user['email'])->send(new StatusMailler($order));
 
         return 'Спасибо за ваше внимание внимание к нашей продукции!';
     }
