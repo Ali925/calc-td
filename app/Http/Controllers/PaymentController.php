@@ -2,19 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\ConfigPayment;
 use App\Mail\StatusMailler;
-use App\Nip;
 use App\Order;
-use App\Thickness;
 use Illuminate\Http\Request;
+use App\User;
 
 use App\Http\Requests;
-use App\BlankType;
-use App\Decor;
-use App\EdgeDecor;
-use App\Form;
-use App\PatternPosition;
 use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
