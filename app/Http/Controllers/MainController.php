@@ -60,7 +60,7 @@ class MainController extends Controller
         $response['thicknesses'] = Thickness::all();
         $response['tech_stack'] = TechStack::all();
 
-        return view('main',$response);
+        return view('main2',$response);
     }
 
     public function getPrint(Request $request)
