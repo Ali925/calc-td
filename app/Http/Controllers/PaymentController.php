@@ -26,7 +26,6 @@ class PaymentController extends Controller
         foreach ($users as $user){
             $email[] = $user['email'];
         }
-        dd($email);
         Mail::send($email)->send(new StatusMailler($order));
 
         return 'Спасибо за ваше внимание внимание к нашей продукции!';
