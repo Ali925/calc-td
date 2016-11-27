@@ -24,11 +24,11 @@ class PaymentController extends Controller
         $user = User::where('role', 2)->get(['email'])->toArray();
         Mail::to($user)->send(new StatusMailler($order));
 
-        return 'Спасибо за ваше внимание внимание к нашей продукции!';
+        return view('ok',['order' => $order]);
     }
 
     public function setNo()
     {
-        return 'Наш менеджер с вами свяжеться';
+        return view('no');
     }
 }
