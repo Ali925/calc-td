@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ConfigPayment;
+use App\Mail\StatusMailler;
 use App\Nip;
 use App\Order;
 use App\Thickness;
@@ -14,6 +15,7 @@ use App\Decor;
 use App\EdgeDecor;
 use App\Form;
 use App\PatternPosition;
+use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
 {
@@ -25,6 +27,9 @@ class PaymentController extends Controller
         $order->bill = $data['billnumber'];
         $order->status = 'Оплачено';
         $order->save();
+
+        $user = User::where('role', 2)->get(['email'])->toArray();
+        Mail::send($user)->send(new StatusMailler($order));
 
         return 'Спасибо за ваше внимание внимание к нашей продукции!';
     }
