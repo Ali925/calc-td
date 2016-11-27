@@ -69,7 +69,7 @@ Route::group(['prefix' => 'api'], function (){
 
 });
     Route::any('ok', 'PaymentController@setOk');
-    Route::any('ok', 'PaymentController@setNo');
+    Route::any('no', 'PaymentController@setNo');
 
 Auth::routes();
 
