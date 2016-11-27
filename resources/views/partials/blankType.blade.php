@@ -1,4 +1,4 @@
-<div class="calc-stage" id="calc-stage1"> <!-- первый экран -->
+
     <div class="calc-choice-blc calc-blc__noactive" id="calc-js-step1_1">  <!-- первый этап -->
         <div class="calc-title">Выберите тип заготовки</div>
 

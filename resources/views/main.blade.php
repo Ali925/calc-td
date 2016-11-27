@@ -32,7 +32,7 @@
         <div class="calc-way calc-way__progress" id="calc-js-progress"></div>
         <!-- к calc-way__progress добавляются классы для показа пути первого экрана: 2 этап calc-way__progress__1-1, 3 этап - calc-way__progress__1-2 -->
     </div> <!-- /calc-step-blc -->
-
+    <div class="calc-stage" id="calc-stage1"> <!-- первый экран -->
     @include('partials.blankType')
 
     @include('partials.form')
@@ -270,8 +270,6 @@
     <div class="calc-stage" id="calc-stage4">    <!-- четвертый экран -->
         <div class="calc-title">Введите данные</div>
         <div class="calc-form-blc">
-            <div class="calc-stage" id="calc-stage4">    <!-- четвертый экран -->
-                <div class="calc-title">Введите данные</div>
                 <form method="post" action="https://test.paysecure.ru/pay/order.cfm"  id="calc-js-payment-form">
                     <div class="calc-form-blc">
                 @foreach($configPayments as $payment)
@@ -319,6 +317,7 @@
                         </div>
                     </div> <!-- /calc-btn-blc -->
                 </form>
+            </div>
             </div>  <!-- /calc-stage4 -->  <!-- конец четвертого экрана -->
 
     <!-- модальные окно -->
