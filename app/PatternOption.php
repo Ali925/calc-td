@@ -39,7 +39,7 @@ class PatternOption extends Model
     public function getUploadSettings()
     {
         return [
-            'pattern_options' => [
+            'image' => [
                 'orientate' => [],
                 'resize' => [600, null, function ($constraint) {
                     $constraint->upsize();
