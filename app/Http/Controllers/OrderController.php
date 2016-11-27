@@ -98,7 +98,8 @@ class OrderController extends Controller
                 ]);
             }
 
-            $order->order_amount = array_sum($coast);
+            $order->blank = $request->blank_sum;
+            $order->order_amount = array_sum($coast)+$request->blank_sum;
             $order->save();
 
             return response()->json(['status' => true]);

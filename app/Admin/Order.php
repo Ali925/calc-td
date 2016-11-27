@@ -11,9 +11,12 @@ AdminSection::registerModel(Order::class, function (ModelConfiguration $model){
     $model->onDisplay(function (){
         $display = AdminDisplay::table()->setColumns([
             AdminColumn::text('order_num','№ заказа'),
+            AdminColumn::text('bill','№ заказа в ПС'),
             AdminColumn::relatedLink('customer.first_name','Заказчик'),
-            AdminColumn::text('order_amount','Стоимость'),
+            AdminColumn::text('blank','Стоимость заготовок'),
+            AdminColumn::text('order_amount','Общая стоимость'),
             AdminColumn::text('status','Статус'),
+
         ]);
         $display->paginate(10);
         return $display;
@@ -27,7 +30,9 @@ AdminSection::registerModel(Order::class, function (ModelConfiguration $model){
 
             $form->addBody([
                 AdminFormElement::text('order_num','№ заказа')->setReadonly(true),
-                AdminFormElement::text('order_amount','Стоимость')->setReadonly(true),
+                AdminFormElement::text('bill','№ заказа в ПС')->setReadonly(true),
+                AdminFormElement::text('blank','Стоимость заготовок')->setReadonly(true),
+                AdminFormElement::text('order_amount','Общая стоимость')->setReadonly(true),
                 AdminFormElement::select('customer_id','Заказчик')->setReadonly(true)
                     ->setModelForOptions(\App\Customer::class)->setDisplay('first_name'),
             ]);
