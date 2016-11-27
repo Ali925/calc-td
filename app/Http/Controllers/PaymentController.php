@@ -20,10 +20,9 @@ class PaymentController extends Controller
     public function setOk(Request $request)
     {
         $data = $request->all();
-        dd($data);
 
-        $order = Order::where('order_num')->first();
-        $order->bill = $request->billnumber;
+        $order = Order::where('order_num', $data['ordernumber'])->first();
+        $order->bill = $data['billnumber'];
         $order->status = 'Оплачено';
         $order->save();
 
@@ -32,6 +31,6 @@ class PaymentController extends Controller
 
     public function setNo()
     {
-
+        return 'Наш менеджер с вами свяжеться';
     }
 }
