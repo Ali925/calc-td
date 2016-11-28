@@ -98,7 +98,7 @@ class PatternController extends Controller
         }else{
             if ($query == null) return response()->json(['status' => false, 'message' => 'Нет  чертежей']);
             if ($blank == null) return response()->json(['status' => false, 'message' => 'Нет загтовки']);
-            if ($wrapper == null) return response()->json(['status' => false, 'message' => 'Нет обертки']);
+            if ($wrapper == null) return response()->json(['status' => false, 'message' => 'Пожалуйста, выберите другой вид кромки']);
         }
 
     }
