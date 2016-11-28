@@ -34,7 +34,7 @@
 
 <body>
 <div class="calc-message">
-    <span>Спасибо за покупку! Менеджер свяжеться с вами!</span>
+    <span>Спасибо за покупку! Менеджер свяжется с вами!</span>
     <span>Номер вашего заказа: {{$order->order_num}}</span>
     <span>Cумма вашего заказа: {{$order->order_amount}}</span>
 </div>  <!-- сообщения -->
