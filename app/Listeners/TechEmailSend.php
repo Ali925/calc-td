@@ -33,11 +33,11 @@ class TechEmailSend
     {
         $user = TechEmail::all(['email'])->toArray();
         $users = User::where('role', 2)->get(['email'])->toArray();
-        $pdf_coast = PDF::loadView('emails.tech', ['details' => $event->details])
+        $pdf_coast = PDF::loadView('emails.tech', ['details' => $event->details,'order'=> $event->order])
             ->setWarnings(false)
             ->download('invoice.pdf');
 
-        $pdf_empty = PDF::loadView('emails.empty', ['details' => $event->details])
+        $pdf_empty = PDF::loadView('emails.empty', ['details' => $event->details,'order'=> $event->order])
             ->setWarnings(false)
             ->download('invoice.pdf');
 

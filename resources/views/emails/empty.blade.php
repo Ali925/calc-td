@@ -120,7 +120,8 @@
                 <table class="calc-info-table">
                     <tr><td colspan="8">
                             <div class="calc-info-top">
-                                <div class="calc-name calc-info-name">№ изделия в заказе <span class="calc-special">{{$detail->id}}</span></div>
+                                <div class="calc-name calc-info-name"> изделие № <span class="calc-special">{{$detail->id}}</span>
+                                    в заказе № <span class="calc-special">{{$order->order_num}}</span> </div>
                                 <img src="{{$detail->patternAccordance->image}}" alt="">
                             </div>
                         </td></tr>
