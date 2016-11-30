@@ -21,9 +21,9 @@ AdminSection::registerModel(EdgeCategory::class, function (ModelConfiguration $m
 
     $model->onCreateAndEdit(function (){
         $form = AdminForm::panel()->addBody([
-            AdminFormElement::text('name', 'Наименование')->required()->unique(),
-            AdminFormElement::text('coast', 'Цена')->required()->unique(),
-            AdminFormElement::select('egoist', 'Эгоист', ['Нет','Да'])->required()->unique(),
+            AdminFormElement::text('name', 'Наименование')->required(),
+            AdminFormElement::text('coast', 'Цена')->required(),
+            AdminFormElement::checkbox('egoist', 'Эгоист')->required(),
 
         ]);
 
