@@ -23,7 +23,7 @@ AdminSection::registerModel(EdgeCategory::class, function (ModelConfiguration $m
         $form = AdminForm::panel()->addBody([
             AdminFormElement::text('name', 'Наименование')->required(),
             AdminFormElement::text('coast', 'Цена')->required(),
-            AdminFormElement::checkbox('egoist', 'Эгоист')->required(),
+            AdminFormElement::checkbox('egoist', 'Эгоист'),
 
         ]);
 
