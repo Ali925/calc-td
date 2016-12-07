@@ -52,4 +52,14 @@ class Form extends Model
     {
         return $this->hasMany('App\ReadyProduct');
     }
+
+    public function option_edge_1(){return $this->belongsToMany(PatternOption::class,'form_edge_1');}
+    public function option_edge_2(){return $this->belongsToMany(PatternOption::class,'form_edge_2');}
+    public function option_edge_3(){return $this->belongsToMany(PatternOption::class,'form_edge_3');}
+    public function option_edge_4(){return $this->belongsToMany(PatternOption::class,'form_edge_4');}
+
+    public function option_side_1(){return $this->belongsToMany(PatternOption::class,'form_side_1');}
+    public function option_side_2(){return $this->belongsToMany(PatternOption::class,'form_side_2');}
+    public function option_side_3(){return $this->belongsToMany(PatternOption::class,'form_side_3');}
+    public function option_side_4(){return $this->belongsToMany(PatternOption::class,'form_side_4');}
 }

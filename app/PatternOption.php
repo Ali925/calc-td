@@ -53,4 +53,14 @@ class PatternOption extends Model
     {
         return md5($this->id).'.'.$file->getClientOriginalExtension();
     }
+
+    public function form_edge_1(){ return $this->belongsToMany(Form::class,'form_edge_1');}
+    public function form_edge_2(){ return $this->belongsToMany(Form::class,'form_edge_2');}
+    public function form_edge_3(){ return $this->belongsToMany(Form::class,'form_edge_3');}
+    public function form_edge_4(){ return $this->belongsToMany(Form::class,'form_edge_4');}
+
+    public function form_side_1(){ return $this->belongsToMany(Form::class,'form_side_1');}
+    public function form_side_2(){ return $this->belongsToMany(Form::class,'form_side_2');}
+    public function form_side_3(){ return $this->belongsToMany(Form::class,'form_side_3');}
+    public function form_side_4(){ return $this->belongsToMany(Form::class,'form_side_4');}
 }
