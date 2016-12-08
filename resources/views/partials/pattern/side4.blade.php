@@ -18,7 +18,7 @@
                             $name = (count($d) > 2)? $d[0].' '.$d[1] : $option->name;
                             echo $name;
                             ?>
-                        @elseif($angle->kind == 'eurozap')
+                        @elseif($option->kind == 'eurozap')
                             <?php
                             $d = explode(" ",$option->name);
                             $name = (count($d) >= 1)? $d[0] : $option->name;
