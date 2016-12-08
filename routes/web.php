@@ -65,6 +65,7 @@ Route::group(['prefix' => 'api'], function (){
     });
 
     Route::post('post/print', 'MainController@getPrint');
+    Route::post('post/facet', 'ProductController@getFacet');
 
 
 });
@@ -74,5 +75,4 @@ Route::group(['prefix' => 'api'], function (){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::post('/test', 'ProductController@getFacet');
 
