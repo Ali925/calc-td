@@ -3,14 +3,14 @@
         <div class="calc-title">
             @if($angle->kind == 'radius')
                 <?php
-                    $d = str_word_count($angle->name,1);
-                    $name = (str_word_count($angle->name) > 2)? $d[0].' '.$d[1] : $angle->name;
+                    $d = explode(" ",$angle->name);
+                    $name = (count($d) > 2)? $d[0].' '.$d[1] : $angle->name;
                     echo $name;
                 ?>
             @elseif($angle->kind == 'skos')
                 <?php
-                $d = str_word_count($angle->name,1);
-                $name = (str_word_count($angle->name) > 1)? $d[0] : $angle->name;
+                $d = explode(" ",$angle->name);
+                $name = (count($d) > 1)? $d[0] : $angle->name;
                 echo $name;
                 ?>
             @else
