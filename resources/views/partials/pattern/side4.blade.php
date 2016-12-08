@@ -1,6 +1,22 @@
 <div class="calc-draft-item calc-draft-side calc-draft-side__l">
     <?php $angle = $patternPosition->where('value','=','side4')->first() ?>
-    <div class="calc-title">{{$angle->name}}</div>
+    <div class="calc-title">
+        @if($angle->kind == 'soed')
+            <?php
+            $d = str_word_count($angle->name,1);
+            $name = (str_word_count($angle->name) > 2)? $d[0].' '.$d[1] : $angle->name;
+            echo $name;
+            ?>
+        @elseif($angle->kind == 'eurozap')
+            <?php
+            $d = str_word_count($angle->name,1);
+            $name = (str_word_count($angle->name) > 1)? $d[0] : $angle->name;
+            echo $name;
+            ?>
+        @else
+            {{$angle->name}}
+        @endif
+    </div>
         <div class="calc-vert-blc">
             @foreach($angle->options as $option)
                 <div class="calc-radio">

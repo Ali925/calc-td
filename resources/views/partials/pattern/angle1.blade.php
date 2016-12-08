@@ -1,6 +1,22 @@
 <div class="calc-draft-item calc-draft-corner calc-draft-corner__tr">
     <?php $angle = $patternPosition->where('value','=','angle1')->first() ?>
-        <div class="calc-title">{{$angle->name}}</div>
+        <div class="calc-title">
+            @if($angle->kind == 'radius')
+                <?php
+                    $d = str_word_count($angle->name,1);
+                    $name = (str_word_count($angle->name) > 2)? $d[0].' '.$d[1] : $angle->name;
+                    echo $name;
+                ?>
+            @elseif($angle->kind == 'skos')
+                <?php
+                $d = str_word_count($angle->name,1);
+                $name = (str_word_count($angle->name) > 1)? $d[0] : $angle->name;
+                echo $name;
+                ?>
+            @else
+                {{$angle->name}}
+            @endif
+        </div>
         @foreach($angle->options as $option)
             <div class="calc-radio">
                 <input name="corner__tl" type="radio" value="{{$option->id}}"
