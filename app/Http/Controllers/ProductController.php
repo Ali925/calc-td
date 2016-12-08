@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\PatternOption;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -32,6 +33,24 @@ class ProductController extends Controller
             ->get();
 
         return response()->json($query);
+    }
+
+    public function getFacet(Request $request)
+    {
+        $data = $request->all();
+
+        if (!empty($data)){
+
+            $query = PatternOption::all();
+
+            foreach ($data as $item=>$value){
+                $query->where($item,$value);
+            };
+
+            return response()->json($query);
+        }else{
+            return response()->json(['status' => false,'message'=>'Ничего не пришло']);
+        }
     }
 
 

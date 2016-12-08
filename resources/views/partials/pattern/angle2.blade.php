@@ -14,7 +14,7 @@
                     <span class="calc-help-blc">
                    <i class="fa fa-question-circle" aria-hidden="true"></i>
                    <span class="calc-help-text"><span class="calc-bold">{{$option->name}}</span>
-                       {{$option->description}}</span>
+                       {{strip_tags($option->description)}}</span>
                  </span>
                 @endif
             </label>

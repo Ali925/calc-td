@@ -74,4 +74,5 @@ Route::group(['prefix' => 'api'], function (){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::post('/test', 'ProductController@getFacet');
 
