@@ -9,7 +9,6 @@
                    id="corner__br-{{$option->id}}"
             >
             <label class="calc-radio-label" for="corner__br-{{$option->id}}">
-                {{$option->name}}
                 @if($option->kind == 'radius')
                     <?php
                     $d = explode(" ",$option->name);

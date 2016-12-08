@@ -12,7 +12,6 @@
                            id="side__t-1-{{$option->id}}"
                     >
                     <label class="calc-radio-label" for="side__t-1-{{$option->id}}">
-
                         @if($option->kind == 'soed')
                             <?php
                             $d = explode(" ",$option->name);
@@ -22,7 +21,7 @@
                         @elseif($angle->kind == 'eurozap')
                             <?php
                             $d = explode(" ",$option->name);
-                            $name = (count($d) > 1)? $d[0] : $option->name;
+                            $name = (count($d) >= 1)? $d[0] : $option->name;
                             echo $name;
                             ?>
                         @else

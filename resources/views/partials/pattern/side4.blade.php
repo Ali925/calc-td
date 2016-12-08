@@ -21,7 +21,7 @@
                         @elseif($angle->kind == 'eurozap')
                             <?php
                             $d = explode(" ",$option->name);
-                            $name = (count($d) > 1)? $d[0] : $option->name;
+                            $name = (count($d) >= 1)? $d[0] : $option->name;
                             echo $name;
                             ?>
                         @else
