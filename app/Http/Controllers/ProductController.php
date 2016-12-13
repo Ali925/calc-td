@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\PatternAccordance;
 use App\PatternOption;
 use App\Product;
 use Illuminate\Http\Request;
@@ -41,7 +42,7 @@ class ProductController extends Controller
 
         if (!empty($data)){
 
-            $query = PatternOption::all();
+            $query = PatternAccordance::all();
 
             foreach ($data as $item=>$value){
                 $query->where($item,$value);
