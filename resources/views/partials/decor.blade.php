@@ -10,11 +10,13 @@
                  data-series-name="{{$decor->decorCategory->name}}"
             >
                 <img src="{{url('/').'/css/img/galochka.png'}}" alt="" class="calc-modal-check">
-                <div class="cub{{$decor->id}}"></div>
+                <div class="cub">
+                    <img src="@if(!empty($decor->image)){{url('/').'/'.$decor->image}}@endif" alt="" width="100%" height="100%">
+                </div>
                 <style>
-                    .cub{{$decor->id}} { width:155px; height:155px; background: url({{url('/').'/'.$decor->image}}) center; background-size: cover; }
+                    .cub { width:155px; height:155px; overflow: hidden; }
                 </style>
-                {{--<img src="@if(!empty($decor->image)){{url('/').'/'.$decor->image}}@endif" alt="">--}}
+
                 <span class="calc-modal-name">{{$decor->name}} {{$decor->code}} ({{$decor->decorCategory->name}})</span>
             </div>
         @endforeach
