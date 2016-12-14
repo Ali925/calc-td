@@ -9,7 +9,7 @@
                  data-series-id="{{$edge->edgeCategory->id}}">  <!-- выбранный элемент -->
                 <img src="{{url('/').'/css/img/galochka.png'}}" alt="" class="calc-modal-check">
                 <div class="edge">
-                    <img src="{{url('/').'/'.$edge->image}}" alt="">
+                    <img src="{{url('/').'/'.$edge->image}}" alt="" class="calc-js-data_img">
                 </div>
 
 
