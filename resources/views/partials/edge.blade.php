@@ -10,7 +10,7 @@
                 <img src="{{url('/').'/css/img/galochka.png'}}" alt="" class="calc-modal-check">
                 <div class="edge{{$edge->id}}"></div>
                 <style>
-                    .edge{{$edge->id}} { width:155px; height:155px; background: url({{url('/').'/'.$decor->image}}) center; background-size: cover; }
+                    .edge{{$edge->id}} { width:155px; height:155px; background: url({{url('/').'/'.$edge->image}}) center; background-size: cover; }
                 </style>
                 {{--<img src="{{url('/').'/'.$edge->image}}" alt="">--}}
                 <span class="calc-modal-name">{{$edge->name}} {{$edge->code}} ({{$edge->edgeCategory->name}})</span>
