@@ -13,12 +13,11 @@
                 <div class="cub">
                     <img src="@if(!empty($decor->image)){{url('/').'/'.$decor->image}}@endif" alt="" width="100%" height="100%">
                 </div>
-                <style>
-                    .cub { width:155px; height:155px; overflow: hidden; }
-                </style>
-
                 <span class="calc-modal-name">{{$decor->name}} {{$decor->code}} ({{$decor->decorCategory->name}})</span>
             </div>
         @endforeach
+            <style>
+                .cub { width:155px; height:155px; overflow: hidden; }
+            </style>
     </div>
 </div> <!-- /calc-mobal-blc -->     <!-- конец модального окна для выбора декора -->
