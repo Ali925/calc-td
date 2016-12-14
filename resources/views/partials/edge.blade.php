@@ -8,7 +8,7 @@
             <div class="calc-modal-item" data-id="{{$edge->id}}" data-code="{{$edge->code}}"
                  data-series-id="{{$edge->edgeCategory->id}}">  <!-- выбранный элемент -->
                 <img src="{{url('/').'/css/img/galochka.png'}}" alt="" class="calc-modal-check">
-                <div class="edge{{$decor->id}}"></div>
+                <div class="edge{{$edge->id}}"></div>
                 <style>
                     .edge{{$edge->id}} { width:155px; height:155px; background: url({{url('/').'/'.$decor->image}}) center; background-size: cover; }
                 </style>
