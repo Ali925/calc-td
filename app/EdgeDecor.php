@@ -37,11 +37,37 @@ class EdgeDecor extends Model
         return $this->belongsTo('App\ReadyProduct');
     }
 
-    protected $casts = ['image' => 'image'];
+    protected $casts = [
+        'image' => 'image',
+        'thumb' => 'image',
+    ];
 
-    protected function getUploadFilename(\Illuminate\Http\UploadedFile $file)
+    public function getUploadSettings()
     {
-        return md5($this->id).'.'.$file->getClientOriginalExtension();
+        return [
+            'image' => [],
+            'thumb' => [
+                'crop' => [150, 150],
+            ],
+        ];
+    }
+
+    public function setUploadImageAttribute($file = null)
+    {
+        if (is_null($file)) {
+            return;
+        }
+
+        $original = Image::make($file);
+        $thumb = Image::make($file);
+
+        $thumb->crop(150, 150);
+
+        $original->save($file);
+        $thumb->save(str_replace('.','-thumb.',$file));
+
+        $this->thumb = str_replace('.','-thumb.',$file);
+        $this->image = $file;
     }
 
 }

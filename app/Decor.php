@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Intervention\Image\Facades\Image;
 
 /**
  * App\Decor
@@ -33,6 +34,11 @@ class Decor extends Model
 
     protected $fillable = ['name','code','image'];
 
+    protected $casts = [
+        'image' => 'image',
+        'thumb' => 'image',
+    ];
+
     public function decorCategory(){
         return $this->belongsTo('App\DecorCategory');
     }
@@ -42,11 +48,31 @@ class Decor extends Model
         return $this->hasMany('App\ReadyProduct');
     }
 
-    protected function getUploadFilename(\Illuminate\Http\UploadedFile $file)
+    public function getUploadSettings()
     {
-        return md5($this->id).'.'.$file->getClientOriginalExtension();
+        return [
+            'image' => [],
+            'thumb' => [
+                'crop' => [150, 150],
+            ],
+        ];
     }
 
+    public function setUploadImageAttribute($file = null)
+    {
+        if (is_null($file)) {
+            return;
+        }
 
+        $original = Image::make($file);
+        $thumb = Image::make($file);
 
+        $thumb->crop(150, 150);
+
+        $original->save($file);
+        $thumb->save(str_replace('.','-thumb.',$file));
+
+        $this->thumb = str_replace('.','-thumb.',$file);
+        $this->image = $file;
+    }
 }

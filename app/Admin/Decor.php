@@ -21,9 +21,9 @@ AdminSection::registerModel(Decor::class, function (ModelConfiguration $model){
         $form = AdminForm::panel()->addBody([
             AdminFormElement::text('name', 'Name')->required()->unique(),
             AdminFormElement::text('code', 'Сode')->required()->unique(),
-            AdminFormElement::image('image', 'Image')->required()->addValidationRule('image'),
-            AdminFormElement::select('decor_category_id', 'Series', \App\DecorCategory::getList())
-        ]);
+            AdminFormElement::image('upload_image', 'Image'),
+            AdminFormElement::select('decor_category_id', 'Series', \App\DecorCategory::getList()),
+        ])->setHtmlAttribute('enctype', 'multipart/form-data');;
 
         return $form;
     });

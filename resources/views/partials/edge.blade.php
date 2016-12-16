@@ -8,16 +8,9 @@
             <div class="calc-modal-item" data-id="{{$edge->id}}" data-code="{{$edge->code}}"
                  data-series-id="{{$edge->edgeCategory->id}}">  <!-- выбранный элемент -->
                 <img src="{{url('/').'/css/img/galochka.png'}}" alt="" class="calc-modal-check">
-                <div class="edge">
-                    <img src="{{url('/').'/'.$edge->image}}" alt="" class="calc-js-data_img">
-                </div>
-
-
+                <img src="{{url('/').'/'.$edge->thumb}}" alt="" class="calc-js-data_img">
                 <span class="calc-modal-name">{{$edge->name}} {{$edge->code}} ({{$edge->edgeCategory->name}})</span>
             </div>
         @endforeach
-            <style>
-                .edge{ width:155px; height:155px; overflow: hidden }
-            </style>
     </div>
 </div> <!-- /calc-mobal-blc -->     <!-- конец модального окна для выбора кромок -->
