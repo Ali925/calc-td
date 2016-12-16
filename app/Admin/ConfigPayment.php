@@ -22,4 +22,6 @@ AdminSection::registerModel(ConfigPayment::class, function (ModelConfiguration $
 
         return $form;
     });
-})->addMenuPage(ConfigPayment::class, 99)->setIcon('fa fa-gear');
+})->addMenuPage(ConfigPayment::class, 99)->setIcon('fa fa-gear')->setAccessLogic(function (){
+    return auth()->user()->isAdmin();
+});

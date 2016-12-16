@@ -28,4 +28,6 @@ AdminSection::registerModel(User::class, function (ModelConfiguration $model){
 
         return $form;
     });
-})->addMenuPage(User::class, 1)->setIcon('fa fa-users');
+})->addMenuPage(User::class, 1)->setIcon('fa fa-users')->setAccessLogic(function (){
+    return auth()->user()->isAdmin();
+});

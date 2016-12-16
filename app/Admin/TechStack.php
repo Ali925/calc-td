@@ -23,4 +23,6 @@ AdminSection::registerModel(TechStack::class, function (ModelConfiguration $mode
 
         return $form;
     });
-})->addMenuPage(TechStack::class, 99)->setIcon('fa fa-gear');
+})->addMenuPage(TechStack::class, 99)->setIcon('fa fa-gear')->setAccessLogic(function (){
+    return auth()->user()->isAdmin();
+});

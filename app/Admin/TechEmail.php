@@ -24,4 +24,6 @@ AdminSection::registerModel(TechEmail::class, function (ModelConfiguration $mode
 
         return $form;
     });
-})->addMenuPage(TechEmail::class, 99)->setIcon('fa fa-gear');
+})->addMenuPage(TechEmail::class, 99)->setIcon('fa fa-gear')->setAccessLogic(function (){
+    return auth()->user()->isAdmin();
+});

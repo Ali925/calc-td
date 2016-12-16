@@ -9,17 +9,16 @@ return [
             ->setIcon('fa fa-file-photo-o')
             ->setPriority(0),
     ],
-
     [
         'title' => 'Information',
         'icon'  => 'fa fa-exclamation-circle',
         'url'   => route('admin.information'),
     ],
-
     [
         'title' => 'Декоры',
         'priority' => 1,
         'icon' => 'fa fa-folder-open',
+        'accessLogic' => function(){return auth()->user()->isAdmin();},
         'pages' => [
             [
                 'title' => 'Изделия',
@@ -56,6 +55,7 @@ return [
         'title' => 'Заготовки и констр.',
         'priority' => 2,
         'icon' => 'fa fa-folder-open',
+        'accessLogic' => function(){return auth()->user()->isAdmin();},
         'pages' => [
             (new Page(\App\Product::class))
                 ->setTitle('Заготовки')
@@ -88,6 +88,7 @@ return [
         'title' => 'Настройки чертежа',
         'priority' => 3,
         'icon' => 'fa fa-folder-open',
+        'accessLogic' => function(){return auth()->user()->isAdmin();},
         'pages' => [
             [
                 'title' => 'Экран калькулятора',

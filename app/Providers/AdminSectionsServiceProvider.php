@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\User;
+use SleepingOwl\Admin\Navigation\Page;
 use SleepingOwl\Admin\Providers\AdminSectionsServiceProvider as ServiceProvider;
 
 class AdminSectionsServiceProvider extends ServiceProvider
@@ -11,7 +13,7 @@ class AdminSectionsServiceProvider extends ServiceProvider
      * @var array
      */
     protected $sections = [
-        //\App\User::class => 'App\Http\Sections\Users',
+//        \App\User::class => 'App\Http\Sections\Users',
     ];
 
     /**
@@ -21,8 +23,6 @@ class AdminSectionsServiceProvider extends ServiceProvider
      */
     public function boot(\SleepingOwl\Admin\Admin $admin)
     {
-    	//
-
         parent::boot($admin);
     }
 }
