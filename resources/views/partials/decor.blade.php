@@ -10,7 +10,7 @@
                  data-series-name="{{$decor->decorCategory->name}}"
             >
                 <img src="{{url('/').'/css/img/galochka.png'}}" alt="" class="calc-modal-check">
-                <img src="@if(!empty($decor->thumb)){{url('/').'/'.$decor->thumb}}@else{{url('/').'/'.$decor->image}}@endif" class="calc-js-data_img" alt="" width="100%" height="100%">
+                <img src="{{url('/').'/'.$decor->thumb}}" class="calc-js-data_img" alt="" width="100%" height="100%">
                 <span class="calc-modal-name">{{$decor->name}} {{$decor->code}} ({{$decor->decorCategory->name}})</span>
             </div>
         @endforeach
