@@ -56,7 +56,7 @@
                     <div class="calc-param-blc">
                         <div class="calc-param-item">min <span class="calc-special" id="calc-js-width_info_min">600 mm</span></div>
                         <div class="calc-param-item">
-                            <input name="" class="calc-field calc-slider-amount" readonly type="text" id="calc-js-width_value">
+                            <input name="calc-detail_width" class="calc-field calc-slider-amount" type="text" id="calc-js-width_value">
                         </div>
                         <div class="calc-param-item">max <span class="calc-special" id="calc-js-width_info_max">1200 mm</span></div>
                     </div><!-- /calc-param-blc -->
@@ -69,7 +69,7 @@
                     <div class="calc-param-blc">
                         <div class="calc-param-item">min <span class="calc-special" id="calc-js-length_info_min">600 mm</span></div>
                         <div class="calc-param-item">
-                            <input type="text" class="calc-slider-amount calc-field" readonly id="calc-js-length_value">
+                            <input type="text" name="calc-detail_height" class="calc-slider-amount calc-field" id="calc-js-length_value">
                         </div>
                         <div class="calc-param-item">max <span class="calc-special" id="calc-js-length_info_max">1200 mm</span></div>
                     </div> <!-- /calc-param-blc -->
