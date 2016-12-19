@@ -13,7 +13,7 @@
                     <span class="calc-modal-name">{{$edge->name}} {{$edge->code}} ({{$edge->edgeCategory->name}})</span>
                     <div class="calc-modal_hidden calc-modal_hidden_choice"><span class="calc-modal_choice-icon"></span> ВЫБРАТЬ</div>
                 </div>
-                <a class="calc-modal_hidden calc-modal_hidden_colorbox calc-js-colorbox" rel="colorbox-group" href="{{url('/').'/'.$edge->thumb}}">
+                <a class="calc-modal_hidden calc-modal_hidden_colorbox calc-js-colorbox" rel="colorbox-group" href="{{url('/').'/'.$edge->image}}">
                     <span class="calc-modal_search-icon"></span>
                     ПОСМОТРЕТЬ
                 </a>
