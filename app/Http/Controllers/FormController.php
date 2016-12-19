@@ -27,14 +27,14 @@ class FormController extends Controller
             ->first();
 
         return response()->json([
-            'edge_1' => $response->option_edge_1,
-            'edge_2' => $response->option_edge_2,
-            'edge_3' => $response->option_edge_3,
-            'edge_4' => $response->option_edge_4,
-            'side_1' => $response->option_side_1,
-            'side_2' => $response->option_side_2,
-            'side_3' => $response->option_side_3,
-            'side_4' => $response->option_side_4,
+            'option_edge_1' => $response->option_edge_1,
+            'option_edge_2' => $response->option_edge_2,
+            'option_edge_3' => $response->option_edge_3,
+            'option_edge_4' => $response->option_edge_4,
+            'option_side_1' => $response->option_side_1,
+            'option_side_2' => $response->option_side_2,
+            'option_side_3' => $response->option_side_3,
+            'option_side_4' => $response->option_side_4,
         ]);
     }
 }
