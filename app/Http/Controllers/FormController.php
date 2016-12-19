@@ -26,15 +26,58 @@ class FormController extends Controller
             ->with('option_side_4')
             ->first();
 
+        $edge_one = [];
+        $edge_two = [];
+        $edge_three = [];
+        $edge_four = [];
+        $side_one = [];
+        $side_two = [];
+        $side_three = [];
+        $side_four = [];
+
+        foreach ($response->option_edge_1 as $edge_1){
+            $edge_one[] = $edge_1->id;
+        }
+
+        foreach ($response->option_edge_2 as $edge_2){
+            $edge_two[] = $edge_2->id;
+        }
+
+        foreach ($response->option_edge_3 as $edge_3){
+            $edge_three[] = $edge_3->id;
+        }
+
+        foreach ($response->option_edge_4 as $edge_4){
+            $edge_four[] = $edge_4->id;
+        }
+
+        foreach ($response->option_side_1 as $side_1){
+            $side_one[] = $side_1->id;
+        }
+
+        foreach ($response->option_side_2 as $side_2){
+            $side_two[] = $side_2->id;
+        }
+
+        foreach ($response->option_side_3 as $side_3){
+            $side_three[] = $side_3->id;
+        }
+
+        foreach ($response->option_side_4 as $side_4){
+            $side_four[] = $side_4->id;
+        }
+
+
+
         return response()->json([
-            'option_edge_1' => $response->option_edge_1->id,
-            'option_edge_2' => $response->option_edge_2->id,
-            'option_edge_3' => $response->option_edge_3->id,
-            'option_edge_4' => $response->option_edge_4->id,
-            'option_side_1' => $response->option_side_1->id,
-            'option_side_2' => $response->option_side_2->id,
-            'option_side_3' => $response->option_side_3->id,
-            'option_side_4' => $response->option_side_4->id,
+            'option_edge_1' => json_encode($edge_one),
+            'option_edge_2' => json_encode($edge_two),
+            'option_edge_3' => json_encode($edge_three),
+            'option_edge_4' => json_encode($edge_four),
+            'option_side_1' => json_encode($side_one),
+            'option_side_2' => json_encode($side_two),
+            'option_side_3' => json_encode($side_three),
+            'option_side_4' => json_encode($side_four),
         ]);
     }
 }
