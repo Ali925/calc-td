@@ -41,6 +41,18 @@ AdminSection::registerModel(Form::class, function (ModelConfiguration $model){
                 ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
             AdminFormElement::multiselect('option_side_4', 'Сторона 4')
                 ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
+            AdminFormElement::select('access_one_side', 'Кромка 1')
+                ->setOptions(['0' => 'Доступно для выбора', '1' => 'Копировать кромку 1',
+                    '2' => 'Копировать кромку 2','3' => 'Копировать кромку 3','4' => 'Копировать кромку 4'])->required(),
+            AdminFormElement::select('access_two_side', 'Кромка 2')
+                ->setOptions(['0' => 'Доступно для выбора', '1' => 'Копировать кромку 1',
+                    '2' => 'Копировать кромку 2','3' => 'Копировать кромку 3','4' => 'Копировать кромку 4'])->required(),
+            AdminFormElement::select('access_three_side', 'Кромка 3')
+                ->setOptions(['0' => 'Доступно для выбора', '1' => 'Копировать кромку 1',
+                    '2' => 'Копировать кромку 2','3' => 'Копировать кромку 3','4' => 'Копировать кромку 4'])->required(),
+            AdminFormElement::select('access_four_side', 'Кромка 4')
+                ->setOptions(['0' => 'Доступно для выбора', '1' => 'Копировать кромку 1',
+                    '2' => 'Копировать кромку 2','3' => 'Копировать кромку 3','4' => 'Копировать кромку 4'])->required(),
         ]);
 
         return $form;

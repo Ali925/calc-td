@@ -78,6 +78,10 @@ class FormController extends Controller
             'option_side_2' => json_encode($side_two),
             'option_side_3' => json_encode($side_three),
             'option_side_4' => json_encode($side_four),
+            'access_one' => $response->access_one_side,
+            'access_two' => $response->access_two_side,
+            'access_three' => $response->access_three_side,
+            'access_four' => $response->access_four_side,
         ]);
     }
 }
