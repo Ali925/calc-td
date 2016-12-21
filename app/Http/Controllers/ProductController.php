@@ -48,7 +48,29 @@ class ProductController extends Controller
                 $query->where($item,$value);
             };
 
-            return response()->json($query);
+            $options = [];
+            $result = [];
+
+            foreach ($query as $option){
+                $options['part_side_one'][] = $option->part_side_one;
+                $options['part_side_two'][] = $option->part_side_two;
+                $options['part_side_three'][] = $option->part_side_three;
+                $options['part_side_four'][] = $option->part_side_four;
+                $options['part_edge_one'][] = $option->part_edge_one;
+                $options['part_edge_two'][] = $option->part_edge_two;
+                $options['part_edge_three'][] = $option->part_edge_three;
+                $options['part_edge_four'][] = $option->part_edge_four;
+            }
+
+            foreach ($options as $key => $res){
+                if (array_key_exists($key,$data)){
+                    unset($options[$key]);
+                }else{
+                    $options[$key] = array_unique($options[$key]);
+                }
+            }
+
+            return response()->json($options);
         }else{
             return response()->json(['status' => false,'message'=>'Ничего не пришло']);
         }
