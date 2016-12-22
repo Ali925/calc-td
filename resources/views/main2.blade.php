@@ -94,6 +94,7 @@
         </div>  <!-- конец первого этапа второго экрана -->
 
         <div class="calc-choice-blc calc-blc__noactive" id="calc-js-step2_2">   <!-- второй этап второго экрана -->
+            <div class="calc-blocked" id="calc-js-step-2-1-pause"></div>
             <div class="calc-btn-blc">
                 <button class="calc-nav calc-nav__active" id="calc-js-step2_2-prev">
                     <i class="fa fa-arrow-up" aria-hidden="true"></i>

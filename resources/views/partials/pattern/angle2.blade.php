@@ -3,7 +3,7 @@
     <div class="calc-title">{{$angle->name}}</div>
     @foreach($angle->options as $option)
         <div class="calc-radio">
-            <input name="corner__tr" type="radio" value="{{$option->id}}"
+            <input name="corner__tr" type="checkbox" value="{{$option->id}}"
                    data-place="{{$angle->value}}"
                    data-image="@if(!empty($option->image)){{url('/').'/'.$option->image}}@endif"
                    id="corner__tr-{{$option->id}}"

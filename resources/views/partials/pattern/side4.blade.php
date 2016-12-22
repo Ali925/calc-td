@@ -6,7 +6,7 @@
         <div class="calc-vert-blc">
             @foreach($angle->options as $option)
                 <div class="calc-radio">
-                    <input name="side__b-1" type="radio" value="{{$option->id}}"
+                    <input name="side__b-1" type="checkbox" value="{{$option->id}}"
                            data-place="{{$angle->value}}"
                            data-image="@if(!empty($option->image)){{url('/').'/'.$option->image}}@endif"
                            id="side__b-1-{{$option->id}}"
