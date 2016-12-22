@@ -66,7 +66,7 @@ class ProductController extends Controller
                 if (array_key_exists($key,$data)){
                     unset($options[$key]);
                 }else{
-                    $options[$key] = array_unique($options[$key]);
+                    $options[$key] = array_values(array_unique($options[$key]));
                 }
             }
 
