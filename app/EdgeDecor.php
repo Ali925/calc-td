@@ -39,20 +39,16 @@ class EdgeDecor extends Model
 
     protected $casts = [
         'image' => 'image',
-        'thumb' => 'image',
     ];
 
     public function getUploadSettings()
     {
         return [
             'image' => [],
-            'thumb' => [
-                'crop' => [150, 150],
-            ],
         ];
     }
 
-    public function setUploadImageAttribute($file = null)
+    public function setImageAttribute($file = null)
     {
         if (is_null($file)) {
             return;
@@ -67,7 +63,7 @@ class EdgeDecor extends Model
         $thumb->save(str_replace('.','-thumb.',$file));
 
         $this->thumb = str_replace('.','-thumb.',$file);
-        $this->image = $file;
+        $this->attributes['image'] =  $file;
     }
 
 }

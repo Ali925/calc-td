@@ -21,7 +21,7 @@ AdminSection::registerModel(Decor::class, function (ModelConfiguration $model){
         $form = AdminForm::panel()->addBody([
             AdminFormElement::text('name', 'Name')->required()->unique(),
             AdminFormElement::text('code', 'Сode')->required()->unique(),
-            AdminFormElement::image('upload_image', 'Image'),
+            AdminFormElement::image('image', 'Image')->required(),
             AdminFormElement::select('decor_category_id', 'Series', \App\DecorCategory::getList()),
         ])->setHtmlAttribute('enctype', 'multipart/form-data');;
 

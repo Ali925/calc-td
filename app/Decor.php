@@ -32,11 +32,10 @@ class Decor extends Model
 {
     use \KodiComponents\Support\Upload;
 
-    protected $fillable = ['name','code','image'];
+    protected $fillable = ['name','code','image','thumb'];
 
     protected $casts = [
         'image' => 'image',
-        'thumb' => 'image',
     ];
 
     public function decorCategory(){
@@ -52,13 +51,10 @@ class Decor extends Model
     {
         return [
             'image' => [],
-            'thumb' => [
-                'crop' => [150, 150],
-            ],
         ];
     }
 
-    public function setUploadImageAttribute($file = null)
+    public function setImageAttribute($file = null)
     {
         if (is_null($file)) {
             return;
@@ -73,6 +69,6 @@ class Decor extends Model
         $thumb->save(str_replace('.','-thumb.',$file));
 
         $this->thumb = str_replace('.','-thumb.',$file);
-        $this->image = $file;
+        $this->attributes['image'] =  $file;
     }
 }
