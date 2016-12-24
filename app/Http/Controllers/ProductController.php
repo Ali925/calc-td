@@ -42,23 +42,20 @@ class ProductController extends Controller
 
         if (!empty($data)){
 
-            $query = PatternAccordance::where('blank_type_id',$request->blank_type_id)
-                ->where('form_id', $request->form_id)
-                ->where('nip_id', $request->nip_id)
-                ->where('thickness_id', $request->thickness_id)->get();
-
+//            $query = PatternAccordance::where('blank_type_id',$request->blank_type_id)
+//                ->where('form_id', $request->form_id)
+//                ->where('nip_id', $request->nip_id)
+//                ->where('thickness_id', $request->thickness_id)->get();
+            $query = 'where ';
             foreach ($data as $item=>$value){
-                if ($item == 'blank_type_id' or $item == 'form_id' or
-                    $item == 'nip_id' or $item == 'thickness_id'){
-                    continue;
-                }else{
-                    $query->where($item,'=',$value);
-                }
+                $query .= '`'.$item.'` = '.$value.' and';
             };
+
+            $result = PatternAccordance::hydrateRaw($query);
 
             $options = [];
 
-            foreach ($query as $option){
+            foreach ($result as $option){
                 $options['part_side_one'][] = $option->part_side_one;
                 $options['part_side_two'][] = $option->part_side_two;
                 $options['part_side_three'][] = $option->part_side_three;
@@ -71,7 +68,7 @@ class ProductController extends Controller
 
             foreach ($options as $key => $res){
                 if (array_key_exists($key,$data)){
-//                    unset($options[$key]);
+                    unset($options[$key]);
                     continue;
                 }else{
                     $options[$key] = array_values(array_unique($options[$key]));
