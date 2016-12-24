@@ -51,7 +51,7 @@ class ProductController extends Controller
                 $query .= '`'.$item.'` = '.$value.' and ';
             };
 
-            $result = PatternAccordance::hydrateRaw(substr($query,0,4));
+            $result = PatternAccordance::hydrateRaw($query);
 
             $options = [];
 
