@@ -48,10 +48,16 @@ class ProductController extends Controller
 //                ->where('thickness_id', $request->thickness_id)->get();
             $query = 'where ';
             foreach ($data as $item=>$value){
-                $query .= '`'.$item.'` = '.$value.' and ';
+                if($item == end($data)) {
+                    $query .= '`'.$item.'` = '.$value;
+                }
+                else {
+                    $query .= '`'.$item.'` = '.$value.' and ';
+                }
+
             };
-            $q = substr($query,0,4);
-            $result = PatternAccordance::hydrateRaw($q);
+
+            $result = PatternAccordance::hydrateRaw($query);
 
             $options = [];
 
