@@ -42,13 +42,14 @@ class ProductController extends Controller
 
         if (!empty($data)){
 
-            $query = PatternAccordance::all();
+//            $query = PatternAccordance::all();
+            $query = \DB::table('pattern_accordances');
 
             foreach ($data as $item=>$value){
                 $query->where($item,$value);
             };
 
-            $query->get();
+            $query->get(['*']);
 
             $options = [];
 
