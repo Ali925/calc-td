@@ -48,7 +48,7 @@ class ProductController extends Controller
                 $query->where($item,$value);
             };
 
-            $query->all();
+            $query->get();
 
             $options = [];
 
