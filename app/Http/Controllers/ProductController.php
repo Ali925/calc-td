@@ -45,11 +45,10 @@ class ProductController extends Controller
             $query = PatternAccordance::all();
 
             foreach ($data as $item=>$value){
-                $query->where($item,$value);
+                $query->whereStrict($item,$value);
             };
 
             $options = [];
-            $result = [];
 
             foreach ($query as $option){
                 $options['part_side_one'][] = $option->part_side_one;
@@ -62,13 +61,13 @@ class ProductController extends Controller
                 $options['part_edge_four'][] = $option->part_edge_four;
             }
 
-            foreach ($options as $key => $res){
-                if (array_key_exists($key,$data)){
-                    unset($options[$key]);
-                }else{
-                    $options[$key] = array_values(array_unique($options[$key]));
-                }
-            }
+//            foreach ($options as $key => $res){
+//                if (array_key_exists($key,$data)){
+//                    unset($options[$key]);
+//                }else{
+//                    $options[$key] = array_values(array_unique($options[$key]));
+//                }
+//            }
 
             return response()->json($options);
         }else{
