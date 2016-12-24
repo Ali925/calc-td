@@ -63,7 +63,7 @@ class ProductController extends Controller
 
             foreach ($options as $key => $res){
                 if (array_key_exists($key,$data)){
-
+                    unset($options[$key]);
                 }else{
                     $options[$key] = array_values(array_unique($options[$key]));
                 }
