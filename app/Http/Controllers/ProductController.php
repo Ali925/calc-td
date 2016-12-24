@@ -42,12 +42,21 @@ class ProductController extends Controller
 
         if (!empty($data)){
 
-            $query = PatternAccordance::all();
+            $query = PatternAccordance::where('blank_type_id',$request->blank_type_id)
+                ->where('form_id', $request->form_id)
+                ->where('nip_id', $request->nip_id)
+                ->where('thickness_id', $request->thickness_id);
 
             foreach ($data as $item=>$value){
-                $query->whereIn($item,$value);
+                if ($item == 'blank_type_id' or $item == 'form_id' or
+                    $item == 'nip_id' or $item == 'thickness_id'){
+                    continue;
+                }else{
+                    $query->where($item,$value);
+                }
             };
 
+            $query->get();
             $options = [];
 
             foreach ($query as $option){
