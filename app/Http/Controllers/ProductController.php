@@ -56,7 +56,6 @@ class ProductController extends Controller
                 }
             };
 
-            $query->get();
             $options = [];
 
             foreach ($query as $option){
