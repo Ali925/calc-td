@@ -52,7 +52,7 @@ class ProductController extends Controller
                     $item == 'nip_id' or $item == 'thickness_id'){
                     continue;
                 }else{
-                    $query->where($item,$value);
+                    $query->where($item,'=',$value);
                 }
             };
 
