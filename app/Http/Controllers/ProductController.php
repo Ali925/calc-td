@@ -45,7 +45,7 @@ class ProductController extends Controller
             $query = PatternAccordance::where('blank_type_id',$request->blank_type_id)
                 ->where('form_id', $request->form_id)
                 ->where('nip_id', $request->nip_id)
-                ->where('thickness_id', $request->thickness_id);
+                ->where('thickness_id', $request->thickness_id)->get();
 
             foreach ($data as $item=>$value){
                 if ($item == 'blank_type_id' or $item == 'form_id' or
