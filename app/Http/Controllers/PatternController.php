@@ -21,8 +21,6 @@ class PatternController extends Controller
 
     public function getPatternByParameter(Request $request)
     {
-        dd($request->all());
-
         $query = PatternAccordance::where('form_id', $request->form_id)
             ->where('thickness_id', $request->thickness_id)
             ->where('blank_type_id',$request->blank_type_id)
@@ -77,7 +75,7 @@ class PatternController extends Controller
         $wrapper = Wrapper::where('length', $length)->first();
 
 
-
+        dd($query);
         if ($query != null & $blank != null & $wrapper!=null){
             return response()->json([
                 'status' => true,
