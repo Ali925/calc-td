@@ -56,6 +56,7 @@ Route::group(['prefix' => 'api'], function (){
         Route::get('get/all', 'PatternController@getAll');
         Route::post('post/check', 'PatternController@notEmptyPattern');
         Route::post('post/result', 'PatternController@getPatternByParameter');
+        Route::post('post/access', 'PatternController@accessEdge');
     });
 
     Route::group(['prefix' => 'order'], function (){
