@@ -21,6 +21,8 @@ class PatternController extends Controller
 
     public function getPatternByParameter(Request $request)
     {
+        dd($request);
+
         $query = PatternAccordance::where('form_id', $request->form_id)
             ->where('thickness_id', $request->thickness_id)
             ->where('blank_type_id',$request->blank_type_id)
@@ -45,6 +47,8 @@ class PatternController extends Controller
             ->whereHas('patternEdgeDecorsFour', function ($query) use($request){
                 $query->where('id',$request->k4_id);
             })->first();
+
+
 
         $width = ($request->width <= 600) ? 600 : 1200;
 
