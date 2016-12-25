@@ -42,11 +42,8 @@ class ProductController extends Controller
 
         if (!empty($data)){
 
-//            $query = PatternAccordance::where('blank_type_id',$request->blank_type_id)
-//                ->where('form_id', $request->form_id)
-//                ->where('nip_id', $request->nip_id)
-//                ->where('thickness_id', $request->thickness_id)->get();
             $query = 'select * from `pattern_accordances` where ';
+
             foreach ($data as $item=>$value){
                 $query .= '`'.$item.'` = '.$value.' and ';
                 if (!next($data)){

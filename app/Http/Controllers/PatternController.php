@@ -49,7 +49,6 @@ class PatternController extends Controller
         $width = ($request->width <= 600)? 600 : 1200;
 
         $blank = Product::where('blank_type_id', $request->blank_type_id)
-            ->where('decor_category_id', $request->decor_category_id)
             ->where('nip_id', $request->nip_id)
             ->where('thickness_id', $request->thickness_id)
             ->where('width', '=' ,$width)
@@ -97,7 +96,8 @@ class PatternController extends Controller
             ]);
         }else{
             if ($query == null) return response()->json(['status' => false, 'message' => 'Нет  чертежей']);
-            if ($blank == null) return response()->json(['status' => false, 'message' => 'Нет загтовки']);
+            if ($blank == null) return response()->json(['status' => false, 'message' => 'Извениете но загтовки с такими параметрами нет, 
+                                                                                            попробуйте выбрать другую серию декора']);
             if ($wrapper == null) return response()->json(['status' => false, 'message' => 'Пожалуйста, выберите другой вид кромки']);
         }
 
