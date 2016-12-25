@@ -46,6 +46,8 @@ class PatternController extends Controller
                 $query->where('id',$request->k4_id);
             })->first();
 
+        dd($query);
+
         $width = ($request->width <= 600)? 600 : 1200;
 
         $blank = Product::where('blank_type_id', $request->blank_type_id)
