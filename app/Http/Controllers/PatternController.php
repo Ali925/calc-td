@@ -21,7 +21,7 @@ class PatternController extends Controller
 
     public function getPatternByParameter(Request $request)
     {
-        dd($request);
+        dd($request->all());
 
         $query = PatternAccordance::where('form_id', $request->form_id)
             ->where('thickness_id', $request->thickness_id)
