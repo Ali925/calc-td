@@ -122,7 +122,7 @@ class PatternController extends Controller
             ->where('part_edge_four',$request->part_edge_four)
             ->get();
 
-        dd($query);
+        dd(sizeof($query));
 
         if (count($query) > 0){
             return response()->json(['status' => true]);
