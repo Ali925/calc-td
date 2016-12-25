@@ -74,8 +74,6 @@ class PatternController extends Controller
 
         $wrapper = Wrapper::where('length', $length)->first();
 
-
-        dd($query);
         if ($query != null & $blank != null & $wrapper!=null){
             return response()->json([
                 'status' => true,
