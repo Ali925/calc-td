@@ -146,7 +146,7 @@ class PatternController extends Controller
                 ->where('part_edge_two',$request->part_edge_two)
                 ->where('part_edge_three',$request->part_edge_three)
                 ->where('part_edge_four',$request->part_edge_four)
-                ->first();
+                ->get();
 
 //        $data['aec_1'] = $query->patternEdgeDecorsOne();
 //        $data['aec_2'] = $query->patternEdgeDecorsTwo();
