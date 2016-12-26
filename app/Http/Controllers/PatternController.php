@@ -124,8 +124,7 @@ class PatternController extends Controller
         if ($query->count() > 0){
             return response()->json(['status' => true]);
         }else{
-            return response()->json(['status' => false, 'message' => 'Извините, такую деталь невозможно изготовить. 
-                                                                        Пожалуйста, выберите другие опции']);
+            return response()->json(['status' => false, 'message' => 'Извините, но заготовки с такими параметрами нет, попробуйте выбрать другую серию декора']);
         }
     }
 
