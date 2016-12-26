@@ -73,7 +73,6 @@ class PatternController extends Controller
         if ($request->length > 1500 and $request->length <= 3050) $length = 3050;
 
         $wrapper = Wrapper::where('length', $length)->first();
-        dd($blank);
         if ($query != null & $blank != null & $wrapper!=null){
             return response()->json([
                 'status' => true,
