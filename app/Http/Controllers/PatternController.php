@@ -144,13 +144,24 @@ class PatternController extends Controller
                 ->where('part_edge_two',$request->part_edge_two)
                 ->where('part_edge_three',$request->part_edge_three)
                 ->where('part_edge_four',$request->part_edge_four)
-                ->get();
+                ->first();
 
-//        $data['aec_1'] = $query->patternEdgeDecorsOne();
-//        $data['aec_2'] = $query->patternEdgeDecorsTwo();
-//        $data['aec_3'] = $query->patternEdgeDecorsThree();
-//        $data['aec_4'] = $query->patternEdgeDecorsFour();
-//        dd($data);
-        dd($query);
+        $access = [];
+
+        foreach ($query->patternEdgeDecorsOne as $q1){
+            $access['one'][] = $q1->id;
+        }
+
+        foreach ($query->patternEdgeDecorsTwo as $q2){
+            $access['two'][] = $q2->id;
+        }
+        foreach ($query->patternEdgeDecorsThree as $q3){
+            $access['three'][] = $q3->id;
+        }
+        foreach ($query->patternEdgeDecorsFour as $q4){
+            $access['four'][] = $q4->id;
+        }
+
+        return response()->json([$access]);
     }
 }
