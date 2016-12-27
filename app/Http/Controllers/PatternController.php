@@ -162,6 +162,6 @@ class PatternController extends Controller
             $access['four'][] = $q4->id;
         }
 
-        return response()->json([$access]);
+        return response()->json($access);
     }
 }
