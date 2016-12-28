@@ -38,4 +38,9 @@ class Nip extends Model
     {
         return $this->hasMany('App\ReadyProduct');
     }
+
+    public function form()
+    {
+        return $this->belongsToMany(Form::class);
+    }
 }

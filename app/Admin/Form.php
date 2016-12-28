@@ -25,6 +25,8 @@ AdminSection::registerModel(Form::class, function (ModelConfiguration $model){
             AdminFormElement::image('pattern_image','Чертеж'),
             AdminFormElement::multiselect('blankTypes', 'Продукт')
                 ->setModelForOptions(new \App\BlankType())->setDisplay('name'),
+            AdminFormElement::multiselect('nip', 'Завал')
+                ->setModelForOptions(new \App\Nip())->setDisplay('name')->required(),
             AdminFormElement::multiselect('option_edge_1', 'Угол 1')
                 ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
             AdminFormElement::multiselect('option_edge_2', 'Угол 2')

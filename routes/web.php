@@ -27,7 +27,6 @@ Route::group(['prefix' => 'api'], function (){
         Route::get('get/all','ProductController@getAll');
         Route::get('get/{id}','ProductController@getById');
         Route::post('post/blank','ProductController@getByParameter');
-        Route::post('post/nip','ProductController@getNip');
     });
 
     Route::group(['prefix' => 'form'],function (){

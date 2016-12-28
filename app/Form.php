@@ -53,6 +53,11 @@ class Form extends Model
         return $this->hasMany('App\ReadyProduct');
     }
 
+    public function nip()
+    {
+        return $this->belongsToMany(Nip::class);
+    }
+
     public function option_edge_1(){return $this->belongsToMany(PatternOption::class,'form_edge_1');}
     public function option_edge_2(){return $this->belongsToMany(PatternOption::class,'form_edge_2');}
     public function option_edge_3(){return $this->belongsToMany(PatternOption::class,'form_edge_3');}

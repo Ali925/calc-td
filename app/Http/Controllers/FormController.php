@@ -34,6 +34,7 @@ class FormController extends Controller
         $side_two = [];
         $side_three = [];
         $side_four = [];
+        $nip = [];
 
         foreach ($response->option_edge_1 as $edge_1){
             $edge_one[] = $edge_1->id;
@@ -67,6 +68,10 @@ class FormController extends Controller
             $side_four[] = $side_4->id;
         }
 
+        foreach ($response->nip as $nips){
+            $nip[] = $nips->id;
+        }
+
 
 
         return response()->json([
@@ -82,6 +87,7 @@ class FormController extends Controller
             'access_two' => $response->access_two_side,
             'access_three' => $response->access_three_side,
             'access_four' => $response->access_four_side,
+            'nip' => $nip,
         ]);
     }
 }

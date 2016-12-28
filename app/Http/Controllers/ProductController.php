@@ -36,19 +36,6 @@ class ProductController extends Controller
         return response()->json($query);
     }
 
-    public function getNip(Request $request)
-    {
-        $query = Product::where('blank_type_id', $request->blank_type_id)
-            ->where('decor_category_id', $request->decor_category_id)
-            ->where('thickness_id', $request->thickness_id)
-            ->where('width', '<=' ,$request->width)
-            ->first();
-
-        return response()->json([
-            'nip' => $query->nip_id
-        ]);
-    }
-
     public function getFacet(Request $request)
     {
         $data = $request->all();
