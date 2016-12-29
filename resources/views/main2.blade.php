@@ -262,12 +262,12 @@
                     <INPUT TYPE="HIDDEN" NAME="URL_RETURN_OK" VALUE="{{url('/ok')}}">
                     <INPUT TYPE="HIDDEN" NAME="URL_RETURN_NO" VALUE="{{url('/no')}}">
 
-                    <INPUT TYPE="HIDDEN" NAME="OrderNumber" VALUE="">
-                    <INPUT TYPE="HIDDEN" NAME="OrderAmount" VALUE="">
-                    <INPUT TYPE="HIDDEN" NAME="Firstname" VALUE="">
-                    <INPUT TYPE="HIDDEN" NAME="Middlename" VALUE="">
-                    <INPUT TYPE="HIDDEN" NAME="Lastname" VALUE="">
-                    <INPUT TYPE="HIDDEN" NAME="Email" VALUE="">
+                    <INPUT TYPE="hidden" NAME="OrderNumber" VALUE="">
+                    <INPUT TYPE="hidden" NAME="OrderAmount" VALUE="">
+                    <INPUT TYPE="hidden" NAME="Firstname" VALUE="">
+                    <INPUT TYPE="hidden" NAME="Middlename" VALUE="">
+                    <INPUT TYPE="hidden" NAME="Lastname" VALUE="">
+                    <INPUT TYPE="hidden" NAME="Email" VALUE="">
                     <div class="calc-form-item calc-form-item__required">
                         <input name="FirstName" class="calc-field calc-js-user_field" placeholder="Имя">
                         <div class="calc-error-message calc-hidden">Пожалуйста, введите имя</div>
