@@ -147,20 +147,22 @@ class PatternController extends Controller
                 ->first();
 
         $access = [];
+        if (!empty($query) and $query != null){
+            foreach ($query->patternEdgeDecorsOne as $q1){
+                $access['one'][] = $q1->id;
+            }
 
-        foreach ($query->patternEdgeDecorsOne as $q1){
-            $access['one'][] = $q1->id;
+            foreach ($query->patternEdgeDecorsTwo as $q2){
+                $access['two'][] = $q2->id;
+            }
+            foreach ($query->patternEdgeDecorsThree as $q3){
+                $access['three'][] = $q3->id;
+            }
+            foreach ($query->patternEdgeDecorsFour as $q4){
+                $access['four'][] = $q4->id;
+            }
         }
 
-        foreach ($query->patternEdgeDecorsTwo as $q2){
-            $access['two'][] = $q2->id;
-        }
-        foreach ($query->patternEdgeDecorsThree as $q3){
-            $access['three'][] = $q3->id;
-        }
-        foreach ($query->patternEdgeDecorsFour as $q4){
-            $access['four'][] = $q4->id;
-        }
 
         return response()->json($access);
     }
