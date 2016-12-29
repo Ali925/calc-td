@@ -67,7 +67,7 @@ class PatternController extends Controller
             ->where('width', '=' ,$width_proxy)
             ->first();
 
-        dd($width_proxy);
+        dd($blank_proxy);
 
         $length = '';
         if ($request->length <= 1000) $length = 1000;
