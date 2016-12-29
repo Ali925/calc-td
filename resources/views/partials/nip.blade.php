@@ -22,7 +22,7 @@
                         <span class="calc-help-blc">
                                             <i class="fa fa-question-circle" aria-hidden="true"></i>
                                             <span class="calc-help-text"><span class="calc-bold">{{$nip->value}} ({{$nip->name}})
-                                                </span> {{$nip->description}}</span>
+                                                </span> {{strip_tags($nip->description)}}</span>
                                         </span>
                     @endif
                 </label>
