@@ -148,6 +148,7 @@ class PatternController extends Controller
 
         $access = [];
 
+        dd($query);
         foreach ($query->patternEdgeDecorsOne as $q1){
             $access['one'][] = $q1->id;
         }
