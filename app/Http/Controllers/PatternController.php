@@ -58,7 +58,7 @@ class PatternController extends Controller
             ->get()
             ->first();
 
-        $width_proxy = ($width == 600)? 1200 : 600;
+        $width_proxy = ($width == 600) ? 1200 : 600;
 
         $blank_proxy = Product::where('blank_type_id', $request->blank_type_id)
             ->where('decor_category_id', $request->decor_category_id)
@@ -66,6 +66,8 @@ class PatternController extends Controller
             ->where('thickness_id', $request->thickness_id)
             ->where('width', '=' ,$width_proxy)
             ->first();
+
+        dd($width_proxy);
 
         $length = '';
         if ($request->length <= 1000) $length = 1000;
