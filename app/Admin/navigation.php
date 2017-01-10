@@ -10,11 +10,6 @@ return [
             ->setPriority(0),
     ],
     [
-        'title' => 'Information',
-        'icon'  => 'fa fa-exclamation-circle',
-        'url'   => route('admin.information'),
-    ],
-    [
         'title' => 'Декоры',
         'priority' => 1,
         'icon' => 'fa fa-folder-open',
@@ -107,6 +102,24 @@ return [
                 ->setTitle('Соответствие чертежей')
                 ->setIcon('fa fa-cubes')
                 ->setPriority(40),
+        ],
+    ],
+    [
+        'title' => 'Information',
+        'icon'  => 'fa fa-exclamation-circle',
+        'pages' => [
+            (new Page())
+                ->setTitle('Секция "Заказы"')
+                ->setIcon('fa fa-exclamation-circle')
+                ->setUrl(route('docs.orders')),
+            (new Page())
+                ->setTitle('Секция "Пользователи"')
+                ->setIcon('fa fa-exclamation-circle')
+                ->setUrl(route('docs.users')),
+            (new Page())
+                ->setTitle('Секция "Декоры"')
+                ->setIcon('fa fa-exclamation-circle')
+                ->setUrl(route('docs.decors')),
         ],
     ],
 ];
