@@ -79,7 +79,24 @@
     <span class="text-center"><img src="/images/doc/3.1.7.png" class="img-responsive"></span>
     <h5 class="text-center">(Рисунок 3.2.7)</h5>
 </div>
-<h4 id="edge-category-delete">Удаление категории</h4>
+
+<div class="col-md-12" style="margin-top: 20px">
+    <h4 id="edge-category-delete">Удаление категории</h4>
+    <p>
+        Удалить категорию можно во время редактирования или находясь на экране главной таблицы
+    </p>
+</div>
+
+<div class="col-md-12">
+    <span class="text-center"><img src="/images/doc/3.1.8.png" class="img-responsive"></span>
+    <h5 class="text-center">(Рисунок 3.2.8)</h5>
+</div>
+
+<div class="col-md-12" style="border-bottom: 2px solid">
+    <span class="text-center"><img src="/images/doc/3.1.9.png" class="img-responsive"></span>
+    <h5 class="text-center">(Рисунок 3.2.9)</h5>
+</div>
+
 <h4 id="edge-decor">Декор</h4>
 <h4 id="edge-decor-create">Добавить декор</h4>
 <h4 id="edge-decor-edit">Редактировать декор</h4>
