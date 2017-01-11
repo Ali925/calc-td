@@ -69,8 +69,8 @@ class PatternController extends Controller
 
         $length = '';
         if ($request->length <= 1000) $length = 1000;
-        if (1500 <= $request->length and $request->length > 1000) $length = 1500;
-        if ($request->length > 1500 and $request->length <= 3050) $length = 3050;
+        if ((1500 <= $request->length) and ($request->length > 1000)) $length = 1500;
+        if (($request->length > 1500) and ($request->length <= 3050)) $length = 3050;
 
         $wrapper = Wrapper::where('length', $length)->first();
         if ($query != null & $blank != null & $wrapper!=null){
