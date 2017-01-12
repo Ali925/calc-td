@@ -120,6 +120,37 @@ return [
                 ->setTitle('Секция "Декоры"')
                 ->setIcon('fa fa-exclamation-circle')
                 ->setUrl(route('docs.decors')),
+            [
+                'title' => 'Заготовки и констр.',
+                'icon'  => 'fa fa-exclamation-circle',
+                'pages' => [
+                    (new Page())
+                        ->setTitle('Секция "Тип заготовки"')
+                        ->setIcon('fa fa-exclamation-circle')
+                        ->setUrl(route('docs.blank-type')),
+                    (new Page())
+                        ->setTitle('Секция "Тип констр."')
+                        ->setIcon('fa fa-exclamation-circle')
+                        ->setUrl(route('docs.construct-type')),
+                    (new Page())
+                        ->setTitle('Секция "Заготовки"')
+                        ->setIcon('fa fa-exclamation-circle')
+                        ->setUrl(route('docs.product')),
+                    (new Page())
+                        ->setTitle('Секция "Завалы"')
+                        ->setIcon('fa fa-exclamation-circle')
+                        ->setUrl(route('docs.nips')),
+                    (new Page())
+                        ->setTitle('Секция "Толщины"')
+                        ->setIcon('fa fa-exclamation-circle')
+                        ->setUrl(route('docs.thickness')),
+                    (new Page())
+                        ->setTitle('Секция "Упаковка"')
+                        ->setIcon('fa fa-exclamation-circle')
+                        ->setUrl(route('docs.wrapper')),
+                ],
+            ],
+
         ],
     ],
 ];

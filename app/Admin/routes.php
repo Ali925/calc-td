@@ -27,5 +27,35 @@ Route::group(['prefix' => 'information'],function (){
         return AdminSection::view($content,'Секция "Декоры"');
     } ]);
 
+    Route::get('construct-type',[ 'as' => 'docs.construct-type', function(){
+        $content = view('docs.construct-type');
+        return AdminSection::view($content,'Секция "Тип конструкции"');
+    } ]);
+
+    Route::get('blank-type',[ 'as' => 'docs.blank-type', function(){
+        $content = view('docs.blank-type');
+        return AdminSection::view($content,'Секция "Тип заготовки"');
+    } ]);
+
+    Route::get('product',[ 'as' => 'docs.product', function(){
+        $content = view('docs.product');
+        return AdminSection::view($content,'Секция "Зготовки"');
+    } ]);
+
+    Route::get('nips',[ 'as' => 'docs.nips', function(){
+        $content = view('docs.nips');
+        return AdminSection::view($content,'Секция "Завалы"');
+    } ]);
+
+    Route::get('thickness',[ 'as' => 'docs.thickness', function(){
+        $content = view('docs.thickness');
+        return AdminSection::view($content,'Секция "Толщина"');
+    } ]);
+
+    Route::get('wrapper',[ 'as' => 'docs.wrapper', function(){
+        $content = view('docs.wrapper');
+        return AdminSection::view($content,'Секция "Упаковка"');
+    } ]);
+
 });
 
