@@ -22,7 +22,7 @@ AdminSection::registerModel(Nip::class, function (ModelConfiguration $model){
         $form = AdminForm::panel()->addBody([
             AdminFormElement::text('name','Наименование'),
             AdminFormElement::text('value','Значение'),
-            AdminFormElement::multiselect('patternPosition','Стороны')
+            AdminFormElement::multiselect('patternPositions','Стороны')
                 ->setModelForOptions(\App\PatternPosition::class)
                 ->setLoadOptionsQueryPreparer(function ($item,$query){
                     return $query->orderBy('name','asc');
