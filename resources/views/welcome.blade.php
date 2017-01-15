@@ -73,11 +73,10 @@
                     ТД "Союз"
                 </div>
 
-                <div class="links">
+                <div class="links text-center">
                     @if (Route::has('login'))
 
                         <a class="btn btn-large" href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
 
                     @endif
                 </div>

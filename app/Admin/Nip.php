@@ -23,7 +23,11 @@ AdminSection::registerModel(Nip::class, function (ModelConfiguration $model){
             AdminFormElement::text('name','Наименование'),
             AdminFormElement::text('value','Значение'),
             AdminFormElement::multiselect('patternPosition','Стороны')
-                ->setModelForOptions(\App\PatternPosition::class)->setDisplay('name'),
+                ->setModelForOptions(\App\PatternPosition::class)
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::wysiwyg('description','Описание'),
         ]);
 

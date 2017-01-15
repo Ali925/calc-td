@@ -29,7 +29,11 @@ AdminSection::registerModel(BlankType::class, function (ModelConfiguration $mode
             AdminFormElement::text('min_length','Мин. длина'),
             AdminFormElement::text('max_length','Макс. длина'),
             AdminFormElement::multiselect('thicknesses','Толщины')
-                ->setModelForOptions(new \App\Thickness())->setDisplay('name'),
+                ->setModelForOptions(new \App\Thickness())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::wysiwyg('description','Описание'),
         ]);
 

@@ -24,25 +24,65 @@ AdminSection::registerModel(Form::class, function (ModelConfiguration $model){
             AdminFormElement::image('image','Изображение'),
             AdminFormElement::image('pattern_image','Чертеж'),
             AdminFormElement::multiselect('blankTypes', 'Продукт')
-                ->setModelForOptions(new \App\BlankType())->setDisplay('name'),
+                ->setModelForOptions(new \App\BlankType())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::multiselect('nip', 'Завал')
-                ->setModelForOptions(new \App\Nip())->setDisplay('name')->required(),
+                ->setModelForOptions(new \App\Nip())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name')->required(),
             AdminFormElement::multiselect('option_edge_1', 'Угол 1')
-                ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
+                ->setModelForOptions(new \App\PatternOption())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::multiselect('option_edge_2', 'Угол 2')
-                ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
+                ->setModelForOptions(new \App\PatternOption())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::multiselect('option_edge_3', 'Угол 3')
-                ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
+                ->setModelForOptions(new \App\PatternOption())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::multiselect('option_edge_4', 'Угол 4')
-                ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
+                ->setModelForOptions(new \App\PatternOption())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::multiselect('option_side_1', 'Сторона 1')
-                ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
+                ->setModelForOptions(new \App\PatternOption())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::multiselect('option_side_2', 'Сторона 2')
-                ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
+                ->setModelForOptions(new \App\PatternOption())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::multiselect('option_side_3', 'Сторона 3')
-                ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
+                ->setModelForOptions(new \App\PatternOption())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::multiselect('option_side_4', 'Сторона 4')
-                ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
+                ->setModelForOptions(new \App\PatternOption())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::select('access_one_side', 'Кромка 1')
                 ->setOptions(['0' => 'Доступно для выбора', '1' => 'Копировать кромку 1',
                     '2' => 'Копировать кромку 2','3' => 'Копировать кромку 3','4' => 'Копировать кромку 4'])->required(),

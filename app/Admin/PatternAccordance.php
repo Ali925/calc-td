@@ -39,37 +39,101 @@ AdminSection::registerModel(PatternAccordance::class, function (ModelConfigurati
             AdminFormElement::text('name','Наименование')->required(),
             AdminFormElement::image('image','Изображение')->required(),
             AdminFormElement::select('thickness_id','Толщ.')->required()
-                ->setModelForOptions(new \App\Thickness())->setDisplay('name'),
+                ->setModelForOptions(new \App\Thickness())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::select('form_id','Тип конструкции')->required()
-                ->setModelForOptions(new \App\Form())->setDisplay('name'),
+                ->setModelForOptions(new \App\Form())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::multiselect('patternEdgeDecorsOne','Кромка 1')->required()
-                ->setModelForOptions(new \App\EdgeCategory())->setDisplay('name'),
+                ->setModelForOptions(new \App\EdgeCategory())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::multiselect('patternEdgeDecorsTwo','Кромка 2')->required()
-                ->setModelForOptions(new \App\EdgeCategory())->setDisplay('name'),
+                ->setModelForOptions(new \App\EdgeCategory())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::multiselect('patternEdgeDecorsThree','Кромка 3')->required()
-                ->setModelForOptions(new \App\EdgeCategory())->setDisplay('name'),
+                ->setModelForOptions(new \App\EdgeCategory())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::multiselect('patternEdgeDecorsFour','Кромка 4')->required()
-                ->setModelForOptions(new \App\EdgeCategory())->setDisplay('name'),
+                ->setModelForOptions(new \App\EdgeCategory())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::select('blank_type_id','Тип заг.')->required()
-                ->setModelForOptions(new \App\BlankType())->setDisplay('name'),
+                ->setModelForOptions(new \App\BlankType())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::select('nip_id','Завал')->required()
-                ->setModelForOptions(new \App\Nip())->setDisplay('name'),
+                ->setModelForOptions(new \App\Nip())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::select('part_side_one','Сторона 1')->required()
-                ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
+                ->setModelForOptions(new \App\PatternOption())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::select('part_side_two','Сторона 2')->required()
-                ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
+                ->setModelForOptions(new \App\PatternOption())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::select('part_side_three','Сторона 3')->required()
-                ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
+                ->setModelForOptions(new \App\PatternOption())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::select('part_side_four','Сторона 4')->required()
-                ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
+                ->setModelForOptions(new \App\PatternOption())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::select('part_edge_one','Угол 1')->required()
-                ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
+                ->setModelForOptions(new \App\PatternOption())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::select('part_edge_two','Угол 2')->required()
-                ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
+                ->setModelForOptions(new \App\PatternOption())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::select('part_edge_three','Угол 3')->required()
-                ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
+                ->setModelForOptions(new \App\PatternOption())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
             AdminFormElement::select('part_edge_four','Угол 4')->required()
-                ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
+                ->setModelForOptions(new \App\PatternOption())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
         ]);
 
         return $form;

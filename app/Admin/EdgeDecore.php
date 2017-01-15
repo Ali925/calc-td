@@ -23,7 +23,11 @@ AdminSection::registerModel(EdgeDecor::class, function (ModelConfiguration $mode
             AdminFormElement::text('code', 'Сode')->required()->unique(),
             AdminFormElement::image('image', 'Image')->required()->addValidationRule('image'),
             AdminFormElement::select('edge_category_id', 'Series')
-                ->setModelForOptions(new \App\EdgeCategory())->setDisplay('name'),
+                ->setModelForOptions(new \App\EdgeCategory())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
         ]);
 
         return $form;

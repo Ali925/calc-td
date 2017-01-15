@@ -16,21 +16,6 @@ AdminSection::registerModel(ReadyProduct::class, function (ModelConfiguration $m
             AdminColumn::relatedLink('decorCategory.name','Категория декора'),
             AdminColumn::relatedLink('decor.name','Декор'),
             AdminColumn::relatedLink('coast','Цена'),
-//            AdminColumn::relatedLink('nip.name','Завал'),
-//            AdminColumn::relatedLink('patternOptionSideOne.name','С-1'),
-//            AdminColumn::relatedLink('patternOptionSideTwo.name','С-2'),
-//            AdminColumn::relatedLink('patternOptionSideThree.name','С-3'),
-//            AdminColumn::relatedLink('patternOptionSideFour.name','С-4'),
-//            AdminColumn::relatedLink('patternOptionEdgeOne.name','У-1'),
-//            AdminColumn::relatedLink('patternOptionEdgeTwo.name','У-2'),
-//            AdminColumn::relatedLink('patternOptionEdgeThree.name','У-3'),
-//            AdminColumn::relatedLink('patternOptionEdgeFour.name','У-4'),
-//            AdminColumn::relatedLink('edgeOne.name','Кромка 1'),
-//            AdminColumn::relatedLink('edgeTwo.name','Кромка 2'),
-//            AdminColumn::relatedLink('edgeThree.name','Кромка 3'),
-//            AdminColumn::relatedLink('edgeFour.name','Кромка 4'),
-//            AdminColumn::relatedLink('wrapper.coast','Упаковка'),
-
         ]);
         $display->paginate(10);
         $display->setHtmlAttribute('class', 'table2 text-center');

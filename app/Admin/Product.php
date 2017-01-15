@@ -1,3 +1,4 @@
+
 <?php
 use App\Product;
 use SleepingOwl\Admin\Model\ModelConfiguration;
@@ -23,13 +24,17 @@ AdminSection::registerModel(Product::class, function (ModelConfiguration $model)
 
         $form = AdminForm::panel()->addBody([
             AdminFormElement::select('blank_type_id','Тип заготовки')
-                ->setModelForOptions(\App\BlankType::class)->setDisplay('name'),
+                ->setModelForOptions(\App\BlankType::class)
+                ->setDisplay('name'),
             AdminFormElement::select('decor_category_id','Серия декора')
-                ->setModelForOptions(\App\DecorCategory::class)->setDisplay('name'),
+                ->setModelForOptions(\App\DecorCategory::class)
+                ->setDisplay('name'),
             AdminFormElement::select('thickness_id','Толщина')
-                ->setModelForOptions(\App\Thickness::class)->setDisplay('name'),
+                ->setModelForOptions(\App\Thickness::class)
+                ->setDisplay('name'),
             AdminFormElement::select('nip_id','Завал')
-                ->setModelForOptions(\App\Nip::class)->setDisplay('name'),
+                ->setModelForOptions(\App\Nip::class)
+                ->setDisplay('name'),
             AdminFormElement::text('length','Длина'),
             AdminFormElement::text('width','Ширина'),
             AdminFormElement::text('coast','Цена'),

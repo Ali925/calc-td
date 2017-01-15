@@ -9,7 +9,7 @@ AdminSection::registerModel(Wrapper::class, function (ModelConfiguration $model)
     $model->onDisplay(function (){
         $display = AdminDisplay::table()->setColumns([
             AdminColumn::text('width','Ширина'),
-            AdminColumn::text('length','Длинна'),
+            AdminColumn::text('length','Длина'),
             AdminColumn::text('coast','Цена'),
 
         ]);

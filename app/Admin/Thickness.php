@@ -21,7 +21,11 @@ AdminSection::registerModel(Thickness::class, function (ModelConfiguration $mode
             AdminFormElement::text('name','Наименование'),
             AdminFormElement::text('value','Значение'),
             AdminFormElement::multiselect('nips','Завалы')
-                ->setModelForOptions(new \App\Nip())->setDisplay('name'),
+                ->setModelForOptions(new \App\Nip())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
         ]);
 
         return $form;

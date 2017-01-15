@@ -20,7 +20,11 @@ AdminSection::registerModel(PatternPosition::class, function (ModelConfiguration
         $form = AdminForm::panel()->addBody([
             AdminFormElement::text('name','Наименование'),
             AdminFormElement::multiselect('options', 'Опции')
-                ->setModelForOptions(new \App\PatternOption())->setDisplay('name'),
+                ->setModelForOptions(new \App\PatternOption())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name'),
         ]);
 
         return $form;
