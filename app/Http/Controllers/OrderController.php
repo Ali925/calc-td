@@ -58,6 +58,7 @@ class OrderController extends Controller
         $coast = [];
         $order = Order::find($request->order_id);
 
+        dd($request->all());
         if (!empty($request->ready_product)){
             foreach ($request->ready_product as $product){
 
