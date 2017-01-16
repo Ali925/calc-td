@@ -57,9 +57,9 @@ class OrderController extends Controller
     {
 
         $post = print_r($_POST, TRUE);
-        file_put_contents(public_path().'post_content.txt', $post, FILE_APPEND);
+        file_put_contents(public_path('/').'post_content.txt', $post, FILE_APPEND);
         $prs = print_r($request->ready_product, TRUE);
-        file_put_contents(public_path().'post_content.txt', $prs, FILE_APPEND);
+        file_put_contents(public_path('/').'post_content.txt', $prs, FILE_APPEND);
         die();
 
         $coast = [];
