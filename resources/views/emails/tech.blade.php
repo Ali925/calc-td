@@ -194,10 +194,10 @@
                             <div class="calc-info-text">{{$detail->edgeThree->name}} ({{$detail->edgeThree->edgeCategory->name}})</div>
                             <span class="calc-info-price">/ {{$detail->edgeThree->edgeCategory->coast}} руб</span>
                         </td>
-                        <td>
-                            <div class="calc-info-text">{{$detail->edgeFour->name}} ({{$detail->edgeFour->edgeCategory->name}})</div>
-                            <span class="calc-info-price">/ {{$detail->edgeFour->edgeCategory->coast}} руб</span>
-                        </td>
+                        {{--<td>--}}
+                            {{--<div class="calc-info-text">{{$detail->edgeFour->name}} ({{$detail->edgeFour->edgeCategory->name}})</div>--}}
+                            {{--<span class="calc-info-price">/ {{$detail->edgeFour->edgeCategory->coast}} руб</span>--}}
+                        {{--</td>--}}
                     </tr>
                 </table>
             </div>
