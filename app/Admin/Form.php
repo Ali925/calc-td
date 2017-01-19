@@ -14,7 +14,7 @@ AdminSection::registerModel(Form::class, function (ModelConfiguration $model){
             AdminColumn::lists('blankTypes.name','Типы заготовок'),
         ]);
         $display->setApply(function ($query){
-            $query->orderBy('name');
+            $query->orderBy('name', 'asc');
         });
         $display->paginate(10);
         return $display;
