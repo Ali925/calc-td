@@ -13,6 +13,9 @@ AdminSection::registerModel(Form::class, function (ModelConfiguration $model){
             AdminColumn::image('pattern_image','Чертеж'),
             AdminColumn::lists('blankTypes.name','Типы заготовок'),
         ]);
+        $display->setApply(function ($query){
+            $query->orderBy('name');
+        });
         $display->paginate(10);
         return $display;
     });
