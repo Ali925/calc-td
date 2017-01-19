@@ -19,8 +19,8 @@ AdminSection::registerModel(EdgeDecor::class, function (ModelConfiguration $mode
 
     $model->onCreateAndEdit(function (){
         $form = AdminForm::panel()->addBody([
-            AdminFormElement::text('name', 'Name')->required()->unique(),
-            AdminFormElement::text('code', 'Сode')->required()->unique(),
+            AdminFormElement::text('name', 'Name')->required(),
+            AdminFormElement::text('code', 'Сode')->required(),
             AdminFormElement::image('image', 'Image')->required()->addValidationRule('image'),
             AdminFormElement::select('edge_category_id', 'Series')
                 ->setModelForOptions(new \App\EdgeCategory())
