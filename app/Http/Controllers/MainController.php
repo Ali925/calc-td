@@ -50,7 +50,7 @@ class MainController extends Controller
 
     public function getBodyPage()
     {
-        $response['blankTypes'] = BlankType::all();
+        $response['blankTypes'] = BlankType::all()->sortBy('name');
         $response['forms'] = Form::all()->sortBy('name');
         $response['patternPosition'] = PatternPosition::with('options')->get();
         $response['decors'] = Decor::with('decorCategory')->get();

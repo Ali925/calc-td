@@ -17,6 +17,9 @@ AdminSection::registerModel(BlankType::class, function (ModelConfiguration $mode
             AdminColumn::text('description','Описание'),
 
         ]);
+        $display->setApply(function ($query){
+            $query->orderBy('name', 'asc');
+        });
         $display->paginate(10);
         return $display;
     });
