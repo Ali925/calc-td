@@ -8,6 +8,7 @@
                        data-place="{{$angle->value}}"
                        data-image="@if(!empty($option->image)){{url('/').'/'.$option->image}}@endif"
                        id="corner__tl-{{$option->id}}"
+                       @if($option->kind == 'none') checked @endif
                 >
                 <label class="calc-radio-label" for="corner__tl-{{$option->id}}">
                     @if($option->kind == 'radius')
