@@ -10,7 +10,6 @@
                            data-place="{{$angle->value}}"
                            data-image="@if(!empty($option->image)){{url('/').'/'.$option->image}}@endif"
                            id="side__t-1-{{$option->id}}"
-                           @if($option->kind == 'none') checked @endif
                     >
                     <label class="calc-radio-label" for="side__t-1-{{$option->id}}">
                         @if($option->kind == 'soed')
