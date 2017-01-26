@@ -1,7 +1,7 @@
 <div class="calc-mobal-blc calc-js-modal-parent" id="calc-js-step2_3_modal">  <!-- модальное окно для выбора кромок -->
     <div class="calc-modal-close">
         <i class="fa fa-times" aria-hidden="true"></i>
-        закрыть
+        ПОДТВЕРДИТЬ
     </div>
     <div class="calc-modal-inside">
         @foreach($edges as $edge)
