@@ -29,6 +29,9 @@ AdminSection::registerModel(PatternAccordance::class, function (ModelConfigurati
 //            AdminColumn::relatedLink('patternOptionEdgeFour.name','У-4')->setWidth('100px'),
         ]);
         $display->paginate(10);
+        $display->setApply(function ($query){
+            $query->orderBy('name', 'asc');
+        });
         $display->setHtmlAttribute('class', 'table2');
         $display->setHtmlAttribute('class', 'text-center');
         return $display;
