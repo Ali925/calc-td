@@ -183,20 +183,41 @@
                             </div>
                         </td>
                         <td>
-                            <div class="calc-info-text">{{$detail->edgeOne->name}} ({{$detail->edgeOne->edgeCategory->name}})</div>
-                            <span class="calc-info-price"> / {{$detail->edgeOne->edgeCategory->coast}} руб</span>
+                            @if($detail->edgeOne->edgeCategory->code == '3D' or $detail->edgeOne->edgeCategory->code == 'none')
+                                <div class="calc-info-text">{{$detail->edgeOne->name}}</div>
+                                <span class="calc-info-price"> / {{$detail->edgeOne->edgeCategory->coast}} руб</span>
+                            @else
+                                <div class="calc-info-text">{{$detail->edgeOne->name}} ({{$detail->edgeOne->edgeCategory->name}})</div>
+                                <span class="calc-info-price"> / {{$detail->edgeOne->edgeCategory->coast}} руб</span>
+                            @endif
+
                         </td>
                         <td>
-                            <div class="calc-info-text">{{$detail->edgeTwo->name}} ({{$detail->edgeTwo->edgeCategory->name}})</div>
-                            <span class="calc-info-price">/ {{$detail->edgeTwo->edgeCategory->coast}} руб</span>
+                            @if($detail->edgeTwo->edgeCategory->code == '3D' or $detail->edgeTwo->edgeCategory->code == 'none')
+                                <div class="calc-info-text">{{$detail->edgeTwo->name}}</div>
+                                <span class="calc-info-price"> / {{$detail->edgeTwo->edgeCategory->coast}} руб</span>
+                            @else
+                                <div class="calc-info-text">{{$detail->edgeTwo->name}} ({{$detail->edgeTwo->edgeCategory->name}})</div>
+                                <span class="calc-info-price">/ {{$detail->edgeTwo->edgeCategory->coast}} руб</span>
+                            @endif
                         </td>
                         <td>
-                            <div class="calc-info-text">{{$detail->edgeThree->name}} ({{$detail->edgeThree->edgeCategory->name}})</div>
-                            <span class="calc-info-price">/ {{$detail->edgeThree->edgeCategory->coast}} руб</span>
+                            @if($detail->edgeThree->edgeCategory->code == '3D' or $detail->edgeThree->edgeCategory->code == 'none')
+                                <div class="calc-info-text">{{$detail->edgeThree->name}}</div>
+                                <span class="calc-info-price"> / {{$detail->edgeThree->edgeCategory->coast}} руб</span>
+                            @else
+                                <div class="calc-info-text">{{$detail->edgeThree->name}} ({{$detail->edgeThree->edgeCategory->name}})</div>
+                                <span class="calc-info-price">/ {{$detail->edgeThree->edgeCategory->coast}} руб</span>
+                            @endif
                         </td>
                         <td>
-                            <div class="calc-info-text">{{$detail->edgeFour->name}} ({{$detail->edgeFour->edgeCategory->name}})</div>
-                            <span class="calc-info-price">/ {{$detail->edgeFour->edgeCategory->coast}} руб</span>
+                            @if($detail->edgeFour->edgeCategory->code == '3D' or $detail->edgeFour->edgeCategory->code == 'none')
+                                <div class="calc-info-text">{{$detail->edgeFour->name}}</div>
+                                <span class="calc-info-price"> / {{$detail->edgeFour->edgeCategory->coast}} руб</span>
+                            @else
+                                <div class="calc-info-text">{{$detail->edgeFour->name}} ({{$detail->edgeFour->edgeCategory->name}})</div>
+                                <span class="calc-info-price">/ {{$detail->edgeFour->edgeCategory->coast}} руб</span>
+                            @endif
                         </td>
                     </tr>
                 </table>
