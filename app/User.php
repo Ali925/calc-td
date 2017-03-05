@@ -48,4 +48,9 @@ class User extends Authenticatable
     public function isManager(){
         return $this->role === 2;
     }
+
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
 }
