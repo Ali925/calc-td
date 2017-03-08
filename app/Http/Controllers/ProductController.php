@@ -46,7 +46,7 @@ class ProductController extends Controller
 
             foreach ($data as $item=>$value){
                 $query .= '`'.$item.'` = '.$value.' and ';
-                if (!next($data)){
+                if (next($data)){
                     $query .= '`'.$item.'` = '.$value;
                 }
             };
