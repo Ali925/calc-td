@@ -45,8 +45,9 @@ class ProductController extends Controller
             $query = 'select * from `pattern_accordances` where ';
 
             foreach ($data as $item=>$value){
-                if (next($data)){
-                    $query .= '`'.$item.'` = '.$value.' and ';
+                $query .= '`'.$item.'` = '.$value.' and ';
+                if (!next($data)){
+                    $query .= '`'.$item.'` = '.$value;
                 }
             };
 
