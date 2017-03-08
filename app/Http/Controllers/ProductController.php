@@ -51,8 +51,6 @@ class ProductController extends Controller
                 }
             };
 
-            dd($query);
-
             $result = PatternAccordance::hydrateRaw($query);
 
             $options = [];
