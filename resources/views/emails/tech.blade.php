@@ -121,6 +121,13 @@
                             ->where('thickness_id',$detail->thickness->id)
                             ->where('width',$width)->first();
 
+                $length = '';
+                if ($detail->length <= 1000) $length = 1000;
+                if ($detail->length <= 1500  && $detail->length > 1000) $length = 1500;
+                if ($detail->length > 1500 && $detail->length <= 3050) $length = 3050;
+
+                $wrapper = App\Wrapper::where('length', $length)->first();
+
             ?>
         <div class="calc-info-item">
             <div class="calc-info-center">
@@ -233,7 +240,24 @@
                     </tr>
                 </table>
             </div>
-
+            <div class="calc-result-blc">
+                <div class="calc-result-item calc-clearfix">
+                    <div class="calc-col50">Стоимость заготовки (основа и облиц. покрытие)</div>
+                    <div class="calc-col50 calc-result-number" id="calc-js-result-raw_price">{{$product->coast}}</div>
+                </div> <!-- /calc-result-item -->
+                <div class="calc-result-item calc-clearfix">
+                    <div class="calc-col50">Стоимость изготовления и обработки детали (еврозапил, скос, стандартное соединение, радиус, кромка)</div>
+                    <div class="calc-col50 calc-result-number" id="calc-js-result-elem_price">{{$detail->form->coast}}</div>
+                </div> <!-- /calc-result-item -->
+                <div class="calc-result-item calc-clearfix">
+                    <div class="calc-col50">Стоимость упаковки</div>
+                    <div class="calc-col50 calc-result-number" id="calc-js-result-pack_price">{{$wrapper->coast}}</div>
+                </div> <!-- /calc-result-item -->
+                <div class="calc-result-item calc-clearfix calc-special">
+                    <div class="calc-col50">Итого стоимость заказа</div>
+                    <div class="calc-col50 calc-result-number" id="calc-js-result-full_price">{{$detail->coast}}</div>
+                </div> <!-- /calc-result-item -->
+            </div> <!-- /calc-result-blc -->
         </div>
 
 @endforeach
