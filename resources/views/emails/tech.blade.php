@@ -113,6 +113,13 @@
                     $eurozap = $eurozap + 1; $eurozap_coast=$eurozap_coast+$detail->patternOptionSideFour->coast;
                 };
 
+                $width = ($detail->width <= 600)?600:1200;
+
+                $product = App\Product::where('blank_type_id',$detail->blankType->id)
+                            ->where('decor_category_id',$detail->decorCategory->id)
+                            ->where('nip_id',$detail->nip->id)
+                            ->where('thickness_id',$detail->thickness->id)
+                            ->where('width',$width)->first();
 
             ?>
         <div class="calc-info-item">
@@ -136,7 +143,11 @@
                         <td>H Ширина, мм</td>
                     </tr>
                     <tr>
-                        <td><div class="calc-info-text">{{$detail->blankType->name}}</div></td>
+                        <td>
+                            <div class="calc-info-text">
+                                <span class="calc-info-price">{{$detail->blankType->name}} / {{$product->coast}}</span>
+                            </div>
+                        </td>
                         <td>
                             <div class="calc-info-text">
                                 <span class="calc-info-price">{{$detail->form->name}} / {{$detail->form->coast}} руб</span>
