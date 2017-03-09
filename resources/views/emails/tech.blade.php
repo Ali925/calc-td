@@ -126,22 +126,22 @@
                             </div>
                         </td></tr>
                     <tr class="calc-info-header">
-                        <td>Конструкция заготовки <span class="calc-info-price">/ Стоимость, руб</span></td>
-                        <td>Тип заготовки</td>
+                        <td>Тип заготовки (основа и покрытие)</td>
+                        <td>Тип конструкции <span class="calc-info-price">/ Цена, руб</span></td>  
                         <td>Серия декора</td>
                         <td>Декор заготовки</td>
                         <td>Завал</td>
                         <td>Толщина, мм</td>
-                        <td>Длина, мм</td>
-                        <td>Ширина, мм</td>
+                        <td>L Длина, мм</td>
+                        <td>H Ширина, мм</td>
                     </tr>
                     <tr>
+                        <td><div class="calc-info-text">{{$detail->blankType->name}}</div></td>
                         <td>
                             <div class="calc-info-text">
-                                <span class="calc-info-price">{{$detail->form->name}} / {{$detail->form->coast}} .руб</span>
+                                <span class="calc-info-price">{{$detail->form->name}} / {{$detail->form->coast}} руб</span>
                             </div>
                         </td>
-                        <td><div class="calc-info-text">{{$detail->blankType->name}}</div></td>
                         <td><div class="calc-info-text">{{$detail->decorCategory->name}}</div></td>
                         <td>
                             <div class="calc-info-text">{{$detail->decor->name}}</div>
@@ -152,10 +152,10 @@
                         <td><div class="calc-info-text">{{$detail->length}}</div></td>
                     </tr>
                     <tr class="calc-info-header">
-                        <td>Еврозапил<br>Kол-во <span class="calc-info-price">/ Стоимость, руб</span></td>
-                        <td>Скос<br>Kол-во <span class="calc-info-price">/ Стоимость, руб</span></td>
-                        <td>Стандартное соединение<br>Kол-во <span class="calc-info-price">/ Стоимость, руб</span></td>
+                        <td>Еврозапил<br>Kол-во <span class="calc-info-price">/ Цена, руб</span></td>
+                        <td>Стандартное соединение<br>Kол-во <span class="calc-info-price">/ Цена, руб</span></td>
                         <td>Радиус<br>Kол-во / Стоимость, руб</td>
+                        <td>Скос<br>Kол-во <span class="calc-info-price">/ Цена, руб</span></td>
                         <td>Кромка сторона 1 оборотная<br>Вид <span class="calc-info-price">/ Цена, руб</span></td>
                         <td>Кромка сторона 2 правая<br>Вид <span class="calc-info-price">/ Цена, руб</span></td>
                         <td>Кромка сторона 3 лицевая<br>Вид <span class="calc-info-price">/ Цена, руб</span></td>
@@ -168,11 +168,6 @@
                             </div>
                         </td>
                         <td>
-                            <div class="calc-info-text">{{$skos}}
-                                <span class="calc-info-price">/ {{$skos_coast}} руб</span>
-                            </div>
-                        </td>
-                        <td>
                             <div class="calc-info-text">{{$soed}}
                                 <span class="calc-info-price">/ {{$soed_coast}} руб</span>
                             </div>
@@ -180,6 +175,11 @@
                         <td>
                             <div class="calc-info-text">{{$radius}}
                                 <span class="calc-info-price">/ {{$radius_coast}} руб</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="calc-info-text">{{$skos}}
+                                <span class="calc-info-price">/ {{$skos_coast}} руб</span>
                             </div>
                         </td>
                         <td>

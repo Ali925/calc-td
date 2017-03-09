@@ -69,7 +69,9 @@
             <div class="calc-title">Выберите параметры</div>
             <div class="calc-row calc-clearfix">
                 <div class="calc-col50">
-                    <div class="calc-title">Выберите ширину</div>
+                    <div class="calc-title">
+                        Выберите ширину
+                    </div>
                     <div class="calc-param-blc">
                         <div class="calc-param-item">min <span class="calc-special" id="calc-js-width_info_min">600 mm</span></div>
                         <div class="calc-param-item">
@@ -236,12 +238,12 @@
 
         <div class="calc-result-blc">
             <div class="calc-result-item calc-clearfix">
-                <div class="calc-col50">Стоимость обработки</div>
-                <div class="calc-col50 calc-result-number" id="calc-js-result-elem_price"></div>
+                <div class="calc-col50">Стоимость заготовки (основа и облиц. покрытие)</div>
+                <div class="calc-col50 calc-result-number" id="calc-js-result-raw_price"></div>
             </div> <!-- /calc-result-item -->
             <div class="calc-result-item calc-clearfix">
-                <div class="calc-col50">Стоимость детали</div>
-                <div class="calc-col50 calc-result-number" id="calc-js-result-raw_price"></div>
+                <div class="calc-col50">Стоимость изготовления и обработки детали (еврозапил, скос, стандартное соединение, радиус, кромка)</div>
+                <div class="calc-col50 calc-result-number" id="calc-js-result-elem_price"></div>
             </div> <!-- /calc-result-item -->
             <div class="calc-result-item calc-clearfix">
                 <div class="calc-col50">Стоимость упаковки</div>

@@ -126,22 +126,22 @@
                             </div>
                         </td></tr>
                     <tr class="calc-info-header">
-                        <td>Конструкция заготовки</td>
-                        <td>Тип заготовки</td>
+                        <td>Тип заготовки (основа и покрытие)</td>
+                        <td>Тип конструкции</td>
                         <td>Серия декора</td>
                         <td>Декор заготовки</td>
                         <td>Завал</td>
                         <td>Толщина, мм</td>
-                        <td>Длина, мм</td>
-                        <td>Ширина, мм</td>
+                        <td>L Длина, мм</td>
+                        <td>H Ширина, мм</td>
                     </tr>
                     <tr>
+                        <td><div class="calc-info-text">{{$detail->blankType->name}}</div></td>
                         <td>
                             <div class="calc-info-text">
                                 <span class="calc-info-price">{{$detail->form->name}}</span>
                             </div>
                         </td>
-                        <td><div class="calc-info-text">{{$detail->blankType->name}}</div></td>
                         <td><div class="calc-info-text">{{$detail->decorCategory->name}}</div></td>
                         <td>
                             <div class="calc-info-text">{{$detail->decor->name}}</div>
@@ -153,9 +153,9 @@
                     </tr>
                     <tr class="calc-info-header">
                         <td>Еврозапил<br>Kол-во </td>
-                        <td>Скос<br>Kол-во </td>
                         <td>Стандартное соединение<br>Kол-во </td>
                         <td>Радиус<br>Kол-во</td>
+                        <td>Скос<br>Kол-во </td>
                         <td>Кромка сторона 1 оборотная<br>Вид</td>
                         <td>Кромка сторона 2 правая<br>Вид</td>
                         <td>Кромка сторона 3 лицевая<br>Вид</td>
@@ -166,13 +166,13 @@
                             <div class="calc-info-text">{{$eurozap}}</div>
                         </td>
                         <td>
-                            <div class="calc-info-text">{{$skos}}</div>
-                        </td>
-                        <td>
                             <div class="calc-info-text">{{$soed}}</div>
                         </td>
                         <td>
                             <div class="calc-info-text">{{$radius}}</div>
+                        </td>
+                        <td>
+                            <div class="calc-info-text">{{$skos}}</div>
                         </td>
                         <td>
                             @if($detail->edgeOne->edgeCategory->code == '3D' or $detail->edgeOne->edgeCategory->code == 'none')
