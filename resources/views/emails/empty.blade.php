@@ -58,6 +58,9 @@
             font-weight: 700;
             color: #000000;
         }
+        .calc-date{
+            text-transform: initial;
+        }
     </style>
 </head>
 
@@ -113,7 +116,27 @@
             $eurozap = $eurozap + 1; 
         };
 
+        if(strpos($detail->edgeOne->name, 'Без')!==false){
+                    $detail->edgeOne->name = 'Без кромки';
+                    $detail->edgeOne->edgeCategory->name = '';
+                }
 
+                if(strpos($detail->edgeTwo->name, 'Без')!==false){
+                    $detail->edgeTwo->name = 'Без кромки';
+                    $detail->edgeTwo->edgeCategory->name = '';
+                }
+
+                if(strpos($detail->edgeThree->name, 'Без')!==false){
+                    $detail->edgeThree->name = 'Без кромки';
+                    $detail->edgeThree->edgeCategory->name = '';
+                }
+
+                if(strpos($detail->edgeFour->name, 'Без')!==false){
+                    $detail->edgeFour->name = 'Без кромки';
+                    $detail->edgeFour->edgeCategory->name = '';
+                }
+
+            $dateNow = date('j.n.Y'); 
         ?>
         <div class="calc-info-item">
             <div class="calc-info-center">
@@ -121,7 +144,7 @@
                     <tr><td colspan="8">
                             <div class="calc-info-top">
                                 <div class="calc-name calc-info-name"> изделие № <span class="calc-special">{{$detail->id}}</span>
-                                    в заказе № <span class="calc-special">{{$order->order_num}}</span> </div>
+                                    в заказе № <span class="calc-special">{{$order->order_num}}</span><span class="calc-date"> от {{$dateNow}}</span></div>
                                 <img src="{{$detail->patternAccordance->image}}" alt="">
                             </div>
                         </td></tr>
@@ -214,4 +237,3 @@
 </body>
 
 </html>
-

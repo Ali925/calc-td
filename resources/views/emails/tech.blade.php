@@ -19,6 +19,10 @@
             content: "";
             display: table;
         }
+        .calc-col50 {
+          float: left;
+          width: 50%;
+        }
         .calc-info-top {
             padding: 20px 0;
             position: relative;
@@ -57,6 +61,22 @@
             font-size: 11px;
             font-weight: 700;
             color: #000000;
+        }
+        .calc-result-blc {
+          margin: 0 auto 20px;
+          max-width: 750px;
+        }
+        .calc-result-blc {
+          width: 100%;
+        }
+        .calc-result-item {
+          padding: 10px 0;
+        }
+        .calc-result-number {
+          text-align: right;
+        }
+        .calc-date{
+            text-transform: initial;
         }
     </style>
 </head>
@@ -113,6 +133,26 @@
                     $eurozap = $eurozap + 1; $eurozap_coast=$eurozap_coast+$detail->patternOptionSideFour->coast;
                 };
 
+                if(strpos($detail->edgeOne->name, 'Без')!==false){
+                    $detail->edgeOne->name = 'Без кромки';
+                    $detail->edgeOne->edgeCategory->name = '';
+                }
+
+                if(strpos($detail->edgeTwo->name, 'Без')!==false){
+                    $detail->edgeTwo->name = 'Без кромки';
+                    $detail->edgeTwo->edgeCategory->name = '';
+                }
+
+                if(strpos($detail->edgeThree->name, 'Без')!==false){
+                    $detail->edgeThree->name = 'Без кромки';
+                    $detail->edgeThree->edgeCategory->name = '';
+                }
+
+                if(strpos($detail->edgeFour->name, 'Без')!==false){
+                    $detail->edgeFour->name = 'Без кромки';
+                    $detail->edgeFour->edgeCategory->name = '';
+                }
+
                 $width = ($detail->width <= 600)?600:1200;
 
                 $product = App\Product::where('blank_type_id',$detail->blankType->id)
@@ -128,6 +168,8 @@
 
                 $wrapper = App\Wrapper::where('length', $length)->first();
 
+                $dateNow = date('j.n.Y'); 
+
             ?>
         <div class="calc-info-item">
             <div class="calc-info-center">
@@ -135,12 +177,12 @@
                     <tr><td colspan="8">
                             <div class="calc-info-top">
                                 <div class="calc-name calc-info-name"> изделие № <span class="calc-special">{{$detail->id}}</span>
-                                    в заказе<span class="calc-special">{{$order->order_num}}</span> </div>
+                                    в заказе<span class="calc-special">{{$order->order_num}}</span><span class="calc-date"> от {{$dateNow}}</span></div>
                                 <img src="{{$detail->patternAccordance->image}}" alt="">
                             </div>
                         </td></tr>
                     <tr class="calc-info-header">
-                        <td>Тип заготовки (основа и покрытие)</td>
+                        <td>Тип заготовки (основа и покрытие) <span class="calc-info-price">/ Цена, руб</span></td>
                         <td>Тип конструкции <span class="calc-info-price">/ Цена, руб</span></td>  
                         <td>Серия декора</td>
                         <td>Декор заготовки</td>
@@ -152,7 +194,7 @@
                     <tr>
                         <td>
                             <div class="calc-info-text">
-                                <span class="calc-info-price">{{$detail->blankType->name}} / {{$product->coast}}</span>
+                                <span class="calc-info-price">{{$detail->blankType->name}} / {{$product->coast}} руб</span>
                             </div>
                         </td>
                         <td>
@@ -265,4 +307,3 @@
 </body>
 
 </html>
-
