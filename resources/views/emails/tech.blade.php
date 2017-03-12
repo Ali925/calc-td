@@ -64,7 +64,6 @@
         }
         .calc-result-blc {
           margin: 0 auto 20px;
-          max-width: 750px;
         }
         .calc-result-blc {
           width: 100%;
@@ -76,7 +75,7 @@
           text-align: right;
         }
         .calc-date{
-            text-transform: initial;
+          text-transform: initial;
         }
     </style>
 </head>
@@ -177,7 +176,7 @@
                     <tr><td colspan="8">
                             <div class="calc-info-top">
                                 <div class="calc-name calc-info-name"> изделие № <span class="calc-special">{{$detail->id}}</span>
-                                    в заказе<span class="calc-special">{{$order->order_num}}</span><span class="calc-date"> от {{$dateNow}}</span></div>
+                                    в заказе<span class="calc-special">{{$order->order_num}}</span> <span class="calc-date"> от {{$dateNow}}</span></div>
                                 <img src="{{$detail->patternAccordance->image}}" alt="">
                             </div>
                         </td></tr>
@@ -243,7 +242,7 @@
                             </div>
                         </td>
                         <td>
-                            @if($detail->edgeOne->edgeCategory->code == '3D' or $detail->edgeOne->edgeCategory->code == 'none')
+                            @if($detail->edgeOne->edgeCategory->code == '3D' or $detail->edgeOne->edgeCategory->code == 'none' or $detail->edgeOne->edgeCategory->name == '')
                                 <div class="calc-info-text">{{$detail->edgeOne->name}}</div>
                                 <span class="calc-info-price"> / {{$detail->edgeOne->edgeCategory->coast}} руб</span>
                             @else
@@ -253,7 +252,7 @@
 
                         </td>
                         <td>
-                            @if($detail->edgeTwo->edgeCategory->code == '3D' or $detail->edgeTwo->edgeCategory->code == 'none')
+                            @if($detail->edgeTwo->edgeCategory->code == '3D' or $detail->edgeTwo->edgeCategory->code == 'none' or $detail->edgeTwo->edgeCategory->name == '')
                                 <div class="calc-info-text">{{$detail->edgeTwo->name}}</div>
                                 <span class="calc-info-price"> / {{$detail->edgeTwo->edgeCategory->coast}} руб</span>
                             @else
@@ -262,7 +261,7 @@
                             @endif
                         </td>
                         <td>
-                            @if($detail->edgeThree->edgeCategory->code == '3D' or $detail->edgeThree->edgeCategory->code == 'none')
+                            @if($detail->edgeThree->edgeCategory->code == '3D' or $detail->edgeThree->edgeCategory->code == 'none' or $detail->edgeThree->edgeCategory->name == '')
                                 <div class="calc-info-text">{{$detail->edgeThree->name}}</div>
                                 <span class="calc-info-price"> / {{$detail->edgeThree->edgeCategory->coast}} руб</span>
                             @else
@@ -271,7 +270,7 @@
                             @endif
                         </td>
                         <td>
-                            @if($detail->edgeFour->edgeCategory->code == '3D' or $detail->edgeFour->edgeCategory->code == 'none')
+                            @if($detail->edgeFour->edgeCategory->code == '3D' or $detail->edgeFour->edgeCategory->code == 'none' or $detail->edgeFour->edgeCategory->name == '')
                                 <div class="calc-info-text">{{$detail->edgeFour->name}}</div>
                                 <span class="calc-info-price"> / {{$detail->edgeFour->edgeCategory->coast}} руб</span>
                             @else
@@ -282,7 +281,8 @@
                     </tr>
                 </table>
             </div>
-            <div class="calc-result-blc">
+        </div>
+        <div class="calc-result-blc">
                 <div class="calc-result-item calc-clearfix">
                     <div class="calc-col50">Стоимость заготовки (основа и облиц. покрытие)</div>
                     <div class="calc-col50 calc-result-number" id="calc-js-result-raw_price">{{$product->coast}}</div>
@@ -300,8 +300,6 @@
                     <div class="calc-col50 calc-result-number" id="calc-js-result-full_price">{{$detail->coast}}</div>
                 </div> <!-- /calc-result-item -->
             </div> <!-- /calc-result-blc -->
-        </div>
-
 @endforeach
     </div>
 </body>

@@ -144,7 +144,7 @@
                     <tr><td colspan="8">
                             <div class="calc-info-top">
                                 <div class="calc-name calc-info-name"> изделие № <span class="calc-special">{{$detail->id}}</span>
-                                    в заказе № <span class="calc-special">{{$order->order_num}}</span><span class="calc-date"> от {{$dateNow}}</span></div>
+                                    в заказе № <span class="calc-special">{{$order->order_num}}</span> <span class="calc-date"> от {{$dateNow}}</span></div>
                                 <img src="{{$detail->patternAccordance->image}}" alt="">
                             </div>
                         </td></tr>
@@ -198,7 +198,7 @@
                             <div class="calc-info-text">{{$skos}}</div>
                         </td>
                         <td>
-                            @if($detail->edgeOne->edgeCategory->code == '3D' or $detail->edgeOne->edgeCategory->code == 'none')
+                            @if($detail->edgeOne->edgeCategory->code == '3D' or $detail->edgeOne->edgeCategory->code == 'none' or $detail->edgeOne->edgeCategory->name == '')
                                 <div class="calc-info-text">{{$detail->edgeOne->name}}</div>
                             @else
                                 <div class="calc-info-text">{{$detail->edgeOne->name}} ({{$detail->edgeOne->edgeCategory->name}})</div>
@@ -206,21 +206,21 @@
 
                         </td>
                         <td>
-                            @if($detail->edgeTwo->edgeCategory->code == '3D' or $detail->edgeTwo->edgeCategory->code == 'none')
+                            @if($detail->edgeTwo->edgeCategory->code == '3D' or $detail->edgeTwo->edgeCategory->code == 'none' or $detail->edgeTwo->edgeCategory->name == '')
                                 <div class="calc-info-text">{{$detail->edgeTwo->name}}</div>
                             @else
                                 <div class="calc-info-text">{{$detail->edgeTwo->name}} ({{$detail->edgeTwo->edgeCategory->name}})</div>
                             @endif
                         </td>
                         <td>
-                            @if($detail->edgeThree->edgeCategory->code == '3D' or $detail->edgeThree->edgeCategory->code == 'none')
+                            @if($detail->edgeThree->edgeCategory->code == '3D' or $detail->edgeThree->edgeCategory->code == 'none' or $detail->edgeThree->edgeCategory->name == '')
                                 <div class="calc-info-text">{{$detail->edgeThree->name}}</div>
                             @else
                                 <div class="calc-info-text">{{$detail->edgeThree->name}} ({{$detail->edgeThree->edgeCategory->name}})</div>
                             @endif
                         </td>
                         <td>
-                            @if($detail->edgeFour->edgeCategory->code == '3D' or $detail->edgeFour->edgeCategory->code == 'none')
+                            @if($detail->edgeFour->edgeCategory->code == '3D' or $detail->edgeFour->edgeCategory->code == 'none' or $detail->edgeFour->edgeCategory->name == '')
                                 <div class="calc-info-text">{{$detail->edgeFour->name}}</div>
                             @else
                                 <div class="calc-info-text">{{$detail->edgeFour->name}} ({{$detail->edgeFour->edgeCategory->name}})</div>
