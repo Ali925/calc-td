@@ -281,6 +281,9 @@
                     </tr>
                 </table>
             </div>
+            
+        </div>
+@endforeach
             <div class="calc-result-blc">
                 <div class="calc-result-item calc-clearfix">
                     <div class="calc-col50">Стоимость заготовки (основа и облиц. покрытие)</div>
@@ -299,8 +302,6 @@
                     <div class="calc-col50 calc-result-number" id="calc-js-result-full_price">{{$detail->coast}}</div>
                 </div> <!-- /calc-result-item -->
             </div> <!-- /calc-result-blc -->
-        </div>
-@endforeach
     </div>
 </body>
 
