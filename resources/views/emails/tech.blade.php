@@ -14,13 +14,9 @@
             margin-top: 1%;
             margin-left: 1%;
         }
-        .calc-clearfix::after {
-            clear: both;
-            content: "";
-            display: table;
-        }
         .calc-col50 {
           float: left;
+          clear: both;
           width: 50%;
         }
         .calc-info-top {
@@ -281,8 +277,7 @@
                     </tr>
                 </table>
             </div>
-        </div>
-        <div class="calc-result-blc">
+            <div class="calc-result-blc">
                 <div class="calc-result-item calc-clearfix">
                     <div class="calc-col50">Стоимость заготовки (основа и облиц. покрытие)</div>
                     <div class="calc-col50 calc-result-number" id="calc-js-result-raw_price">{{$product->coast}}</div>
@@ -300,6 +295,7 @@
                     <div class="calc-col50 calc-result-number" id="calc-js-result-full_price">{{$detail->coast}}</div>
                 </div> <!-- /calc-result-item -->
             </div> <!-- /calc-result-blc -->
+        </div>
 @endforeach
     </div>
 </body>
