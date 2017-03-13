@@ -14,11 +14,15 @@
             margin-top: 1%;
             margin-left: 1%;
         }
+/*        .calc-clearfix::after {
+            clear: both;
+            content: "";
+            display: table;
+        }
         .calc-col50 {
           float: left;
-          clear: both;
           width: 50%;
-        }
+        }*/
         .calc-info-top {
             padding: 20px 0;
             position: relative;
@@ -58,7 +62,7 @@
             font-weight: 700;
             color: #000000;
         }
-        .calc-result-blc {
+/*        .calc-result-blc {
           margin: 0 auto 20px;
         }
         .calc-result-blc {
@@ -69,7 +73,7 @@
         }
         .calc-result-number {
           text-align: right;
-        }
+        }*/
         .calc-date{
           text-transform: initial;
         }
