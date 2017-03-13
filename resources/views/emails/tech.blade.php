@@ -18,11 +18,11 @@
             clear: both;
             content: "";
             display: table;
-        }
+        }*/
         .calc-col50 {
           float: left;
           width: 50%;
-        }*/
+        }
         .calc-info-top {
             padding: 20px 0;
             position: relative;
@@ -70,9 +70,11 @@
         }
         .calc-result-item {
           padding: 10px 0;
+          clear: both;
         }
         .calc-result-number {
           text-align: right;
+          float: right;
         }
         .calc-date{
           text-transform: initial;
