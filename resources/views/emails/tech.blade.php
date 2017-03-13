@@ -62,7 +62,7 @@
             font-weight: 700;
             color: #000000;
         }
-/*        .calc-result-blc {
+        .calc-result-blc {
           margin: 0 auto 20px;
         }
         .calc-result-blc {
@@ -73,7 +73,7 @@
         }
         .calc-result-number {
           text-align: right;
-        }*/
+        }
         .calc-date{
           text-transform: initial;
         }
@@ -281,9 +281,6 @@
                     </tr>
                 </table>
             </div>
-            
-        </div>
-@endforeach
             <div class="calc-result-blc">
                 <div class="calc-result-item calc-clearfix">
                     <div class="calc-col50">Стоимость заготовки (основа и облиц. покрытие)</div>
@@ -302,6 +299,8 @@
                     <div class="calc-col50 calc-result-number" id="calc-js-result-full_price">{{$detail->coast}}</div>
                 </div> <!-- /calc-result-item -->
             </div> <!-- /calc-result-blc -->
+        </div>
+@endforeach
     </div>
 </body>
 
