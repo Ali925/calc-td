@@ -171,6 +171,10 @@
 
                 $dateNow = date('j.n.Y'); 
 
+                $coastTreatment = $detail->form->coast + $skos_coast + $radius_coast + $eurozap_coast + $soed_coast + $detail->edgeOne->edgeCategory->coast + $detail->edgeTwo->edgeCategory->coast + $detail->edgeThree->edgeCategory->coast + $detail->edgeFour->edgeCategory->coast;
+
+                $coastAll = $coastTreatment + $product->coast + $wrapper->coast;
+
             ?>
         <div class="calc-info-item">
             <div class="calc-info-center">
@@ -290,7 +294,7 @@
                 </div> <!-- /calc-result-item -->
                 <div class="calc-result-item calc-clearfix">
                     <div class="calc-col50">Стоимость изготовления и обработки детали (еврозапил, скос, стандартное соединение, радиус, кромка)</div>
-                    <div class="calc-col50 calc-result-number" id="calc-js-result-elem_price">{{$detail->form->coast}}</div>
+                    <div class="calc-col50 calc-result-number" id="calc-js-result-elem_price">{{$coastTreatment}}</div>
                 </div> <!-- /calc-result-item -->
                 <div class="calc-result-item calc-clearfix">
                     <div class="calc-col50">Стоимость упаковки</div>
@@ -298,7 +302,7 @@
                 </div> <!-- /calc-result-item -->
                 <div class="calc-result-item calc-clearfix calc-special">
                     <div class="calc-col50">Итого стоимость заказа</div>
-                    <div class="calc-col50 calc-result-number" id="calc-js-result-full_price">{{$detail->coast}}</div>
+                    <div class="calc-col50 calc-result-number" id="calc-js-result-full_price">{{$coastAll}}</div>
                 </div> <!-- /calc-result-item -->
             </div> <!-- /calc-result-blc -->
         </div>
