@@ -21,7 +21,7 @@
         }*/
         .calc-col50 {
           float: left;
-          width: 50%;
+          width: 80%;
         }
         .calc-info-top {
             padding: 20px 0;
@@ -77,6 +77,7 @@
         .calc-result-number {
           text-align: right;
           float: right;
+          width: 20%;
         }
         .calc-date{
           text-transform: initial;
