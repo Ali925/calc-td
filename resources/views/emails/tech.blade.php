@@ -68,8 +68,7 @@
         .calc-result-blc {
           margin: 0 auto 20px;
         }
-        .calc-result-blc {
-          margin-top: 50px;  
+        .calc-result-blc { 
           width: 100%;
           clear: both;
         }
@@ -310,24 +309,29 @@
             </div>
         </div>
 @endforeach
-            <div class="calc-result-blc">
-                <div class="calc-result-item calc-clearfix">
-                    <div class="calc-col50">Стоимость заготовки (основа и облиц. покрытие)</div>
-                    <div class="calc-col50 calc-result-number" id="calc-js-result-raw_price">{{$product->coast}} руб</div>
-                </div> <!-- /calc-result-item -->
-                <div class="calc-result-item calc-clearfix">
-                    <div class="calc-col50">Стоимость изготовления и обработки детали (еврозапил, скос, стандартное соединение, радиус, кромка)</div>
-                    <div class="calc-col50 calc-result-number" id="calc-js-result-elem_price">{{$coastTreatment}} руб</div>
-                </div> <!-- /calc-result-item -->
-                <div class="calc-result-item calc-clearfix">
-                    <div class="calc-col50">Стоимость упаковки</div>
-                    <div class="calc-col50 calc-result-number" id="calc-js-result-pack_price">{{$wrapper->coast}} руб</div>
-                </div> <!-- /calc-result-item -->
-                <div class="calc-result-item calc-clearfix calc-special">
-                    <div class="calc-col50">Итого стоимость заказа</div>
-                    <div class="calc-col50 calc-result-number" id="calc-js-result-full_price">{{$coastAll}} руб</div>
-                </div> <!-- /calc-result-item -->
-            </div> <!-- /calc-result-blc -->
+        <div class="calc-info-item">
+            <div class="calc-info-center">
+                <div class="calc-result-blc">
+                    <div class="calc-result-item calc-clearfix">
+                        <div class="calc-col50">Стоимость заготовки (основа и облиц. покрытие)</div>
+                        <div class="calc-col50 calc-result-number" id="calc-js-result-raw_price">{{$product->coast}} руб</div>
+                    </div> <!-- /calc-result-item -->
+                    <div class="calc-result-item calc-clearfix">
+                        <div class="calc-col50">Стоимость изготовления и обработки детали (еврозапил, скос, стандартное соединение, радиус, кромка)</div>
+                        <div class="calc-col50 calc-result-number" id="calc-js-result-elem_price">{{$coastTreatment}} руб</div>
+                    </div> <!-- /calc-result-item -->
+                    <div class="calc-result-item calc-clearfix">
+                        <div class="calc-col50">Стоимость упаковки</div>
+                        <div class="calc-col50 calc-result-number" id="calc-js-result-pack_price">{{$wrapper->coast}} руб</div>
+                    </div> <!-- /calc-result-item -->
+                    <div class="calc-result-item calc-clearfix calc-special">
+                        <div class="calc-col50">Итого стоимость заказа</div>
+                        <div class="calc-col50 calc-result-number" id="calc-js-result-full_price">{{$coastAll}} руб</div>
+                    </div> <!-- /calc-result-item -->
+                </div> <!-- /calc-result-blc -->
+            </div>
+        </div>
+            
     </div>
 </body>
 
