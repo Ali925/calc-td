@@ -37,7 +37,7 @@
             color: #cd353d;
         }
         .calc-info-item{
-            margin-bottom: 100px;
+            margin-bottom: 50px;
         }
         .calc-info-draft {
             margin: 20px auto 0;
