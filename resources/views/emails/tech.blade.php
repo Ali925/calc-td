@@ -67,7 +67,7 @@
         }
         .calc-result-blc {
           width: 100%;
-          margin-top: 50px;
+          margin-top: 200px;
           clear: both;
         }
         .calc-result-item {
