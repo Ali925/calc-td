@@ -36,9 +36,6 @@
         .calc-special {
             color: #cd353d;
         }
-        .calc-info-item{
-            margin-bottom: 50px;
-        }
         .calc-info-draft {
             margin: 20px auto 0;
             max-width: 700px;
@@ -55,13 +52,13 @@
         }
         .calc-info-table td {
             border: 1px solid #666666;
-            font-size: 13px;
+            font-size: 11px;
             padding: 10px 2px;
             text-align: center;
             vertical-align: middle;
         }
         .calc-info-table .calc-info-header td {
-            font-size: 11px;
+            font-size: 9px;
             font-weight: 700;
             color: #000000;
         }
@@ -89,6 +86,13 @@
 
 <body>
     <div class="calc-print">
+    <?php
+
+        $allProductsCoast = 0;
+        $allCoastsTreatment = 0;
+        $allWrapperCoasts = 0;
+        $allCoasts = 0;
+    ?>
 @foreach($details as $detail)
         <?php
                 $skos = 0;
@@ -195,7 +199,14 @@
 
                 $coastAll = $coastTreatment + $product->coast + $wrapper->coast;
 
-            ?>
+                $allProductsCoast = $allProductsCoast + $product->coast;
+
+                $allCoastsTreatment = $allCoastsTreatment + $coastTreatment;
+
+                $allWrapperCoasts = $allWrapperCoasts + $wrapper->coast;
+
+                $allCoasts = $allCoasts + $coastAll;
+            ?>  
         <div class="calc-info-item">
             <div class="calc-info-center">
                 <table class="calc-info-table">
@@ -314,24 +325,24 @@
                 <div class="calc-result-blc">
                     <div class="calc-result-item calc-clearfix">
                         <div class="calc-col50">Стоимость заготовки (основа и облиц. покрытие)</div>
-                        <div class="calc-col50 calc-result-number" id="calc-js-result-raw_price">{{$product->coast}} руб</div>
+                        <div class="calc-col50 calc-result-number" id="calc-js-result-raw_price">{{$allProductsCoast}} руб</div>
                     </div> <!-- /calc-result-item -->
                     <div class="calc-result-item calc-clearfix">
                         <div class="calc-col50">Стоимость изготовления и обработки детали (еврозапил, скос, стандартное соединение, радиус, кромка)</div>
-                        <div class="calc-col50 calc-result-number" id="calc-js-result-elem_price">{{$coastTreatment}} руб</div>
+                        <div class="calc-col50 calc-result-number" id="calc-js-result-elem_price">{{$allCoastsTreatment}} руб</div>
                     </div> <!-- /calc-result-item -->
                     <div class="calc-result-item calc-clearfix">
                         <div class="calc-col50">Стоимость упаковки</div>
-                        <div class="calc-col50 calc-result-number" id="calc-js-result-pack_price">{{$wrapper->coast}} руб</div>
+                        <div class="calc-col50 calc-result-number" id="calc-js-result-pack_price">{{$allWrapperCoasts}} руб</div>
                     </div> <!-- /calc-result-item -->
                     <div class="calc-result-item calc-clearfix calc-special">
                         <div class="calc-col50">Итого стоимость заказа</div>
-                        <div class="calc-col50 calc-result-number" id="calc-js-result-full_price">{{$coastAll}} руб</div>
+                        <div class="calc-col50 calc-result-number" id="calc-js-result-full_price">{{$allCoasts}} руб</div>
                     </div> <!-- /calc-result-item -->
                 </div> <!-- /calc-result-blc -->
             </div>
         </div>
-            
+
     </div>
 </body>
 
