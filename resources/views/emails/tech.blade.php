@@ -36,6 +36,9 @@
         .calc-special {
             color: #cd353d;
         }
+        .calc-info-item{
+            margin-bottom: 100px;
+        }
         .calc-info-draft {
             margin: 20px auto 0;
             max-width: 700px;
@@ -67,7 +70,6 @@
         }
         .calc-result-blc {
           width: 100%;
-          margin-top: 200px;
           clear: both;
         }
         .calc-result-item {
