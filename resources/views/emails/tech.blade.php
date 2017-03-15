@@ -72,7 +72,7 @@
         }
         .calc-result-item {
           padding: 10px 0;
-          padding-top: 20px;
+          margin-top: 10px;
           clear: both;
         }
         .calc-result-number {
