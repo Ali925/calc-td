@@ -64,6 +64,7 @@
         }
         .calc-result-blc {
           margin: 0 auto 20px;
+          font-size: 10px;
         }
         .calc-result-blc { 
           width: 100%;
