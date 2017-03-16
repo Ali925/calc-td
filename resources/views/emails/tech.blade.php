@@ -207,6 +207,8 @@
                 $allWrapperCoasts = $allWrapperCoasts + $wrapper->coast;
 
                 $allCoasts = $allCoasts + $coastAll;
+
+                echo $detail->edgeOne->edgeCategory->code, $detail->edgeOne->edgeCategory->name;
             ?>  
         <div class="calc-info-item">
             <div class="calc-info-center">
