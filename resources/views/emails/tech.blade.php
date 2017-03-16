@@ -24,11 +24,11 @@
           width: 80%;
         }
         .calc-info-top {
-            padding: 20px 0;
+            padding: 10px 0;
             position: relative;
         }
         .calc-name {
-            font-size: 18px;
+            font-size: 15px;
             font-weight: 700;
             text-transform: uppercase;
             text-align: center;

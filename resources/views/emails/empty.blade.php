@@ -136,6 +136,23 @@
                     $detail->edgeFour->edgeCategory->name = '';
                 }
 
+           if($detail->edgeOne->edgeCategory->name == 'Завал'){
+                    $detail->edgeOne->name = 'По этой стороне расположен завал';
+                    $detail->edgeOne->edgeCategory->name = '';
+                }
+                if($detail->edgeTwo->edgeCategory->name == 'Завал'){
+                    $detail->edgeTwo->name = 'По этой стороне расположен завал';
+                    $detail->edgeTwo->edgeCategory->name = '';
+                }
+                if($detail->edgeThree->edgeCategory->name == 'Завал'){
+                    $detail->edgeThree->name = 'По этой стороне расположен завал';
+                    $detail->edgeThree->edgeCategory->name = '';
+                }
+                if($detail->edgeFour->edgeCategory->name == 'Завал'){
+                    $detail->edgeFour->name = 'По этой стороне расположен завал';
+                    $detail->edgeFour->edgeCategory->name = '';
+                }     
+
             $dateNow = date('j.n.Y'); 
         ?>
         <div class="calc-info-item">
