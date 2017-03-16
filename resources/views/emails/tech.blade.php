@@ -148,19 +148,33 @@
                     $detail->edgeOne->name = 'Без кромки';
                     $detail->edgeOne->edgeCategory->name = '';
                 }
-
                 if(strpos($detail->edgeTwo->name, 'Без')!==false){
                     $detail->edgeTwo->name = 'Без кромки';
                     $detail->edgeTwo->edgeCategory->name = '';
                 }
-
                 if(strpos($detail->edgeThree->name, 'Без')!==false){
                     $detail->edgeThree->name = 'Без кромки';
                     $detail->edgeThree->edgeCategory->name = '';
                 }
-
                 if(strpos($detail->edgeFour->name, 'Без')!==false){
                     $detail->edgeFour->name = 'Без кромки';
+                    $detail->edgeFour->edgeCategory->name = '';
+                }
+
+                if($detail->edgeOne->edgeCategory->name == 'Завал'){
+                    $detail->edgeOne->name = 'По этой стороне расположен завал';
+                    $detail->edgeOne->edgeCategory->name = '';
+                }
+                if($detail->edgeTwo->edgeCategory->name == 'Завал'){
+                    $detail->edgeTwo->name = 'По этой стороне расположен завал';
+                    $detail->edgeTwo->edgeCategory->name = '';
+                }
+                if($detail->edgeThree->edgeCategory->name == 'Завал'){
+                    $detail->edgeThree->name = 'По этой стороне расположен завал';
+                    $detail->edgeThree->edgeCategory->name = '';
+                }
+                if($detail->edgeFour->edgeCategory->name == 'Завал'){
+                    $detail->edgeFour->name = 'По этой стороне расположен завал';
                     $detail->edgeFour->edgeCategory->name = '';
                 }
 
@@ -207,8 +221,6 @@
                 $allWrapperCoasts = $allWrapperCoasts + $wrapper->coast;
 
                 $allCoasts = $allCoasts + $coastAll;
-
-                echo $detail->edgeOne->edgeCategory->code, $detail->edgeOne->edgeCategory->name;
             ?>  
         <div class="calc-info-item">
             <div class="calc-info-center">
