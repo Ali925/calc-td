@@ -222,7 +222,7 @@
 
                 $allCoasts = $allCoasts + $coastAll;
 
-                echo $detail->mPrice;
+                print_r($detail);
             ?>  
         <div class="calc-info-item">
             <div class="calc-info-center">
