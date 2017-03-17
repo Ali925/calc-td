@@ -91,7 +91,6 @@ class OrderController extends Controller
                 $readyProduct->length = $product['length'];
                 $readyProduct->coast = $product['coast'];
 
-                $readyProduct->mPrice = $product['materialPrice'];
                 $readyProduct->save();
 
                 $coast[] = (int)$product['coast'];
