@@ -30,6 +30,7 @@ class ReadyProduct extends Model
         'width',
         'length',
         'coast',
+        'mPrice'
     ];
     public function blankType(){ return $this->belongsTo('App\BlankType'); }
     public function thickness(){ return $this->belongsTo('App\Thickness'); }

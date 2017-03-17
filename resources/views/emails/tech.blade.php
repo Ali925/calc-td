@@ -221,6 +221,8 @@
                 $allWrapperCoasts = $allWrapperCoasts + $wrapper->coast;
 
                 $allCoasts = $allCoasts + $coastAll;
+
+                echo $detail->mPrice;
             ?>  
         <div class="calc-info-item">
             <div class="calc-info-center">
