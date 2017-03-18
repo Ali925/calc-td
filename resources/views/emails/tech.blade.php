@@ -212,17 +212,15 @@
 
                 $coastTreatment = $detail->form->coast + $skos_coast + $radius_coast + $eurozap_coast + $soed_coast + $edgeOneCoast + $edgeTwoCoast + $edgeThreeCoast + $edgeFourCoast;
 
-                $coastAll = $coastTreatment + $product->coast + $wrapper->coast;
+                $coastAll = $coastTreatment + $detail->material_coast + $wrapper->coast;
 
-                $allProductsCoast = $allProductsCoast + $product->coast;
+                $allProductsCoast = $allProductsCoast + $detail->material_coast;
 
                 $allCoastsTreatment = $allCoastsTreatment + $coastTreatment;
 
                 $allWrapperCoasts = $allWrapperCoasts + $wrapper->coast;
 
                 $allCoasts = $allCoasts + $coastAll;
-
-                print_r($detail);
 
             ?>  
         <div class="calc-info-item">
@@ -248,7 +246,7 @@
                     <tr>
                         <td>
                             <div class="calc-info-text">
-                                <span class="calc-info-price">{{$detail->blankType->name}} / {{$product->coast}} руб</span>
+                                <span class="calc-info-price">{{$detail->blankType->name}} / {{$detail->material_coast}} руб</span>
                             </div>
                         </td>
                         <td>
