@@ -29,7 +29,8 @@ class ReadyProduct extends Model
         'nip_id',
         'width',
         'length',
-        'coast'
+        'coast',
+        'material_coast'
     ];
     public function blankType(){ return $this->belongsTo('App\BlankType'); }
     public function thickness(){ return $this->belongsTo('App\Thickness'); }

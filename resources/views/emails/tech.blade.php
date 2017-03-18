@@ -222,6 +222,8 @@
 
                 $allCoasts = $allCoasts + $coastAll;
 
+                print_r($detail);
+
             ?>  
         <div class="calc-info-item">
             <div class="calc-info-center">
