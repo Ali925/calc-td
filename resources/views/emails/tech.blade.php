@@ -96,8 +96,6 @@
     ?>
 @foreach($details as $detail)
         <?php
-                print_r($detail->decorCategory);
-                print_r($detail->decor);
                 $skos = 0;
                 $skos_coast = 0;
                 $radius = 0;
@@ -258,7 +256,7 @@
                         </td>
                         <td><div class="calc-info-text">{{$detail->decorCategory->name}}</div></td>
                         <td>
-                            <div class="calc-info-text">{{$detail->decor->name}}</div>
+                            <div class="calc-info-text">{{$detail->decor->name}} {{$detail->decor->code}}</div>
                         </td>
                         <td><div class="calc-info-text">{{$detail->nip->value}}</div></td>
                         <td><div class="calc-info-text">{{$detail->thickness->name}}</div></td>
