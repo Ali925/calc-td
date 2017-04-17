@@ -96,6 +96,7 @@
     ?>
 @foreach($details as $detail)
         <?php
+        print_r($detail);
                 $skos = 0;
                 $skos_coast = 0;
                 $radius = 0;
