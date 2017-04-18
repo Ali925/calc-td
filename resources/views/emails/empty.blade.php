@@ -188,8 +188,8 @@
                         </td>
                         <td><div class="calc-info-text">{{$detail->nip->value}}</div></td>
                         <td><div class="calc-info-text">{{$detail->thickness->name}}</div></td>
-                        <td><div class="calc-info-text">{{$detail->width}}</div></td>
                         <td><div class="calc-info-text">{{$detail->length}}</div></td>
+                        <td><div class="calc-info-text">{{$detail->width}}</div></td>
                     </tr>
                     <tr class="calc-info-header">
                         <td>Еврозапил<br>Kол-во </td>
