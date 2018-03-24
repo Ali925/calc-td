@@ -306,6 +306,10 @@
                         <input name="MobilePhone" class="calc-field calc-js-user_field" placeholder="+7(___)_______">
                         <div class="calc-error-message calc-hidden">Пожалуйста, введите корректный телефон</div>
                     </div> <!-- /calc-form-item -->
+                    <div class="calc-form-item calc-form-item__required">
+                        <input name="CityName" class="calc-field calc-js-user_field" placeholder="Город">
+                        <div class="calc-error-message calc-hidden">Пожалуйста, введите город</div>
+                    </div> <!-- /calc-form-item -->
                     <div class="calc-form-item">
                         <input name="address" class="calc-field calc-js-user_field" placeholder="Адрес (заполняется в случае доставки)">
                     </div>

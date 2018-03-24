@@ -10,6 +10,7 @@
 ФИО: {{$customer->first_name}} {{$customer->last_name}} <br>
 Телефон: {{$customer->phone}} <br>
 Эл. почта: {{$customer->email}} <br>
+Город:  {{$customer->city}} <br>
 Сумма заказа: {{$order->order_amount}} <br>
 Статус заказа: {{$order->status}} <br>
 

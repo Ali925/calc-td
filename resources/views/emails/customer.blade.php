@@ -10,6 +10,7 @@
 Дата заказа: {{$order->created_at}}  <br>
 E-Mail:  {{$customer->email}} <br>
 Телефон:  {{$customer->phone}} <br>
+Город:  {{$customer->city}} <br>
 
 </body>
 </html>
