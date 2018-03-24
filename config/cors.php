@@ -12,7 +12,7 @@ return [
      |
      */
     'supportsCredentials' => false,
-    'allowedOrigins' => ['http://calc.pgsouz.ru'],
+    'allowedOrigins' => ['http://calc.tdsouz.ru', 'http://calc.pgsouz.ru'],
     'allowedHeaders' => ['*'],
     'allowedMethods' => ['*'],
     'exposedHeaders' => [],
