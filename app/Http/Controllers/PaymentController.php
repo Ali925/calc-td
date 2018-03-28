@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\StatusMailler;
 use App\Order;
+use App\TechEmail;
 use Illuminate\Http\Request;
 use App\User;
 
@@ -21,7 +22,7 @@ class PaymentController extends Controller
         $order->status = 'Оплачено';
         $order->save();
 
-        $user = User::where('role', 2)->get(['email'])->toArray();
+        $user = TechEmail::all(['email'])->toArray();
         Mail::to($user)->send(new StatusMailler($order));
 
         return view('ok',['order' => $order]);
