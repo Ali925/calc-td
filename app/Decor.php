@@ -71,4 +71,12 @@ class Decor extends Model
         $this->thumb = str_replace('.','-thumb.',$file);
         $this->attributes['image'] =  $file;
     }
+
+    public static function getList()
+    {
+        $result = [];
+        $lists = Decor::all();
+        foreach ($lists as $list){ $result[$list->id] = $list->name; }
+        return $result;
+    }
 }
