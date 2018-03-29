@@ -43,16 +43,7 @@ AdminSection::registerModel(BlankType::class, function (ModelConfiguration $mode
                 ->setLoadOptionsQueryPreparer(function ($item,$query){
                     return $query->orderBy('name','asc');
                 })
-                ->setDisplay('name'),
-            AdminFormElement::custom()
-                ->setDisplay(function ($instance)
-            {
-                return view('article.view', ['instance' => $instance]);
-            })
-                ->setCallback(function ($instance)
-            {
-                $instance->myField = 12;
-            }) 
+                ->setDisplay('name')
         ]);
 
         return $form;
