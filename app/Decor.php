@@ -81,7 +81,8 @@ class Decor extends Model
     {
         $result = [];
         $lists = Decor::all();
-        foreach ($lists as $list){ $result[$list->id] = $list->name; }
+        $result[0] = "All";
+        foreach ($lists as $list){ $result[intval($list->id) + 1] = $list->name; }
         return $result;
     }
 }
