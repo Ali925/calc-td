@@ -72,6 +72,6 @@ class BlankType extends Model
         $lists = BlankType::all();
         $result[0] = "Все";
         foreach ($lists as $list){ $result[intval($list->id) + 1] = $list->name; }
-        return $result;
+        print_r($result);
     }
 }
