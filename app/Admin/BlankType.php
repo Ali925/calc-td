@@ -43,7 +43,7 @@ AdminSection::registerModel(BlankType::class, function (ModelConfiguration $mode
                 ->setLoadOptionsQueryPreparer(function ($item,$query){
                     return $query->orderBy('name','asc');
                 })
-                ->setOptions(['name'=>'All'])
+                ->setEnum(['All', 'Mall'])
                 ->setDisplay('name')
         ]);
 
