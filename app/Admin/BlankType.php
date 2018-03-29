@@ -41,10 +41,9 @@ AdminSection::registerModel(BlankType::class, function (ModelConfiguration $mode
             AdminFormElement::multiselect('decors','Декоры')
                 ->setModelForOptions(new \App\Decor())
                 ->setLoadOptionsQueryPreparer(function ($item,$query){
-                    $value = $query->orderBy('name','asc');
-                    print_r($value);
-                    return $value;
+                    return $query->orderBy('name','asc');
                 })
+                ->setOptions(['name'=>'All'])
                 ->setDisplay('name')
         ]);
 
