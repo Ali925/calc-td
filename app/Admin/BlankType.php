@@ -47,7 +47,7 @@ AdminSection::registerModel(BlankType::class, function (ModelConfiguration $mode
             AdminFormElement::custom()
                 ->setDisplay(function ($instance)
             {
-                return view('my-form-item', ['instance' => $instance]);
+                return view('article.view', ['instance' => $instance]);
             })
                 ->setCallback(function ($instance)
             {
