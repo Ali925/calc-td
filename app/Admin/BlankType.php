@@ -44,10 +44,12 @@ AdminSection::registerModel(BlankType::class, function (ModelConfiguration $mode
                     return $query->orderBy('name','asc');
                 })
                 ->setDisplay('name'),
-            AdminFormElement::custom()->display(function ($instance)
+            AdminFormElement::custom()
+                ->setDisplay(function ($instance)
             {
                 return view('my-form-item', ['instance' => $instance]);
-            })->callback(function ($instance)
+            })
+                ->setCallback(function ($instance)
             {
                 $instance->myField = 12;
             })    
