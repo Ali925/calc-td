@@ -79,10 +79,9 @@ class Decor extends Model
 
     public static function getList()
     {
-        // $result = [];
-        // $lists = Decor::all();
-        // $result[0] = "All";
-        // foreach ($lists as $list){ $result[intval($list->id) + 1] = $list->name; }
-        // return $result;
+        $result = [];
+        $lists = Decor::all();
+        foreach ($lists as $list){ $result[$list->id] = $list->name; }
+        return $result;
     }
 }
