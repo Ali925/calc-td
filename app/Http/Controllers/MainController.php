@@ -23,7 +23,7 @@ class MainController extends Controller
 {
     public function getFirstData()
     {
-        $response['blankTypes'] = BlankType::with('forms')->with('thicknesses')->get();
+        $response['blankTypes'] = BlankType::with('forms')->with('thicknesses')->with('decors')->get();
         $response['edgeSeries'] = EdgeCategory::with('edgeDecor')->get();
         $response['patternOptions'] = PatternOption::all();
         $response['thickness'] = Thickness::with('nips')->get();
