@@ -41,11 +41,16 @@ AdminSection::registerModel(BlankType::class, function (ModelConfiguration $mode
             AdminFormElement::multiselect('decors','Декоры')
                 ->setModelForOptions(new \App\Decor())
                 ->setLoadOptionsQueryPreparer(function ($item,$query){
-                    //array_push($query, array("name" => "All"));
-                    //return $query->orderBy('name','asc');
-                    print_r($item);
+                    return $query->orderBy('name','asc');
                 })
-                ->setDisplay('name')
+                ->setDisplay('name'),
+            AdminFormElement::custom()->display(function ($instance)
+            {
+                return view('my-form-item', ['instance' => $instance]);
+            })->callback(function ($instance)
+            {
+                $instance->myField = 12;
+            })    
         ]);
 
         return $form;
