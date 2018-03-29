@@ -13,7 +13,7 @@ class CreateBlankTypeDecor extends Migration
      */
     public function up()
     {
-         Schema::drop('blank_type_decors');
+         Schema::dropIfExists('blank_type_decors');
 
          Schema::create('blank_type_decor', function (Blueprint $table){
             $table->unsignedInteger('blank_type_id');
