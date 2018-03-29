@@ -15,7 +15,7 @@ AdminSection::registerModel(BlankType::class, function (ModelConfiguration $mode
             AdminColumn::text('max_length','Макс. длина'),
             AdminColumn::lists('thicknesses.name','Толщинны'),
             AdminColumn::text('description','Описание'),
-            AdminColumn::lists('decors','Декоры')
+            AdminColumn::lists('decors.name','Декоры')
         ]);
         $display->setApply(function ($query){
             $query->orderBy('name', 'asc');

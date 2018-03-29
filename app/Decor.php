@@ -47,6 +47,11 @@ class Decor extends Model
         return $this->hasMany('App\ReadyProduct');
     }
 
+    public function blankTypes()
+    {
+        return $this->belongsToMany('App\BlankType');
+    }
+
     public function getUploadSettings()
     {
         return [

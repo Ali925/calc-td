@@ -49,6 +49,11 @@ class BlankType extends Model
         return $this->belongsToMany('App\Thickness');
     }
 
+    public function decors()
+    {
+        return $this->belongsToMany('App\Decor');
+    }
+
     public function patternAccordance()
     {
         return $this->hasMany(PatternAccordance::class);
@@ -58,6 +63,8 @@ class BlankType extends Model
     {
         return $this->hasMany('App\ReadyProduct');
     }
+
+
 
     public static function getList()
     {
