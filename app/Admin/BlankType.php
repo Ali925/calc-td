@@ -15,7 +15,7 @@ AdminSection::registerModel(BlankType::class, function (ModelConfiguration $mode
             AdminColumn::text('max_length','Макс. длина'),
             AdminColumn::lists('thicknesses.name','Толщинны'),
             AdminColumn::text('description','Описание'),
-
+            AdminColumn::lists('decors','Декоры')
         ]);
         $display->setApply(function ($query){
             $query->orderBy('name', 'asc');
@@ -38,6 +38,12 @@ AdminSection::registerModel(BlankType::class, function (ModelConfiguration $mode
                 })
                 ->setDisplay('name'),
             AdminFormElement::wysiwyg('description','Описание'),
+            AdminFormElement::checkbox('decors','Декоры')
+                ->setModelForOptions(new \App\Decor())
+                ->setLoadOptionsQueryPreparer(function ($item,$query){
+                    return $query->orderBy('name','asc');
+                })
+                ->setDisplay('name')
         ]);
 
         return $form;
