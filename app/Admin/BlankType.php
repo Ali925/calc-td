@@ -38,7 +38,7 @@ AdminSection::registerModel(BlankType::class, function (ModelConfiguration $mode
                 })
                 ->setDisplay('name'),
             AdminFormElement::wysiwyg('description','Описание'),
-            AdminFormElement::checkbox('decors','Декоры')
+            AdminFormElement::multiselect('decors','Декоры')
                 ->setModelForOptions(new \App\Decor())
                 ->setLoadOptionsQueryPreparer(function ($item,$query){
                     return $query->orderBy('name','asc');
