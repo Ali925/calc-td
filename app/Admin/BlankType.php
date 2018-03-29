@@ -43,7 +43,7 @@ AdminSection::registerModel(BlankType::class, function (ModelConfiguration $mode
                 ->setLoadOptionsQueryPreparer(function ($item,$query){
                     //array_push($query, array("name" => "All"));
                     //return $query->orderBy('name','asc');
-                    print_r($query);
+                    print_r($item);
                 })
                 ->setDisplay('name')
         ]);
