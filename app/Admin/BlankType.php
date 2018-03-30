@@ -43,7 +43,8 @@ AdminSection::registerModel(BlankType::class, function (ModelConfiguration $mode
                 ->setLoadOptionsQueryPreparer(function ($item,$query){
                     return $query->orderBy('name','asc');
                 })
-                ->setDisplay('name')
+                ->setDisplay('name'),
+            AdminFormElement::checkbox('all_decors', 'All')
         ]);
 
         return $form;
