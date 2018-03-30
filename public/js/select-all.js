@@ -1,6 +1,8 @@
 $( document ).ready(function() {
 	$(".checkbox>label").click(function(){
 		console.log('aaa');
-		$("#decors[] option").each().click();
+		$(".input-select[name='decors[]'] option").each(function(){
+			$(this).click();
+		});
 	});
 });
