@@ -5,6 +5,7 @@ use SleepingOwl\Admin\Model\ModelConfiguration;
 
 AdminSection::registerModel(BlankType::class, function (ModelConfiguration $model){
     $model->setTitle('Тип заготовки');
+    Assets::addJS('select-all', asset('js/select-all.js'),true,true);
 
     $model->onDisplay(function (){
         $display = AdminDisplay::table()->setColumns([
