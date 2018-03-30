@@ -45,7 +45,7 @@ AdminSection::registerModel(BlankType::class, function (ModelConfiguration $mode
                     return $query->orderBy('name','asc');
                 })
                 ->setDisplay('name'),
-            AdminFormElement::checkbox('', 'Выбрать все декоры')
+            AdminFormElement::checkbox('all_decors', 'Выбрать все декоры')
         ]);
 
         return $form;
