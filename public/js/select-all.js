@@ -15,6 +15,7 @@ $( document ).ready(function() {
 				var text = $(this).parent().attr("title");
 				$(".input-select[name='decors[]'] option").filter(function () { return $(this).html() == text; }).prop('selected', false);
 				$(this).parent().remove();
+				$(".checkbox>label>input").prop('checked', false);
 			});
 		} else {
 			$(".input-select[name='decors[]'] option").prop('selected', false);
