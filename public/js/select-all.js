@@ -11,6 +11,11 @@ $( document ).ready(function() {
 							$(this).text() + "</li>";
 				$(".input-select[name='decors[]']").next().find("ul").prepend(text);
 			});
+			$(".select2-selection__choice__remove").click(function(){
+				var text = $(this).parent().attr("title");
+				$(".input-select[name='decors[]'] option").filter(function () { return $(this).html() == text; }).prop('selected', false);
+				$(this).parent().remove();
+			});
 		} else {
 			$(".input-select[name='decors[]'] option").prop('selected', false);
 			$(".input-select[name='decors[]']").next().find("li.select2-selection__choice").remove();
