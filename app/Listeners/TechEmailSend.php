@@ -32,7 +32,7 @@ class TechEmailSend
      */
     public function handle(OrderCreate $event)
     {
-        $user = OrderEmail::all(['email'])->toArray();
+        $user = TechEmail::all(['email'])->toArray();
         //$users = User::where('role', 2)->get(['email'])->toArray();
         $pdf_coast = PDF::loadView('emails.tech', ['details' => $event->details,'order'=> $event->order])
             ->setWarnings(false)

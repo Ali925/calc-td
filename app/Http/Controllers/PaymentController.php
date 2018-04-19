@@ -22,9 +22,13 @@ class PaymentController extends Controller
         $order->status = 'Оплачено';
         $order->save();
 
-        $user = TechEmail::all(['email'])->toArray();
-        if (sizeof($user)){
-            Mail::to($user)->send(new StatusMailler($order));
+        $orderuser = OrderEmail::all(['email'])->toArray();
+        $techuser = TechEmail::all(['email'])->toArray();
+        if (sizeof($techuser)){
+            Mail::to($techuser)->send(new StatusMailler($order));
+        }
+        if (sizeof($orderuser)){
+            Mail::to($orderuser)->send(new StatusMailler($order));
         }
 
         return view('ok',['order' => $order]);
