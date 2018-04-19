@@ -5,6 +5,7 @@ use SleepingOwl\Admin\Model\ModelConfiguration;
 
 AdminSection::registerModel(BlankType::class, function (ModelConfiguration $model){
     $model->setTitle('Тип заготовки');
+    Assets::addJS('select-all', asset('js/select-all.js'),true,true);
 
     $model->onDisplay(function (){
         $display = AdminDisplay::table()->setColumns([
@@ -43,7 +44,8 @@ AdminSection::registerModel(BlankType::class, function (ModelConfiguration $mode
                 ->setLoadOptionsQueryPreparer(function ($item,$query){
                     return $query->orderBy('name','asc');
                 })
-                ->setDisplay('name')
+                ->setDisplay('name'),
+            AdminFormElement::checkbox('all_decors', 'Выбрать все декоры')
         ]);
 
         return $form;
