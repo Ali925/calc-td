@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\StatusMailler;
 use App\Order;
 use App\TechEmail;
+use App\OrderEmail;
 use Illuminate\Http\Request;
 use App\User;
 
