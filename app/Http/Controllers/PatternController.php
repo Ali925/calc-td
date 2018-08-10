@@ -96,8 +96,7 @@ class PatternController extends Controller
             ]);
         }else{
             if ($query == null) return response()->json(['status' => false, 'message' => 'Нет  чертежей']);
-            if ($blank == null) return response()->json(['status' => false, 'message' => 'Извениете но загтовки с такими параметрами нет, 
-                                                                                            попробуйте выбрать другую серию декора']);
+            if ($blank == null) return response()->json(['status' => false, 'message' => 'Извините но заготовки с такими параметрами нет, попробуйте выбрать другую серию декора']);
             if ($wrapper == null) return response()->json(['status' => false, 'message' => 'Пожалуйста, выберите другой вид кромки']);
         }
 
