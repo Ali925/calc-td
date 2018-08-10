@@ -8,7 +8,9 @@ AdminSection::registerModel(Notifications::class, function (ModelConfiguration $
 
     $model->onDisplay(function (){
         $display = AdminDisplay::table()->setColumns([
-            AdminColumn::text('type','Модель'),
+            AdminColumn::custom('Модель', function(\Illuminate\Database\Eloquent\Model $model){
+                return $model->id;
+            }),
             AdminColumn::text('text','Текст'),
 
         ]);
@@ -18,7 +20,7 @@ AdminSection::registerModel(Notifications::class, function (ModelConfiguration $
 
     $model->onCreateAndEdit(function (){
         $form = AdminForm::panel()->addBody([
-            AdminFormElement::select('type','Модель', array('1' => 'Пожалуйста, введите корректное значение размера еврозапила.')),
+            AdminFormElement::select('type','Модель', array('1' => 'Некорректное значение размера еврозапила')),
             AdminFormElement::text('text','Текст'),
         ]);
 
