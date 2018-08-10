@@ -10,7 +10,7 @@ AdminSection::registerModel(Notifications::class, function (ModelConfiguration $
         $display = AdminDisplay::table()->setColumns([
             AdminColumn::custom('Модель', function(\Illuminate\Database\Eloquent\Model $model){
                 $type = $model->type;
-                $arr = array('1' => 'Некорректное значение размера еврозапила'));
+                $arr = array('1' => 'Некорректное значение размера еврозапила');
                 return $arr[$type];
             }),
             AdminColumn::text('text','Текст'),
