@@ -1,9 +1,9 @@
 <?php
 
-use App\Notification;
+use App\ErrorNotifications;
 use SleepingOwl\Admin\Model\ModelConfiguration;
 
-AdminSection::registerModel(Notification::class, function (ModelConfiguration $model){
+AdminSection::registerModel(ErrorNotifications::class, function (ModelConfiguration $model){
     $model->setTitle('Уведомлении');
 
     $model->onDisplay(function (){
@@ -28,6 +28,6 @@ AdminSection::registerModel(Notification::class, function (ModelConfiguration $m
 
         return $form;
     });
-})->addMenuPage(Notification::class, 99)->setIcon('fa fa-exclamation-circle')->setAccessLogic(function (){
+})->addMenuPage(ErrorNotifications::class, 99)->setIcon('fa fa-exclamation-circle')->setAccessLogic(function (){
     return auth()->user()->isAdmin();
 });

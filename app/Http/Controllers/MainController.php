@@ -17,7 +17,7 @@ use App\Nip;
 use App\Thickness;
 use App\EdgeCategory;
 use App\PatternOption;
-use App\Notification;
+use App\ErrorNotifications;
 
 
 class MainController extends Controller
@@ -30,7 +30,7 @@ class MainController extends Controller
         $response['thickness'] = Thickness::with('nips')->get();
         $response['nip'] = Nip::with('patternPositions')->get();
         $response['wrapper'] = Wrapper::all();
-        $response['errors'] = Notification::all();
+        $response['errors'] = ErrorNotifications::all();
 
         return response()->json($response);
     }
