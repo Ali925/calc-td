@@ -244,6 +244,29 @@
                             @endif
                         </td>
                     </tr>
+                    @if($detail->eurozap_one_size && $detail->eurozap_two_size)
+                        <tr class="calc-info-header">
+                            <td>Размер еврозапила 1 (мм)</td>
+                            <td>Размер еврозапила 2 (мм)</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="calc-info-text">{{$detail->eurozap_one_size}} мм</div>
+                            </td>
+                            <td>
+                                <div class="calc-info-text">{$detail->eurozap_two_size}} мм</div>
+                            </td>
+                        </tr>
+                    @elseif($detail->eurozap_one_size)
+                        <tr class="calc-info-header">
+                            <td>Размер еврозапила (мм)</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="calc-info-text">{{$detail->eurozap_one_size}} мм</div>
+                            </td>
+                        </tr>
+                    @endif
                 </table>
             </div>
 
