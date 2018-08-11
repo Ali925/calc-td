@@ -30,7 +30,7 @@ class MainController extends Controller
         $response['thickness'] = Thickness::with('nips')->get();
         $response['nip'] = Nip::with('patternPositions')->get();
         $response['wrapper'] = Wrapper::all();
-        $response['error_nots'] = ErrorNotifications::where("type", 2)->get();
+        $response['errors'] = ErrorNotifications::all();
 
         return response()->json($response);
     }
