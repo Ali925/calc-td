@@ -93,9 +93,9 @@ class OrderController extends Controller
 
                 $readyProduct->material_coast = $product['materialPrice'];
 
-                if($product['list_eurozap1'])
+                if(isset($product['list_eurozap1']))
                     $readyProduct->eurozap_one_size = $product['list_eurozap1'];
-                if($product['list_eurozap2'])
+                if(isset($product['list_eurozap2']))
                     $readyProduct->eurozap_two_size = $product['list_eurozap2'];
 
                 $readyProduct->save();
